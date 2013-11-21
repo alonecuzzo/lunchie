@@ -7,12 +7,19 @@
 //
 
 #import "LCHAppDelegate.h"
+#import "LCHViewController.h"
 
 @implementation LCHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.viewController = [[UINavigationController alloc] initWithRootViewController:[
+                                                                                      [LCHViewController alloc] initWithStyle:UITableViewStylePlain]];
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							

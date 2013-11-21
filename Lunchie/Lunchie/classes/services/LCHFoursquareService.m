@@ -13,6 +13,7 @@
 #define FS_CLIENT_SECRET @"L35ZA0AD2PJQMTAEPMRL0M5IGIXGUPWBE03L4BIAH21M0SLJ"
 
 static NSString *const FS_SEARCH_URL = @"https://api.foursquare.com/v2/venues/search";
+static NSString *const FS_MENU_URL = @"https://api.foursquare.com/v2/venues/";
 
 @implementation LCHFoursquareService
 
@@ -65,6 +66,43 @@ static NSString *const FS_SEARCH_URL = @"https://api.foursquare.com/v2/venues/se
     ];
     
     [connection start];
+}
+
+- (void)searchMenuForVenueID:(NSString*)venueID
+{
+    __block id delegate = self.delegate;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", FS_MENU_URL, venueID, @"/menu"]];
+    NSDictionary *params = [NSDictionary dictionaryWithObjects:@[
+                                                                 FS_CLIENT_ID,
+                                                                 FS_CLIENT_SECRET,
+                                                                 @"20130815"
+                                                                 ] forKeys:@[
+                                                                             @"client_id",
+                                                                             @"client_secret",
+                                                                             @"v"
+                                                                             ]
+                            ];
+    
+    FSNConnection *connection = [FSNConnection withUrl:url method:FSNRequestMethodGET headers:nil parameters:params
+                                            parseBlock:^id(FSNConnection *connection, NSError **error) {
+                                                
+                                                return connection;
+                                            } completionBlock:^(FSNConnection *connection) {
+                                                NSLog(@"complete! %@ :: %@", connection.responseData, connection.error);
+                                                
+                                                if (!connection.error) {
+                                                    NSError *error = nil;
+                                                    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:connection.responseData options:kNilOptions error:&error];
+                                                    NSLog(@"json: %@", json);
+                                                }
+                                                
+                                            } progressBlock:^(FSNConnection *connection) {
+                                                
+                                            }
+                                 ];
+    
+    [connection start];
+
 }
 
 @end

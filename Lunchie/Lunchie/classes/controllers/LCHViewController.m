@@ -11,6 +11,7 @@
 #import "LCHFoursquareService.h"
 #import "LCHFoursquareVenue.h"
 #import "LCHModel.h"
+#import "LCHFoursquareVenueViewController.h"
 
 @interface LCHViewController ()
 
@@ -24,10 +25,10 @@
 {
     [super viewDidLoad];
     
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    [self.view addSubview:self.tableView];
+//    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
+//    self.tableView.delegate = self;
+//    self.tableView.dataSource = self;
+//    [self.view addSubview:self.tableView];
     
     CLLocation *location = [[CLLocation alloc] initWithLatitude:40.712840 longitude:-74.007742];
     LCHNetworkManager *manager = [[LCHNetworkManager alloc] init];
@@ -47,7 +48,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    LCHFoursquareVenueViewController *lvc = [[LCHFoursquareVenueViewController alloc] init];
+    lvc.venue = [_venues objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:lvc animated:YES];
 }
 
 #pragma mark - datasourcedelegate goodies

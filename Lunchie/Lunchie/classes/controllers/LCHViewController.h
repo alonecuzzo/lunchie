@@ -15,8 +15,6 @@
 
 @end
 
-@interface LCHViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, LCHVenuesTableViewDelegate>
-
-@property(nonatomic) UITableView *tableView;
+@interface LCHViewController : UITableViewController <LCHVenuesTableViewDelegate>
 
 @end

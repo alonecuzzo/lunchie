@@ -35,4 +35,9 @@
     [_delegate refreshVenues];
 }
 
+- (void)searcMenusForVenueID:(NSString*)venueID
+{
+    [_foursquareService searchMenuForVenueID:venueID];
+}
+
 @end

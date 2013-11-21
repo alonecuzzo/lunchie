@@ -29,5 +29,6 @@
 
 - (void)buildVenuesWithJSON:(NSDictionary *)json;
 - (void)searchVenuesForLocation:(CLLocation*)location;
+- (void)searcMenusForVenueID:(NSString*)venueID;
 
 @end

@@ -16,5 +16,6 @@
 
 - (instancetype)initWithDelegate:(id<LCHNetworkManagerProtocol>)delegate;
 - (void)searchVenuesForLocation:(CLLocation*)location;
+- (void)searchMenuForVenueID:(NSString*)venueID;
 
 @end
