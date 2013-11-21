@@ -1,11 +1,7 @@
 target "Lunchie" do
-pod 'MKNetworkKit', :head
-pod 'MKNetworkKit+RACExtensions', :head
-pod 'NSData+Base64', '~> 1.0.0'
+pod "FSNetworking", :head
 end
 
 target "LunchieTests" do
-pod 'MKNetworkKit', :head
-pod 'MKNetworkKit+RACExtensions', :head
-pod 'NSData+Base64', '~> 1.0.0'
+pod "FSNetworking", :head
 end
