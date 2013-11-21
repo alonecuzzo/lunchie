@@ -25,6 +25,14 @@
 		8E367E80183DCB33001792E1 /* LCHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E7F183DCB33001792E1 /* LCHViewController.m */; };
 		8E367E81183DCB33001792E1 /* LCHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E7F183DCB33001792E1 /* LCHViewController.m */; };
 		8E367E83183DCF07001792E1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E367E82183DCF07001792E1 /* Security.framework */; };
+		8E6252A2183EB56D00244D54 /* LCHMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A1183EB56D00244D54 /* LCHMenu.m */; };
+		8E6252A3183EB56D00244D54 /* LCHMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A1183EB56D00244D54 /* LCHMenu.m */; };
+		8E6252A6183EB58A00244D54 /* LCHMenuEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A5183EB58A00244D54 /* LCHMenuEntry.m */; };
+		8E6252A7183EB58A00244D54 /* LCHMenuEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A5183EB58A00244D54 /* LCHMenuEntry.m */; };
+		8E6252AA183EB68400244D54 /* LCHMenuSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A9183EB68400244D54 /* LCHMenuSection.m */; };
+		8E6252AB183EB68400244D54 /* LCHMenuSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A9183EB68400244D54 /* LCHMenuSection.m */; };
+		8E6252AE183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252AD183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m */; };
+		8E6252AF183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252AD183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m */; };
 		8EABBF3C183E679A00A3D705 /* LCHFoursquareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */; };
 		8EABBF3D183E679A00A3D705 /* LCHFoursquareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */; };
 		8EABBF3F183E67BA00A3D705 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EABBF3E183E67BA00A3D705 /* CoreLocation.framework */; };
@@ -76,6 +84,14 @@
 		8E367E7E183DCB33001792E1 /* LCHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHViewController.h; path = classes/controllers/LCHViewController.h; sourceTree = "<group>"; };
 		8E367E7F183DCB33001792E1 /* LCHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHViewController.m; path = classes/controllers/LCHViewController.m; sourceTree = "<group>"; };
 		8E367E82183DCF07001792E1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8E6252A0183EB56D00244D54 /* LCHMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHMenu.h; path = classes/model/LCHMenu.h; sourceTree = "<group>"; };
+		8E6252A1183EB56D00244D54 /* LCHMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHMenu.m; path = classes/model/LCHMenu.m; sourceTree = "<group>"; };
+		8E6252A4183EB58A00244D54 /* LCHMenuEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHMenuEntry.h; path = classes/model/LCHMenuEntry.h; sourceTree = "<group>"; };
+		8E6252A5183EB58A00244D54 /* LCHMenuEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHMenuEntry.m; path = classes/model/LCHMenuEntry.m; sourceTree = "<group>"; };
+		8E6252A8183EB68400244D54 /* LCHMenuSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHMenuSection.h; path = classes/model/LCHMenuSection.h; sourceTree = "<group>"; };
+		8E6252A9183EB68400244D54 /* LCHMenuSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHMenuSection.m; path = classes/model/LCHMenuSection.m; sourceTree = "<group>"; };
+		8E6252AC183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHFoursquareVenueMenuBuilder.h; path = classes/builders/LCHFoursquareVenueMenuBuilder.h; sourceTree = "<group>"; };
+		8E6252AD183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHFoursquareVenueMenuBuilder.m; path = classes/builders/LCHFoursquareVenueMenuBuilder.m; sourceTree = "<group>"; };
 		8EABBF3A183E679A00A3D705 /* LCHFoursquareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHFoursquareService.h; path = classes/services/LCHFoursquareService.h; sourceTree = "<group>"; };
 		8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHFoursquareService.m; path = classes/services/LCHFoursquareService.m; sourceTree = "<group>"; };
 		8EABBF3E183E67BA00A3D705 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -253,6 +269,8 @@
 			children = (
 				8EABBF44183E805100A3D705 /* LCHFoursquareVenueBuilder.h */,
 				8EABBF45183E805100A3D705 /* LCHFoursquareVenueBuilder.m */,
+				8E6252AC183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.h */,
+				8E6252AD183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m */,
 			);
 			name = builders;
 			sourceTree = "<group>";
@@ -262,6 +280,12 @@
 			children = (
 				8EABBF49183E808900A3D705 /* LCHFoursquareVenue.h */,
 				8EABBF4A183E808900A3D705 /* LCHFoursquareVenue.m */,
+				8E6252A0183EB56D00244D54 /* LCHMenu.h */,
+				8E6252A1183EB56D00244D54 /* LCHMenu.m */,
+				8E6252A4183EB58A00244D54 /* LCHMenuEntry.h */,
+				8E6252A5183EB58A00244D54 /* LCHMenuEntry.m */,
+				8E6252A8183EB68400244D54 /* LCHMenuSection.h */,
+				8E6252A9183EB68400244D54 /* LCHMenuSection.m */,
 				8EABBF52183E967800A3D705 /* LCHModel.h */,
 				8EABBF53183E967800A3D705 /* LCHModel.m */,
 			);
@@ -446,10 +470,14 @@
 				8E367E80183DCB33001792E1 /* LCHViewController.m in Sources */,
 				8EABBF58183EAEF400A3D705 /* LCHFoursquareVenueViewController.m in Sources */,
 				8EABBF46183E805100A3D705 /* LCHFoursquareVenueBuilder.m in Sources */,
+				8E6252AA183EB68400244D54 /* LCHMenuSection.m in Sources */,
+				8E6252A6183EB58A00244D54 /* LCHMenuEntry.m in Sources */,
 				8E367E7C183DCB23001792E1 /* LCHAppDelegate.m in Sources */,
 				8EABBF3C183E679A00A3D705 /* LCHFoursquareService.m in Sources */,
 				8EABBF54183E967800A3D705 /* LCHModel.m in Sources */,
+				8E6252AE183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m in Sources */,
 				8E367E41183DBEEA001792E1 /* main.m in Sources */,
+				8E6252A2183EB56D00244D54 /* LCHMenu.m in Sources */,
 				8EABBF50183E84D500A3D705 /* LCHNetworkManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EABBF4C183E808900A3D705 /* LCHFoursquareVenue.m in Sources */,
+				8E6252AB183EB68400244D54 /* LCHMenuSection.m in Sources */,
 				8EABBF42183E689A00A3D705 /* LCHFoursquareServiceTests.m in Sources */,
 				8EABBF51183E84D500A3D705 /* LCHNetworkManager.m in Sources */,
 				8E367E60183DBEEB001792E1 /* LunchieTests.m in Sources */,
@@ -466,8 +495,11 @@
 				8EABBF47183E805100A3D705 /* LCHFoursquareVenueBuilder.m in Sources */,
 				8E367E81183DCB33001792E1 /* LCHViewController.m in Sources */,
 				8EABBF3D183E679A00A3D705 /* LCHFoursquareService.m in Sources */,
+				8E6252AF183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m in Sources */,
+				8E6252A3183EB56D00244D54 /* LCHMenu.m in Sources */,
 				8EABBF55183E967800A3D705 /* LCHModel.m in Sources */,
 				8E367E7D183DCB23001792E1 /* LCHAppDelegate.m in Sources */,
+				8E6252A7183EB58A00244D54 /* LCHMenuEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

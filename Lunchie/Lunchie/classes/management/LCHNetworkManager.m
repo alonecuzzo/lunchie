@@ -20,6 +20,7 @@
     if (self) {
         _foursquareService = [[LCHFoursquareService alloc] initWithDelegate:self];
         _foursquareVenueBuilder = [[LCHFoursquareVenueBuilder alloc] init];
+        _foursquareVenueMenuBuilder = [[LCHFoursquareVenueMenuBuilder alloc] init];
     }
     return self;
 }
@@ -38,6 +39,11 @@
 - (void)searcMenusForVenueID:(NSString*)venueID
 {
     [_foursquareService searchMenuForVenueID:venueID];
+}
+
+- (void)buildMenuWithJSON:(NSDictionary *)json
+{
+    [_foursquareVenueMenuBuilder buildMenuFromJSON:json];
 }
 
 @end

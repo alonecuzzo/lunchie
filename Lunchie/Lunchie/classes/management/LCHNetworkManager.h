@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import "LCHViewController.h"
+#import "LCHFoursquareVenueMenuBuilder.h"
 
 @class LCHFoursquareService;
 @class LCHFoursquareVenueBuilder;
@@ -17,6 +18,9 @@
 
 - (void)buildVenuesWithJSON:(NSDictionary*)json;
 
+@optional
+- (void)buildMenuWithJSON:(NSDictionary*)json;
+
 @end
 
 @interface LCHNetworkManager : NSObject <LCHNetworkManagerProtocol>
@@ -24,6 +28,7 @@
 - (instancetype)init;
 
 @property(nonatomic) LCHFoursquareVenueBuilder *foursquareVenueBuilder;
+@property(nonatomic) LCHFoursquareVenueMenuBuilder *foursquareVenueMenuBuilder;
 @property(nonatomic) LCHFoursquareService *foursquareService;
 @property(weak) id <LCHVenuesTableViewDelegate> delegate;
 
