@@ -1,0 +1,7 @@
+target "Lunchie" do
+pod 'MKNetworkKit+RACExtensions', '~> 0.2'
+end
+
+target "LunchieTests" do
+pod 'MKNetworkKit+RACExtensions', '~> 0.2'
+end

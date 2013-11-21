@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		62CB2723180340F5A95C8372 /* libPods-Lunchie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 707FF70617884127BEEE532D /* libPods-Lunchie.a */; };
+		8E367E35183DBEEA001792E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E367E34183DBEEA001792E1 /* Foundation.framework */; };
+		8E367E37183DBEEA001792E1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E367E36183DBEEA001792E1 /* CoreGraphics.framework */; };
+		8E367E39183DBEEA001792E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E367E38183DBEEA001792E1 /* UIKit.framework */; };
+		8E367E3F183DBEEA001792E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E367E3D183DBEEA001792E1 /* InfoPlist.strings */; };
+		8E367E41183DBEEA001792E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E40183DBEEA001792E1 /* main.m */; };
+		8E367E45183DBEEA001792E1 /* LCHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E44183DBEEA001792E1 /* LCHAppDelegate.m */; };
+		8E367E48183DBEEA001792E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E367E46183DBEEA001792E1 /* Main.storyboard */; };
+		8E367E4B183DBEEA001792E1 /* LCHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E4A183DBEEA001792E1 /* LCHViewController.m */; };
+		8E367E4D183DBEEA001792E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E367E4C183DBEEA001792E1 /* Images.xcassets */; };
+		8E367E54183DBEEB001792E1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E367E53183DBEEB001792E1 /* XCTest.framework */; };
+		8E367E55183DBEEB001792E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E367E34183DBEEA001792E1 /* Foundation.framework */; };
+		8E367E56183DBEEB001792E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E367E38183DBEEA001792E1 /* UIKit.framework */; };
+		8E367E5E183DBEEB001792E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E367E5C183DBEEB001792E1 /* InfoPlist.strings */; };
+		8E367E60183DBEEB001792E1 /* LunchieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E5F183DBEEB001792E1 /* LunchieTests.m */; };
+		8E367E6B183DC105001792E1 /* LCHNetworkEngineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E6A183DC105001792E1 /* LCHNetworkEngineTests.m */; };
+		8E367E70183DC193001792E1 /* LCHNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E6F183DC193001792E1 /* LCHNetworkEngine.m */; };
+		8E367E71183DC193001792E1 /* LCHNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E6F183DC193001792E1 /* LCHNetworkEngine.m */; };
+		A679EF86CF394708A95E38EE /* libPods-LunchieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3778D5A5C9147229B596A65 /* libPods-LunchieTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8E367E57183DBEEB001792E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E367E29183DBEEA001792E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E367E30183DBEEA001792E1;
+			remoteInfo = Lunchie;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B8FAB723A4B4C9A92239D04 /* Pods-Lunchie.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lunchie.xcconfig"; path = "Pods/Pods-Lunchie.xcconfig"; sourceTree = "<group>"; };
+		384B1BD7E3B343E6AEF9AFD1 /* Pods-LunchieTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchieTests.xcconfig"; path = "Pods/Pods-LunchieTests.xcconfig"; sourceTree = "<group>"; };
+		707FF70617884127BEEE532D /* libPods-Lunchie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Lunchie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E367E31183DBEEA001792E1 /* Lunchie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lunchie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E367E34183DBEEA001792E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8E367E36183DBEEA001792E1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8E367E38183DBEEA001792E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8E367E3C183DBEEA001792E1 /* Lunchie-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lunchie-Info.plist"; sourceTree = "<group>"; };
+		8E367E3E183DBEEA001792E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8E367E40183DBEEA001792E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8E367E42183DBEEA001792E1 /* Lunchie-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lunchie-Prefix.pch"; sourceTree = "<group>"; };
+		8E367E43183DBEEA001792E1 /* LCHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCHAppDelegate.h; sourceTree = "<group>"; };
+		8E367E44183DBEEA001792E1 /* LCHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCHAppDelegate.m; sourceTree = "<group>"; };
+		8E367E47183DBEEA001792E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8E367E49183DBEEA001792E1 /* LCHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCHViewController.h; sourceTree = "<group>"; };
+		8E367E4A183DBEEA001792E1 /* LCHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCHViewController.m; sourceTree = "<group>"; };
+		8E367E4C183DBEEA001792E1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8E367E52183DBEEB001792E1 /* LunchieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LunchieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E367E53183DBEEB001792E1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8E367E5B183DBEEB001792E1 /* LunchieTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LunchieTests-Info.plist"; sourceTree = "<group>"; };
+		8E367E5D183DBEEB001792E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8E367E5F183DBEEB001792E1 /* LunchieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LunchieTests.m; sourceTree = "<group>"; };
+		8E367E6A183DC105001792E1 /* LCHNetworkEngineTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHNetworkEngineTests.m; path = LCHNetworkEngine/LCHNetworkEngineTests.m; sourceTree = "<group>"; };
+		8E367E6E183DC193001792E1 /* LCHNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHNetworkEngine.h; path = classes/network/engine/LCHNetworkEngine.h; sourceTree = "<group>"; };
+		8E367E6F183DC193001792E1 /* LCHNetworkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHNetworkEngine.m; path = classes/network/engine/LCHNetworkEngine.m; sourceTree = "<group>"; };
+		D3778D5A5C9147229B596A65 /* libPods-LunchieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LunchieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E367E2E183DBEEA001792E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E367E37183DBEEA001792E1 /* CoreGraphics.framework in Frameworks */,
+				8E367E39183DBEEA001792E1 /* UIKit.framework in Frameworks */,
+				8E367E35183DBEEA001792E1 /* Foundation.framework in Frameworks */,
+				62CB2723180340F5A95C8372 /* libPods-Lunchie.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E367E4F183DBEEB001792E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E367E54183DBEEB001792E1 /* XCTest.framework in Frameworks */,
+				8E367E56183DBEEB001792E1 /* UIKit.framework in Frameworks */,
+				8E367E55183DBEEB001792E1 /* Foundation.framework in Frameworks */,
+				A679EF86CF394708A95E38EE /* libPods-LunchieTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E367E28183DBEEA001792E1 = {
+			isa = PBXGroup;
+			children = (
+				8E367E3A183DBEEA001792E1 /* Lunchie */,
+				8E367E59183DBEEB001792E1 /* LunchieTests */,
+				8E367E33183DBEEA001792E1 /* Frameworks */,
+				8E367E32183DBEEA001792E1 /* Products */,
+				1B8FAB723A4B4C9A92239D04 /* Pods-Lunchie.xcconfig */,
+				384B1BD7E3B343E6AEF9AFD1 /* Pods-LunchieTests.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		8E367E32183DBEEA001792E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E367E31183DBEEA001792E1 /* Lunchie.app */,
+				8E367E52183DBEEB001792E1 /* LunchieTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E367E33183DBEEA001792E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E367E34183DBEEA001792E1 /* Foundation.framework */,
+				8E367E36183DBEEA001792E1 /* CoreGraphics.framework */,
+				8E367E38183DBEEA001792E1 /* UIKit.framework */,
+				8E367E53183DBEEB001792E1 /* XCTest.framework */,
+				707FF70617884127BEEE532D /* libPods-Lunchie.a */,
+				D3778D5A5C9147229B596A65 /* libPods-LunchieTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E367E3A183DBEEA001792E1 /* Lunchie */ = {
+			isa = PBXGroup;
+			children = (
+				8E367E6C183DC164001792E1 /* network */,
+				8E367E43183DBEEA001792E1 /* LCHAppDelegate.h */,
+				8E367E44183DBEEA001792E1 /* LCHAppDelegate.m */,
+				8E367E46183DBEEA001792E1 /* Main.storyboard */,
+				8E367E49183DBEEA001792E1 /* LCHViewController.h */,
+				8E367E4A183DBEEA001792E1 /* LCHViewController.m */,
+				8E367E4C183DBEEA001792E1 /* Images.xcassets */,
+				8E367E3B183DBEEA001792E1 /* Supporting Files */,
+			);
+			path = Lunchie;
+			sourceTree = "<group>";
+		};
+		8E367E3B183DBEEA001792E1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8E367E3C183DBEEA001792E1 /* Lunchie-Info.plist */,
+				8E367E3D183DBEEA001792E1 /* InfoPlist.strings */,
+				8E367E40183DBEEA001792E1 /* main.m */,
+				8E367E42183DBEEA001792E1 /* Lunchie-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8E367E59183DBEEB001792E1 /* LunchieTests */ = {
+			isa = PBXGroup;
+			children = (
+				8E367E72183DC51A001792E1 /* mocks */,
+				8E367E69183DC0DA001792E1 /* LCHNetworkEngine */,
+				8E367E5F183DBEEB001792E1 /* LunchieTests.m */,
+				8E367E5A183DBEEB001792E1 /* Supporting Files */,
+			);
+			path = LunchieTests;
+			sourceTree = "<group>";
+		};
+		8E367E5A183DBEEB001792E1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8E367E5B183DBEEB001792E1 /* LunchieTests-Info.plist */,
+				8E367E5C183DBEEB001792E1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8E367E69183DC0DA001792E1 /* LCHNetworkEngine */ = {
+			isa = PBXGroup;
+			children = (
+				8E367E6A183DC105001792E1 /* LCHNetworkEngineTests.m */,
+			);
+			name = LCHNetworkEngine;
+			sourceTree = "<group>";
+		};
+		8E367E6C183DC164001792E1 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				8E367E6D183DC16B001792E1 /* engine */,
+			);
+			name = network;
+			sourceTree = "<group>";
+		};
+		8E367E6D183DC16B001792E1 /* engine */ = {
+			isa = PBXGroup;
+			children = (
+				8E367E6E183DC193001792E1 /* LCHNetworkEngine.h */,
+				8E367E6F183DC193001792E1 /* LCHNetworkEngine.m */,
+			);
+			name = engine;
+			sourceTree = "<group>";
+		};
+		8E367E72183DC51A001792E1 /* mocks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = mocks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E367E30183DBEEA001792E1 /* Lunchie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E367E63183DBEEB001792E1 /* Build configuration list for PBXNativeTarget "Lunchie" */;
+			buildPhases = (
+				B3ADDB0ABBB548EDA65E9490 /* Check Pods Manifest.lock */,
+				8E367E2D183DBEEA001792E1 /* Sources */,
+				8E367E2E183DBEEA001792E1 /* Frameworks */,
+				8E367E2F183DBEEA001792E1 /* Resources */,
+				611DEF8E2F8F4840AB2FC12B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lunchie;
+			productName = Lunchie;
+			productReference = 8E367E31183DBEEA001792E1 /* Lunchie.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8E367E51183DBEEB001792E1 /* LunchieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E367E66183DBEEB001792E1 /* Build configuration list for PBXNativeTarget "LunchieTests" */;
+			buildPhases = (
+				3039FD9C146F4274B276DC48 /* Check Pods Manifest.lock */,
+				8E367E4E183DBEEB001792E1 /* Sources */,
+				8E367E4F183DBEEB001792E1 /* Frameworks */,
+				8E367E50183DBEEB001792E1 /* Resources */,
+				56F590D305C544E780A00FE6 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E367E58183DBEEB001792E1 /* PBXTargetDependency */,
+			);
+			name = LunchieTests;
+			productName = LunchieTests;
+			productReference = 8E367E52183DBEEB001792E1 /* LunchieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E367E29183DBEEA001792E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LCH;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = 23bit;
+				TargetAttributes = {
+					8E367E51183DBEEB001792E1 = {
+						TestTargetID = 8E367E30183DBEEA001792E1;
+					};
+				};
+			};
+			buildConfigurationList = 8E367E2C183DBEEA001792E1 /* Build configuration list for PBXProject "Lunchie" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8E367E28183DBEEA001792E1;
+			productRefGroup = 8E367E32183DBEEA001792E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E367E30183DBEEA001792E1 /* Lunchie */,
+				8E367E51183DBEEB001792E1 /* LunchieTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E367E2F183DBEEA001792E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E367E4D183DBEEA001792E1 /* Images.xcassets in Resources */,
+				8E367E3F183DBEEA001792E1 /* InfoPlist.strings in Resources */,
+				8E367E48183DBEEA001792E1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E367E50183DBEEB001792E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E367E5E183DBEEB001792E1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3039FD9C146F4274B276DC48 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		56F590D305C544E780A00FE6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-LunchieTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		611DEF8E2F8F4840AB2FC12B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Lunchie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3ADDB0ABBB548EDA65E9490 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E367E2D183DBEEA001792E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E367E70183DC193001792E1 /* LCHNetworkEngine.m in Sources */,
+				8E367E45183DBEEA001792E1 /* LCHAppDelegate.m in Sources */,
+				8E367E41183DBEEA001792E1 /* main.m in Sources */,
+				8E367E4B183DBEEA001792E1 /* LCHViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E367E4E183DBEEB001792E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E367E6B183DC105001792E1 /* LCHNetworkEngineTests.m in Sources */,
+				8E367E60183DBEEB001792E1 /* LunchieTests.m in Sources */,
+				8E367E71183DC193001792E1 /* LCHNetworkEngine.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8E367E58183DBEEB001792E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E367E30183DBEEA001792E1 /* Lunchie */;
+			targetProxy = 8E367E57183DBEEB001792E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8E367E3D183DBEEA001792E1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E367E3E183DBEEA001792E1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8E367E46183DBEEA001792E1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E367E47183DBEEA001792E1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8E367E5C183DBEEB001792E1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E367E5D183DBEEB001792E1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8E367E61183DBEEB001792E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8E367E62183DBEEB001792E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E367E64183DBEEB001792E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B8FAB723A4B4C9A92239D04 /* Pods-Lunchie.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lunchie/Lunchie-Prefix.pch";
+				INFOPLIST_FILE = "Lunchie/Lunchie-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8E367E65183DBEEB001792E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B8FAB723A4B4C9A92239D04 /* Pods-Lunchie.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lunchie/Lunchie-Prefix.pch";
+				INFOPLIST_FILE = "Lunchie/Lunchie-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8E367E67183DBEEB001792E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 384B1BD7E3B343E6AEF9AFD1 /* Pods-LunchieTests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Lunchie.app/Lunchie";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lunchie/Lunchie-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LunchieTests/LunchieTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8E367E68183DBEEB001792E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 384B1BD7E3B343E6AEF9AFD1 /* Pods-LunchieTests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Lunchie.app/Lunchie";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lunchie/Lunchie-Prefix.pch";
+				INFOPLIST_FILE = "LunchieTests/LunchieTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E367E2C183DBEEA001792E1 /* Build configuration list for PBXProject "Lunchie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E367E61183DBEEB001792E1 /* Debug */,
+				8E367E62183DBEEB001792E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E367E63183DBEEB001792E1 /* Build configuration list for PBXNativeTarget "Lunchie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E367E64183DBEEB001792E1 /* Debug */,
+				8E367E65183DBEEB001792E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E367E66183DBEEB001792E1 /* Build configuration list for PBXNativeTarget "LunchieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E367E67183DBEEB001792E1 /* Debug */,
+				8E367E68183DBEEB001792E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8E367E29183DBEEA001792E1 /* Project object */;
+}
