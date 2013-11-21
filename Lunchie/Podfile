@@ -1,7 +1,9 @@
 target "Lunchie" do
 pod "FSNetworking", :head
+pod "ReactiveCocoa", :head
 end
 
 target "LunchieTests" do
 pod "FSNetworking", :head
+pod "ReactiveCocoa", :head
 end

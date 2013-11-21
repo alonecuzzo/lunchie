@@ -1,10 +1,18 @@
 PODS:
   - FSNetworking (HEAD based on 0.0.1)
+  - ReactiveCocoa (HEAD based on 2.1.7):
+    - ReactiveCocoa/Core
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/Core (HEAD based on 2.1.7):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (HEAD based on 2.1.7)
 
 DEPENDENCIES:
   - FSNetworking (HEAD)
+  - ReactiveCocoa (HEAD)
 
 SPEC CHECKSUMS:
   FSNetworking: 676e31d646599b2cc3ebc5c1527e503a02eab4f0
+  ReactiveCocoa: 1117f7968c8667d2ca00b5aa47156fabcb56af75
 
 COCOAPODS: 0.26.2

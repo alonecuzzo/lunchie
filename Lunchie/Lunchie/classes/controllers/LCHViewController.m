@@ -7,6 +7,7 @@
 //
 
 #import "LCHViewController.h"
+#import "LCHFoursquareService.h"
 
 @interface LCHViewController ()
 
@@ -18,6 +19,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+//    [[CLLocation alloc] initWithLatitude:40.712840 longitude:-74.007742];
+    LCHFoursquareService *service = [[LCHFoursquareService alloc] init];
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:40.712840 longitude:-74.007742];
+    [service searchVenuesForLocation:location];
 }
 
 - (void)didReceiveMemoryWarning
