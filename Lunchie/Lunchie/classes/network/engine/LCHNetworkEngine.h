@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 23bit. All rights reserved.
 //
 
-#import "MKNetworkEngine.h"
+#import "RSOAuthEngine/RSOAuthEngine.h"
 
-@interface LCHNetworkEngine : MKNetworkEngine
+@interface LCHNetworkEngine : RSOAuthEngine
 
 - (NSString*)consumerKey;
 - (NSString*)consumerSecret;

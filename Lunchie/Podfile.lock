@@ -1,9 +1,10 @@
 PODS:
-  - MKNetworkKit (0.87):
+  - MKNetworkKit (HEAD based on 0.87):
     - Reachability (~> 3.1.0)
-  - MKNetworkKit+RACExtensions (0.2):
+  - MKNetworkKit+RACExtensions (HEAD based on 0.2):
     - MKNetworkKit
     - ReactiveCocoa
+  - NSData+Base64 (1.0.0)
   - Reachability (3.1.1)
   - ReactiveCocoa (2.1.7):
     - ReactiveCocoa/Core
@@ -11,18 +12,17 @@ PODS:
   - ReactiveCocoa/Core (2.1.7):
     - ReactiveCocoa/no-arc
   - ReactiveCocoa/no-arc (2.1.7)
-  - RSOAuthEngine (1.0.0):
-    - MKNetworkKit
 
 DEPENDENCIES:
-  - MKNetworkKit+RACExtensions (~> 0.2)
-  - RSOAuthEngine (~> 1.0.0)
+  - MKNetworkKit (HEAD)
+  - MKNetworkKit+RACExtensions (HEAD)
+  - NSData+Base64 (~> 1.0.0)
 
 SPEC CHECKSUMS:
   MKNetworkKit: f174100f92473012138b6b1c3040266af8d43a14
   MKNetworkKit+RACExtensions: 93a2bfbe1429d365e008926e84745a91382877b1
+  NSData+Base64: 4819562faee4544e3cf5703f2139820b09732b28
   Reachability: be4883bb93f31e38266ae3365e5600a317aae735
   ReactiveCocoa: 1117f7968c8667d2ca00b5aa47156fabcb56af75
-  RSOAuthEngine: 48f6a30a75e8d4e591af77f4222f6153f8941850
 
 COCOAPODS: 0.26.2

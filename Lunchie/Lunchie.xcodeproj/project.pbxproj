@@ -27,6 +27,8 @@
 		8E367E7D183DCB23001792E1 /* LCHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E7B183DCB23001792E1 /* LCHAppDelegate.m */; };
 		8E367E80183DCB33001792E1 /* LCHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E7F183DCB33001792E1 /* LCHViewController.m */; };
 		8E367E81183DCB33001792E1 /* LCHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E7F183DCB33001792E1 /* LCHViewController.m */; };
+		8E367E83183DCF07001792E1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E367E82183DCF07001792E1 /* Security.framework */; };
+		8EBB9B78183DD62E0055E8B9 /* RSOAuthEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB9B77183DD62E0055E8B9 /* RSOAuthEngine.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		A679EF86CF394708A95E38EE /* libPods-LunchieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3778D5A5C9147229B596A65 /* libPods-LunchieTests.a */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,9 @@
 		8E367E7B183DCB23001792E1 /* LCHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHAppDelegate.m; path = classes/delegates/LCHAppDelegate.m; sourceTree = "<group>"; };
 		8E367E7E183DCB33001792E1 /* LCHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHViewController.h; path = classes/controllers/LCHViewController.h; sourceTree = "<group>"; };
 		8E367E7F183DCB33001792E1 /* LCHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHViewController.m; path = classes/controllers/LCHViewController.m; sourceTree = "<group>"; };
+		8E367E82183DCF07001792E1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8EBB9B76183DD62E0055E8B9 /* RSOAuthEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSOAuthEngine.h; path = classes/network/engine/RSOAuthEngine/RSOAuthEngine.h; sourceTree = "<group>"; };
+		8EBB9B77183DD62E0055E8B9 /* RSOAuthEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSOAuthEngine.m; path = classes/network/engine/RSOAuthEngine/RSOAuthEngine.m; sourceTree = "<group>"; };
 		D3778D5A5C9147229B596A65 /* libPods-LunchieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LunchieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E367E83183DCF07001792E1 /* Security.framework in Frameworks */,
 				8E367E37183DBEEA001792E1 /* CoreGraphics.framework in Frameworks */,
 				8E367E39183DBEEA001792E1 /* UIKit.framework in Frameworks */,
 				8E367E35183DBEEA001792E1 /* Foundation.framework in Frameworks */,
@@ -119,6 +125,7 @@
 		8E367E33183DBEEA001792E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E367E82183DCF07001792E1 /* Security.framework */,
 				8E367E34183DBEEA001792E1 /* Foundation.framework */,
 				8E367E36183DBEEA001792E1 /* CoreGraphics.framework */,
 				8E367E38183DBEEA001792E1 /* UIKit.framework */,
@@ -190,6 +197,7 @@
 		8E367E6D183DC16B001792E1 /* engine */ = {
 			isa = PBXGroup;
 			children = (
+				8EBB9B72183DD5B10055E8B9 /* RSOAuthEngine */,
 				8E367E6E183DC193001792E1 /* LCHNetworkEngine.h */,
 				8E367E6F183DC193001792E1 /* LCHNetworkEngine.m */,
 			);
@@ -229,6 +237,15 @@
 				8E367E7B183DCB23001792E1 /* LCHAppDelegate.m */,
 			);
 			name = delegates;
+			sourceTree = "<group>";
+		};
+		8EBB9B72183DD5B10055E8B9 /* RSOAuthEngine */ = {
+			isa = PBXGroup;
+			children = (
+				8EBB9B76183DD62E0055E8B9 /* RSOAuthEngine.h */,
+				8EBB9B77183DD62E0055E8B9 /* RSOAuthEngine.m */,
+			);
+			name = RSOAuthEngine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EBB9B78183DD62E0055E8B9 /* RSOAuthEngine.m in Sources */,
 				8E367E80183DCB33001792E1 /* LCHViewController.m in Sources */,
 				8E367E7C183DCB23001792E1 /* LCHAppDelegate.m in Sources */,
 				8E367E70183DC193001792E1 /* LCHNetworkEngine.m in Sources */,
@@ -534,6 +552,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lunchie/Lunchie-Prefix.pch";
 				INFOPLIST_FILE = "Lunchie/Lunchie-Info.plist";
+				OTHER_CFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -548,6 +567,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lunchie/Lunchie-Prefix.pch";
 				INFOPLIST_FILE = "Lunchie/Lunchie-Info.plist";
+				OTHER_CFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
