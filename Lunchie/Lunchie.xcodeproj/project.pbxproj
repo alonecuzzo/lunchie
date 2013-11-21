@@ -29,6 +29,10 @@
 		8EABBF3D183E679A00A3D705 /* LCHFoursquareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */; };
 		8EABBF3F183E67BA00A3D705 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EABBF3E183E67BA00A3D705 /* CoreLocation.framework */; };
 		8EABBF42183E689A00A3D705 /* LCHFoursquareServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF41183E689A00A3D705 /* LCHFoursquareServiceTests.m */; };
+		8EABBF46183E805100A3D705 /* LCHFoursquareVenueBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF45183E805100A3D705 /* LCHFoursquareVenueBuilder.m */; };
+		8EABBF47183E805100A3D705 /* LCHFoursquareVenueBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF45183E805100A3D705 /* LCHFoursquareVenueBuilder.m */; };
+		8EABBF4B183E808900A3D705 /* LCHFoursquareVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF4A183E808900A3D705 /* LCHFoursquareVenue.m */; };
+		8EABBF4C183E808900A3D705 /* LCHFoursquareVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF4A183E808900A3D705 /* LCHFoursquareVenue.m */; };
 		A679EF86CF394708A95E38EE /* libPods-LunchieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3778D5A5C9147229B596A65 /* libPods-LunchieTests.a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +74,10 @@
 		8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHFoursquareService.m; path = classes/services/LCHFoursquareService.m; sourceTree = "<group>"; };
 		8EABBF3E183E67BA00A3D705 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8EABBF41183E689A00A3D705 /* LCHFoursquareServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHFoursquareServiceTests.m; path = services/LCHFoursquareServiceTests.m; sourceTree = "<group>"; };
+		8EABBF44183E805100A3D705 /* LCHFoursquareVenueBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHFoursquareVenueBuilder.h; path = classes/builders/LCHFoursquareVenueBuilder.h; sourceTree = "<group>"; };
+		8EABBF45183E805100A3D705 /* LCHFoursquareVenueBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHFoursquareVenueBuilder.m; path = classes/builders/LCHFoursquareVenueBuilder.m; sourceTree = "<group>"; };
+		8EABBF49183E808900A3D705 /* LCHFoursquareVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHFoursquareVenue.h; path = classes/model/LCHFoursquareVenue.h; sourceTree = "<group>"; };
+		8EABBF4A183E808900A3D705 /* LCHFoursquareVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHFoursquareVenue.m; path = classes/model/LCHFoursquareVenue.m; sourceTree = "<group>"; };
 		D3778D5A5C9147229B596A65 /* libPods-LunchieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LunchieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -181,8 +189,10 @@
 		8E367E77183DCAF8001792E1 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				8EABBF43183E802200A3D705 /* builders */,
 				8E367E78183DCAFF001792E1 /* controllers */,
 				8E367E79183DCB07001792E1 /* delegates */,
+				8EABBF48183E805900A3D705 /* model */,
 				8EABBF39183E674E00A3D705 /* services */,
 			);
 			name = classes;
@@ -221,6 +231,24 @@
 				8EABBF41183E689A00A3D705 /* LCHFoursquareServiceTests.m */,
 			);
 			name = services;
+			sourceTree = "<group>";
+		};
+		8EABBF43183E802200A3D705 /* builders */ = {
+			isa = PBXGroup;
+			children = (
+				8EABBF44183E805100A3D705 /* LCHFoursquareVenueBuilder.h */,
+				8EABBF45183E805100A3D705 /* LCHFoursquareVenueBuilder.m */,
+			);
+			name = builders;
+			sourceTree = "<group>";
+		};
+		8EABBF48183E805900A3D705 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8EABBF49183E808900A3D705 /* LCHFoursquareVenue.h */,
+				8EABBF4A183E808900A3D705 /* LCHFoursquareVenue.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,7 +416,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EABBF4B183E808900A3D705 /* LCHFoursquareVenue.m in Sources */,
 				8E367E80183DCB33001792E1 /* LCHViewController.m in Sources */,
+				8EABBF46183E805100A3D705 /* LCHFoursquareVenueBuilder.m in Sources */,
 				8E367E7C183DCB23001792E1 /* LCHAppDelegate.m in Sources */,
 				8EABBF3C183E679A00A3D705 /* LCHFoursquareService.m in Sources */,
 				8E367E41183DBEEA001792E1 /* main.m in Sources */,
@@ -399,8 +429,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EABBF4C183E808900A3D705 /* LCHFoursquareVenue.m in Sources */,
 				8EABBF42183E689A00A3D705 /* LCHFoursquareServiceTests.m in Sources */,
 				8E367E60183DBEEB001792E1 /* LunchieTests.m in Sources */,
+				8EABBF47183E805100A3D705 /* LCHFoursquareVenueBuilder.m in Sources */,
 				8E367E81183DCB33001792E1 /* LCHViewController.m in Sources */,
 				8EABBF3D183E679A00A3D705 /* LCHFoursquareService.m in Sources */,
 				8E367E7D183DCB23001792E1 /* LCHAppDelegate.m in Sources */,

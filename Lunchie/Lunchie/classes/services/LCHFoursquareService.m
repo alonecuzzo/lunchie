@@ -24,11 +24,13 @@ static NSString *const FS_SEARCH_URL = @"https://api.foursquare.com/v2/venues/se
                                                         locationString,
                                                         FS_CLIENT_ID,
                                                         FS_CLIENT_SECRET,
+                                                        @"restaurant",
                                                         @"20130815"
                                                      ] forKeys:@[
                                                         @"ll",
                                                         @"client_id",
                                                         @"client_secret",
+                                                        @"query",
                                                         @"v"
                                                      ]
    ];
