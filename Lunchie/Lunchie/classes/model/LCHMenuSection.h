@@ -10,6 +10,8 @@
 
 @interface LCHMenuSection : NSObject
 
+- (instancetype)initWithDictionary:(NSDictionary*)dict;
+
 @property(nonatomic) NSString *sectionName;
 @property(nonatomic) NSString *sectionID;
 @property(nonatomic) NSArray *entries;

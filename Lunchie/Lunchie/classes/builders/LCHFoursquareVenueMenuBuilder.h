@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class LCHMenu;
+
 @interface LCHFoursquareVenueMenuBuilder : NSObject
 
-- (void)buildMenuFromJSON:(NSDictionary*)json;
+- (LCHMenu*)buildMenuFromJSON:(NSDictionary*)json;
 
 @end

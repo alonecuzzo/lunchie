@@ -7,11 +7,9 @@
 //
 
 #import "LCHFoursquareVenueViewController.h"
-#import "LCHNetworkManager.h"
+#import "LCHMenuTableViewController.h"
 
 @interface LCHFoursquareVenueViewController ()
-
-@property(nonatomic)LCHNetworkManager *manager;
 
 @end
 
@@ -22,8 +20,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.view.backgroundColor = [UIColor whiteColor];
-        _manager = [[LCHNetworkManager alloc] init];
-        
     }
     return self;
 }
@@ -41,7 +37,9 @@
 
 - (void)getMenuPressed
 {
-    [_manager searcMenusForVenueID:self.venue.venueID];
+    LCHMenuTableViewController *mtvc = [[LCHMenuTableViewController alloc] init];
+    mtvc.venueID = self.venue.venueID;
+    [self.navigationController pushViewController:mtvc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

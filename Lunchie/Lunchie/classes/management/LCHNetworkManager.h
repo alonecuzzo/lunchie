@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "LCHViewController.h"
 #import "LCHFoursquareVenueMenuBuilder.h"
+#import "LCHMenuTableViewController.h"
 
 @class LCHFoursquareService;
 @class LCHFoursquareVenueBuilder;
@@ -31,9 +32,10 @@
 @property(nonatomic) LCHFoursquareVenueMenuBuilder *foursquareVenueMenuBuilder;
 @property(nonatomic) LCHFoursquareService *foursquareService;
 @property(weak) id <LCHVenuesTableViewDelegate> delegate;
+@property(weak) id <LCHMenuTableViewControllerDelegate> menuDelegate;
 
 - (void)buildVenuesWithJSON:(NSDictionary *)json;
 - (void)searchVenuesForLocation:(CLLocation*)location;
-- (void)searcMenusForVenueID:(NSString*)venueID;
+- (void)searchMenusForVenueID:(NSString*)venueID;
 
 @end

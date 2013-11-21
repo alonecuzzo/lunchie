@@ -12,7 +12,7 @@
 
 @property(nonatomic) NSString *menuName;
 @property(nonatomic) NSString *menuID;
-@property(nonatomic) NSArray *sections;
+@property(nonatomic) NSArray *menuSections;
 
 - (instancetype)initWithDictionary:(NSDictionary*)dict;
 

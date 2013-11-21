@@ -10,4 +10,14 @@
 
 @implementation LCHMenuSection
 
+- (instancetype)initWithDictionary:(NSDictionary*)dict
+{
+    self = [super init];
+    if (self) {
+        _sectionID = [dict valueForKey:@"sectionId"];
+        _sectionName = [dict valueForKey:@"name"];
+    }
+    return self;
+}
+
 @end

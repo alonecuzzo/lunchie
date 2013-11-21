@@ -36,14 +36,15 @@
     [_delegate refreshVenues];
 }
 
-- (void)searcMenusForVenueID:(NSString*)venueID
+- (void)searchMenusForVenueID:(NSString*)venueID
 {
     [_foursquareService searchMenuForVenueID:venueID];
 }
 
 - (void)buildMenuWithJSON:(NSDictionary *)json
 {
-    [_foursquareVenueMenuBuilder buildMenuFromJSON:json];
+    [[LCHModel sharedInstance] setCurrentMenu:[_foursquareVenueMenuBuilder buildMenuFromJSON:json]];
+    [_menuDelegate refreshMenu];
 }
 
 @end

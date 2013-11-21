@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class LCHMenu;
+
 @interface LCHModel : NSObject
 
 @property(nonatomic) NSArray *venues;
+@property(nonatomic) LCHMenu *currentMenu;
 
 + (id)sharedInstance;
 
