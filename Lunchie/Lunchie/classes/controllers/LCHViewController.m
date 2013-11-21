@@ -7,9 +7,14 @@
 //
 
 #import "LCHViewController.h"
+#import "LCHNetworkManager.h"
 #import "LCHFoursquareService.h"
+#import "LCHFoursquareVenue.h"
+#import "LCHModel.h"
 
 @interface LCHViewController ()
+
+@property(nonatomic) NSArray *venues;
 
 @end
 
@@ -18,11 +23,58 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-//    [[CLLocation alloc] initWithLatitude:40.712840 longitude:-74.007742];
-    LCHFoursquareService *service = [[LCHFoursquareService alloc] init];
+    
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
+    
     CLLocation *location = [[CLLocation alloc] initWithLatitude:40.712840 longitude:-74.007742];
-    [service searchVenuesForLocation:location];
+    LCHNetworkManager *manager = [[LCHNetworkManager alloc] init];
+    manager.delegate = self;
+    [manager searchVenuesForLocation:location];
+    
+}
+
+#pragma mark - lchtableviewdelegate stuff
+- (void)refreshVenues
+{
+    _venues = [[LCHModel sharedInstance] venues];
+    [self.tableView reloadData];
+}
+
+#pragma mark - uitableviewdelegate stuff
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+#pragma mark - datasourcedelegate goodies
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return (_venues) ? [_venues count] : 0;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    LCHFoursquareVenue *venue = [_venues objectAtIndex:indexPath.row];
+    cell.textLabel.text = venue.venueName;
+    
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning

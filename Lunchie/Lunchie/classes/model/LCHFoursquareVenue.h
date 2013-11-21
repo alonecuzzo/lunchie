@@ -10,4 +10,9 @@
 
 @interface LCHFoursquareVenue : NSObject
 
+@property(nonatomic) NSString *venueID;
+@property(nonatomic) NSString *venueName;
+
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary;
+
 @end

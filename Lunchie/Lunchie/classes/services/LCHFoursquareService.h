@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "LCHNetworkManager.h"
 
 @interface LCHFoursquareService : NSObject
 
+@property(weak) id <LCHNetworkManagerProtocol> delegate;
+
+- (instancetype)initWithDelegate:(id<LCHNetworkManagerProtocol>)delegate;
 - (void)searchVenuesForLocation:(CLLocation*)location;
 
 @end

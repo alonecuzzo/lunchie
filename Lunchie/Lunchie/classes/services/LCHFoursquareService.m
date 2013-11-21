@@ -16,8 +16,18 @@ static NSString *const FS_SEARCH_URL = @"https://api.foursquare.com/v2/venues/se
 
 @implementation LCHFoursquareService
 
+- (instancetype)initWithDelegate:(id<LCHNetworkManagerProtocol>)delegate
+{
+    self = [super init];
+    if (self) {
+        _delegate = delegate;
+    }
+    return self;
+}
+
 - (void)searchVenuesForLocation:(CLLocation*)location
 {
+    __block id delegate = self.delegate;
     NSURL *url = [NSURL URLWithString:FS_SEARCH_URL];
     NSString *locationString = [NSString stringWithFormat:@"%f,%f", location.coordinate.latitude, location.coordinate.longitude];
     NSDictionary *params = [NSDictionary dictionaryWithObjects:@[
@@ -34,6 +44,7 @@ static NSString *const FS_SEARCH_URL = @"https://api.foursquare.com/v2/venues/se
                                                         @"v"
                                                      ]
    ];
+   
    FSNConnection *connection = [FSNConnection withUrl:url method:FSNRequestMethodGET headers:nil parameters:params
        parseBlock:^id(FSNConnection *connection, NSError **error) {
            
@@ -45,6 +56,7 @@ static NSString *const FS_SEARCH_URL = @"https://api.foursquare.com/v2/venues/se
                NSError *error = nil;
                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:connection.responseData options:kNilOptions error:&error];
                NSLog(@"json: %@", json);
+               [delegate buildVenuesWithJSON:json];
            }
            
        } progressBlock:^(FSNConnection *connection) {

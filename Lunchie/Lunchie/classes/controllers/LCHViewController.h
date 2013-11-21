@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface LCHViewController : UIViewController
+@protocol LCHVenuesTableViewDelegate <NSObject>
+
+- (void)refreshVenues;
+
+@end
+
+@interface LCHViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, LCHVenuesTableViewDelegate>
+
+@property(nonatomic) UITableView *tableView;
 
 @end

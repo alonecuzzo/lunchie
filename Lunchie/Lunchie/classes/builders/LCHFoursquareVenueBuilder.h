@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LCHNetworkManager.h"
 
 @interface LCHFoursquareVenueBuilder : NSObject
+
+- (NSArray*)buildVenuesFromJSON:(NSDictionary*)json;
 
 @end

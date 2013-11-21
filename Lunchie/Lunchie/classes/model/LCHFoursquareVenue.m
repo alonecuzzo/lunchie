@@ -10,4 +10,14 @@
 
 @implementation LCHFoursquareVenue
 
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary
+{
+    self = [super self];
+    if (self) {
+        _venueID = [dictionary objectForKey:@"id"];
+        _venueName = [dictionary objectForKey:@"name"];
+    }
+    return self;
+}
+
 @end
