@@ -13,4 +13,6 @@
 
 @property(nonatomic) LCHFoursquareVenue *venue;
 
+- (instancetype)initWithVenue:(LCHFoursquareVenue*)venue;
+
 @end

@@ -77,6 +77,11 @@
     [data writeToFile:dataPath atomically:YES];
 }
 
+- (void)toggleThumbsDowned
+{
+    _data.isThumbsDowned = !_data.isThumbsDowned;
+}
+
 - (void)addComment:(NSString*)comment
 {
     if (_data.comments) {

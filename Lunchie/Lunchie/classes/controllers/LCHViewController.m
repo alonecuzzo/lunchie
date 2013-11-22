@@ -43,8 +43,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    LCHFoursquareVenueViewController *lvc = [[LCHFoursquareVenueViewController alloc] init];
-    lvc.venue = [_venues objectAtIndex:indexPath.row];
+    LCHFoursquareVenueViewController *lvc = [[LCHFoursquareVenueViewController alloc] initWithVenue:[_venues objectAtIndex:indexPath.row]];
     [self.navigationController pushViewController:lvc animated:YES];
 }
 

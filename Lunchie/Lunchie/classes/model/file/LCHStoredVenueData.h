@@ -11,14 +11,14 @@
 #define kVenueIDKey @"venueID"
 #define kCommentsKey @"comments"
 #define kHasBeenVisitedKey @"hasBeenVisited"
-#define kIsLikedKey @"isLiked"
+#define kIsThumbsDownedKey @"isThumbsDowned"
 
 @interface LCHStoredVenueData : NSObject <NSCoding>
 
 @property(nonatomic) NSString *venueID;
 @property(nonatomic) NSMutableArray *comments;
 @property(assign) BOOL hasBeenVisited;
-@property(assign) BOOL isLiked;
+@property(assign) BOOL isThumbsDowned;
 
 - (instancetype)initWithDictionary:(NSDictionary*)dict;
 

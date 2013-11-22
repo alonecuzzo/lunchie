@@ -15,6 +15,7 @@
 @property(nonatomic) NSString *docPath;
 
 - (void)saveData;
+- (void)toggleThumbsDowned;
 - (instancetype)initWithDictionary:(NSDictionary*)dict;
 - (instancetype)initWithDocPath:(NSString*)docPath;
 - (void)addComment:(NSString*)comment;

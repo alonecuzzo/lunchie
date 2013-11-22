@@ -16,8 +16,8 @@
     if (self) {
         _venueID = [dict objectForKey:kVenueIDKey];
         _comments = [dict objectForKey:kCommentsKey];
-        _hasBeenVisited = [[dict objectForKey:kHasBeenVisitedKey] intValue];
-        _isLiked = [[dict objectForKey:kIsLikedKey] intValue];
+        _hasBeenVisited = [[dict objectForKey:kHasBeenVisitedKey] boolValue];
+        _isThumbsDowned = [[dict objectForKey:kIsThumbsDownedKey] boolValue];
     }
     return self;
 }
@@ -28,8 +28,8 @@
 {
     [aCoder encodeObject:_venueID forKey:kVenueIDKey];
     [aCoder encodeObject:_comments forKey:kCommentsKey];
-    [aCoder encodeObject:[NSNumber numberWithInt:_hasBeenVisited] forKey:kHasBeenVisitedKey];
-    [aCoder encodeObject:[NSNumber numberWithInt:_isLiked] forKey:kIsLikedKey];
+    [aCoder encodeObject:[NSNumber numberWithBool:_hasBeenVisited] forKey:kHasBeenVisitedKey];
+    [aCoder encodeBool:_isThumbsDowned forKey:kIsThumbsDownedKey];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
@@ -37,8 +37,8 @@
     NSString *venueID = [aDecoder decodeObjectForKey:kVenueIDKey];
     NSArray *comments = [aDecoder decodeObjectForKey:kCommentsKey];
     NSNumber *hasBeenVisited = [aDecoder decodeObjectForKey:kHasBeenVisitedKey];
-    NSNumber *isLiked = [aDecoder decodeObjectForKey:kIsLikedKey];
-    NSDictionary *initDict = [NSDictionary dictionaryWithObjectsAndKeys:venueID, kVenueIDKey, comments, kCommentsKey, hasBeenVisited, kHasBeenVisitedKey, isLiked, kIsLikedKey, nil];
+    BOOL isThumbsDowned = [aDecoder decodeBoolForKey:kIsThumbsDownedKey];
+    NSDictionary *initDict = [NSDictionary dictionaryWithObjectsAndKeys:venueID, kVenueIDKey, comments, kCommentsKey, hasBeenVisited, kHasBeenVisitedKey, [NSNumber numberWithBool:isThumbsDowned], kIsThumbsDownedKey, nil];
     return [self initWithDictionary:initDict];
 }
 
