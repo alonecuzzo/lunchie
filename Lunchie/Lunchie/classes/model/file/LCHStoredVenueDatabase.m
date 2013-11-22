@@ -8,6 +8,7 @@
 
 #import "LCHStoredVenueDatabase.h"
 #import "LCHStoredVenueData.h"
+#import "LCHStoredVenue.h"
 
 @implementation LCHStoredVenueDatabase
 
@@ -37,15 +38,13 @@
     
     NSMutableArray *retval = [NSMutableArray arrayWithCapacity:files.count];
     for (NSString *file in files) {
-        if ([file.pathExtension compare:@"scarybug" options:NSCaseInsensitiveSearch] == NSOrderedSame) {
+        if ([file.pathExtension compare:@"storedvenue" options:NSCaseInsensitiveSearch] == NSOrderedSame) {
             NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:file];
-//            ScaryBugDoc *doc = [[[ScaryBugDoc alloc] initWithDocPath:fullPath] autorelease];
-//            [retval addObject:doc];
+            LCHStoredVenue *sv = [[LCHStoredVenue alloc] initWithDocPath:fullPath];
+            [retval addObject:sv];
         }
     }
-    
     return retval;
-
 }
 
 + (NSString*)nextStoredVenuePath

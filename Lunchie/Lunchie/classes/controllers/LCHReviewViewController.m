@@ -7,6 +7,9 @@
 //
 
 #import "LCHReviewViewController.h"
+#import "LCHStoredVenue.h"
+#import "LCHStoredVenueData.h"
+#import "LCHModel.h"
 
 @interface LCHReviewViewController ()
 
@@ -60,38 +63,45 @@
     UIButton *sendButton = [[UIButton alloc] initWithFrame:CGRectMake(_growingTextView.frame.size.width + 5, 3, buttonWidth, 38)];
     [sendButton setTitle:@"send" forState:UIControlStateNormal];
     [sendButton setBackgroundColor:[UIColor blackColor]];
+    [sendButton addTarget:self action:@selector(saveComment) forControlEvents:UIControlEventTouchUpInside];
     [_containerView addSubview:sendButton];
+}
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+- (void)saveComment
+{
+    NSLog(@"venueID: %@", self.venue.venueID);
+    if ([_growingTextView.text length] > 0) {
+        LCHStoredVenue *sv;
+        if (!self.venue.storedVenue) {
+            sv = [[LCHStoredVenue alloc] initWithDictionary:[NSDictionary dictionaryWithObject:self.venue.venueID forKey:kVenueIDKey]];
+            [sv addComment:_growingTextView.text];
+            [[LCHModel sharedInstance] writeStoredVenue:sv];
+        } else {
+            NSLog(@"our comments!, %d", self.venue.storedVenue.data.comments.count);
+            [self.venue.storedVenue addComment:_growingTextView.text];
+            [[LCHModel sharedInstance] writeStoredVenue:self.venue.storedVenue];
+        }
+    }
 }
 
 -(void) keyboardWillShow:(NSNotification *)note{
-    // get keyboard size and loctaion
 	CGRect keyboardBounds;
     [[note.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue: &keyboardBounds];
     NSNumber *duration = [note.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
     NSNumber *curve = [note.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
     
-    // Need to translate the bounds to account for rotation.
     keyboardBounds = [self.view convertRect:keyboardBounds toView:nil];
     
-	// get a rect for the textView frame
 	CGRect containerFrame = _containerView.frame;
     containerFrame.origin.y = self.view.bounds.size.height - (keyboardBounds.size.height + containerFrame.size.height);
-	// animations settings
+    
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:[duration doubleValue]];
     [UIView setAnimationCurve:[curve intValue]];
 	
-	// set views with new info
 	_containerView.frame = containerFrame;
 	
-	// commit animations
 	[UIView commitAnimations];
 }
 
@@ -99,20 +109,16 @@
     NSNumber *duration = [note.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
     NSNumber *curve = [note.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
 	
-	// get a rect for the textView frame
 	CGRect containerFrame = _containerView.frame;
     containerFrame.origin.y = self.view.bounds.size.height - containerFrame.size.height;
 	
-	// animations settings
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:[duration doubleValue]];
     [UIView setAnimationCurve:[curve intValue]];
     
-	// set views with new info
 	_containerView.frame = containerFrame;
 	
-	// commit animations
 	[UIView commitAnimations];
 }
 

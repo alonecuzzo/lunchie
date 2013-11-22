@@ -77,4 +77,13 @@
     [data writeToFile:dataPath atomically:YES];
 }
 
+- (void)addComment:(NSString*)comment
+{
+    if (_data.comments) {
+        [_data.comments addObject:comment];
+    } else {
+        _data.comments = [NSMutableArray arrayWithObject:comment];
+    }
+}
+
 @end

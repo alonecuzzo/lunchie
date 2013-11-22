@@ -9,13 +9,12 @@
 #import "LCHAppDelegate.h"
 #import "LCHViewController.h"
 #import "LCHModel.h"
-#import "LCHStoredVenueDatabase.h"
 
 @implementation LCHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[LCHModel sharedInstance] setStoredVenues:[LCHStoredVenueDatabase loadStoredVenueData]];
+    [[LCHModel sharedInstance] refreshStoredVenueData];
     
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

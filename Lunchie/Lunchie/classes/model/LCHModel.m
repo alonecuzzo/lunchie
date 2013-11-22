@@ -8,6 +8,7 @@
 
 #import "LCHModel.h"
 #import "LCHStoredVenue.h"
+#import "LCHStoredVenueDatabase.h"
 
 @implementation LCHModel
 
@@ -29,6 +30,17 @@
         }
     }
     return nil;
+}
+
+- (void)refreshStoredVenueData
+{
+    [[LCHModel sharedInstance] setStoredVenues:[LCHStoredVenueDatabase loadStoredVenueData]];
+}
+
+- (void)writeStoredVenue:(LCHStoredVenue*)storedVenue
+{
+    [storedVenue saveData];
+    [[LCHModel sharedInstance] refreshStoredVenueData];
 }
 
 @end

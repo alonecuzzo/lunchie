@@ -22,6 +22,7 @@
         venue = [[LCHFoursquareVenue alloc] initWithDictionary:dict];
         [venuesToReturn addObject:venue];
         if ([[LCHModel sharedInstance] getStoredVenueForVenueID:venue.venueID]) {
+            NSLog(@"venueName: %@", venue.venueName);
             venue.storedVenue = [[LCHModel sharedInstance] getStoredVenueForVenueID:venue.venueID];
         }
     }

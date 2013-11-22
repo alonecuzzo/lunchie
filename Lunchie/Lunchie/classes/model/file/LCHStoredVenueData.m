@@ -8,11 +8,6 @@
 
 #import "LCHStoredVenueData.h"
 
-#define kVenueIDKey @"venueID"
-#define kCommentsKey @"comments"
-#define kHasBeenVisitedKey @"hasBeenVisited"
-#define kIsLikedKey @"isLiked"
-
 @implementation LCHStoredVenueData
 
 - (instancetype)initWithDictionary:(NSDictionary*)dict

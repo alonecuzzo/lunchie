@@ -8,10 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+#define kVenueIDKey @"venueID"
+#define kCommentsKey @"comments"
+#define kHasBeenVisitedKey @"hasBeenVisited"
+#define kIsLikedKey @"isLiked"
+
 @interface LCHStoredVenueData : NSObject <NSCoding>
 
 @property(nonatomic) NSString *venueID;
-@property(nonatomic) NSArray *comments;
+@property(nonatomic) NSMutableArray *comments;
 @property(assign) BOOL hasBeenVisited;
 @property(assign) BOOL isLiked;
 

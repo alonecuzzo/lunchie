@@ -17,5 +17,6 @@
 - (void)saveData;
 - (instancetype)initWithDictionary:(NSDictionary*)dict;
 - (instancetype)initWithDocPath:(NSString*)docPath;
+- (void)addComment:(NSString*)comment;
 
 @end

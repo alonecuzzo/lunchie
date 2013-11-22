@@ -18,6 +18,8 @@
 @property(nonatomic) NSArray *storedVenues;
 
 - (LCHStoredVenue*)getStoredVenueForVenueID:(NSString*)venueID;
+- (void)writeStoredVenue:(LCHStoredVenue*)storedVenue;
+- (void)refreshStoredVenueData;
 + (id)sharedInstance;
 
 @end
