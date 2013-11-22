@@ -44,17 +44,23 @@
     [self.view addSubview:self.tableView];
     
     float containerHeight = 40.0f;
-    float buttonWidth = 50.0f;
+    float buttonWidth = 40.0f;
     
     _containerView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - containerHeight, self.view.frame.size.width, containerHeight)];
     _containerView.backgroundColor = [UIColor redColor];
     [self.view addSubview:_containerView];
+    _containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     
     _growingTextView = [[HPGrowingTextView alloc] initWithFrame:CGRectMake(0, 3, _containerView.frame.size.width - buttonWidth, containerHeight)];
     _growingTextView.contentInset = UIEdgeInsetsMake(3, 3, 0, 0);
     _growingTextView.delegate = self;
     _growingTextView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [_containerView addSubview:_growingTextView];
+    
+    UIButton *sendButton = [[UIButton alloc] initWithFrame:CGRectMake(_growingTextView.frame.size.width + 5, 3, buttonWidth, 38)];
+    [sendButton setTitle:@"send" forState:UIControlStateNormal];
+    [sendButton setBackgroundColor:[UIColor blackColor]];
+    [_containerView addSubview:sendButton];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

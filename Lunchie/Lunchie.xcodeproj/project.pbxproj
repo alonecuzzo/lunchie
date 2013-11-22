@@ -41,6 +41,8 @@
 		8E6252BE183F06F200244D54 /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252BA183F06F200244D54 /* HPGrowingTextView.m */; };
 		8E6252BF183F06F200244D54 /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252BC183F06F200244D54 /* HPTextViewInternal.m */; };
 		8E6252C0183F06F200244D54 /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252BC183F06F200244D54 /* HPTextViewInternal.m */; };
+		8E6252C6183F198400244D54 /* LCHStoredVenueData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252C5183F198400244D54 /* LCHStoredVenueData.m */; };
+		8E6252C7183F198400244D54 /* LCHStoredVenueData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252C5183F198400244D54 /* LCHStoredVenueData.m */; };
 		8EABBF3C183E679A00A3D705 /* LCHFoursquareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */; };
 		8EABBF3D183E679A00A3D705 /* LCHFoursquareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */; };
 		8EABBF3F183E67BA00A3D705 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EABBF3E183E67BA00A3D705 /* CoreLocation.framework */; };
@@ -108,6 +110,8 @@
 		8E6252BA183F06F200244D54 /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPGrowingTextView.m; path = classes/views/HPGrowingTextView/HPGrowingTextView.m; sourceTree = "<group>"; };
 		8E6252BB183F06F200244D54 /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPTextViewInternal.h; path = classes/views/HPGrowingTextView/HPTextViewInternal.h; sourceTree = "<group>"; };
 		8E6252BC183F06F200244D54 /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPTextViewInternal.m; path = classes/views/HPGrowingTextView/HPTextViewInternal.m; sourceTree = "<group>"; };
+		8E6252C4183F198400244D54 /* LCHStoredVenueData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHStoredVenueData.h; path = classes/model/file/LCHStoredVenueData.h; sourceTree = "<group>"; };
+		8E6252C5183F198400244D54 /* LCHStoredVenueData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHStoredVenueData.m; path = classes/model/file/LCHStoredVenueData.m; sourceTree = "<group>"; };
 		8EABBF3A183E679A00A3D705 /* LCHFoursquareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHFoursquareService.h; path = classes/services/LCHFoursquareService.h; sourceTree = "<group>"; };
 		8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHFoursquareService.m; path = classes/services/LCHFoursquareService.m; sourceTree = "<group>"; };
 		8EABBF3E183E67BA00A3D705 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -287,6 +291,15 @@
 			name = HPGrowingTextView;
 			sourceTree = "<group>";
 		};
+		8E6252C3183F194400244D54 /* file */ = {
+			isa = PBXGroup;
+			children = (
+				8E6252C4183F198400244D54 /* LCHStoredVenueData.h */,
+				8E6252C5183F198400244D54 /* LCHStoredVenueData.m */,
+			);
+			name = file;
+			sourceTree = "<group>";
+		};
 		8EABBF39183E674E00A3D705 /* services */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +331,7 @@
 		8EABBF48183E805900A3D705 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				8E6252C3183F194400244D54 /* file */,
 				8EABBF49183E808900A3D705 /* LCHFoursquareVenue.h */,
 				8EABBF4A183E808900A3D705 /* LCHFoursquareVenue.m */,
 				8E6252A0183EB56D00244D54 /* LCHMenu.h */,
@@ -514,6 +528,7 @@
 				8EABBF46183E805100A3D705 /* LCHFoursquareVenueBuilder.m in Sources */,
 				8E6252B2183EC11E00244D54 /* LCHMenuTableViewController.m in Sources */,
 				8E6252AA183EB68400244D54 /* LCHMenuSection.m in Sources */,
+				8E6252C6183F198400244D54 /* LCHStoredVenueData.m in Sources */,
 				8E6252A6183EB58A00244D54 /* LCHMenuEntry.m in Sources */,
 				8E367E7C183DCB23001792E1 /* LCHAppDelegate.m in Sources */,
 				8E6252B6183F02A400244D54 /* LCHReviewViewController.m in Sources */,
@@ -534,6 +549,7 @@
 				8E6252AB183EB68400244D54 /* LCHMenuSection.m in Sources */,
 				8EABBF42183E689A00A3D705 /* LCHFoursquareServiceTests.m in Sources */,
 				8E6252B3183EC11E00244D54 /* LCHMenuTableViewController.m in Sources */,
+				8E6252C7183F198400244D54 /* LCHStoredVenueData.m in Sources */,
 				8EABBF51183E84D500A3D705 /* LCHNetworkManager.m in Sources */,
 				8E367E60183DBEEB001792E1 /* LunchieTests.m in Sources */,
 				8EABBF59183EAEF400A3D705 /* LCHFoursquareVenueViewController.m in Sources */,
