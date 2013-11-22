@@ -35,6 +35,12 @@
 		8E6252AF183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252AD183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m */; };
 		8E6252B2183EC11E00244D54 /* LCHMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252B1183EC11E00244D54 /* LCHMenuTableViewController.m */; };
 		8E6252B3183EC11E00244D54 /* LCHMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252B1183EC11E00244D54 /* LCHMenuTableViewController.m */; };
+		8E6252B6183F02A400244D54 /* LCHReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252B5183F02A400244D54 /* LCHReviewViewController.m */; };
+		8E6252B7183F02A400244D54 /* LCHReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252B5183F02A400244D54 /* LCHReviewViewController.m */; };
+		8E6252BD183F06F200244D54 /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252BA183F06F200244D54 /* HPGrowingTextView.m */; };
+		8E6252BE183F06F200244D54 /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252BA183F06F200244D54 /* HPGrowingTextView.m */; };
+		8E6252BF183F06F200244D54 /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252BC183F06F200244D54 /* HPTextViewInternal.m */; };
+		8E6252C0183F06F200244D54 /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252BC183F06F200244D54 /* HPTextViewInternal.m */; };
 		8EABBF3C183E679A00A3D705 /* LCHFoursquareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */; };
 		8EABBF3D183E679A00A3D705 /* LCHFoursquareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */; };
 		8EABBF3F183E67BA00A3D705 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EABBF3E183E67BA00A3D705 /* CoreLocation.framework */; };
@@ -96,6 +102,12 @@
 		8E6252AD183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHFoursquareVenueMenuBuilder.m; path = classes/builders/LCHFoursquareVenueMenuBuilder.m; sourceTree = "<group>"; };
 		8E6252B0183EC11E00244D54 /* LCHMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHMenuTableViewController.h; path = classes/controllers/LCHMenuTableViewController.h; sourceTree = "<group>"; };
 		8E6252B1183EC11E00244D54 /* LCHMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHMenuTableViewController.m; path = classes/controllers/LCHMenuTableViewController.m; sourceTree = "<group>"; };
+		8E6252B4183F02A400244D54 /* LCHReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHReviewViewController.h; path = classes/controllers/LCHReviewViewController.h; sourceTree = "<group>"; };
+		8E6252B5183F02A400244D54 /* LCHReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHReviewViewController.m; path = classes/controllers/LCHReviewViewController.m; sourceTree = "<group>"; };
+		8E6252B9183F06F200244D54 /* HPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPGrowingTextView.h; path = classes/views/HPGrowingTextView/HPGrowingTextView.h; sourceTree = "<group>"; };
+		8E6252BA183F06F200244D54 /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPGrowingTextView.m; path = classes/views/HPGrowingTextView/HPGrowingTextView.m; sourceTree = "<group>"; };
+		8E6252BB183F06F200244D54 /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPTextViewInternal.h; path = classes/views/HPGrowingTextView/HPTextViewInternal.h; sourceTree = "<group>"; };
+		8E6252BC183F06F200244D54 /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPTextViewInternal.m; path = classes/views/HPGrowingTextView/HPTextViewInternal.m; sourceTree = "<group>"; };
 		8EABBF3A183E679A00A3D705 /* LCHFoursquareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHFoursquareService.h; path = classes/services/LCHFoursquareService.h; sourceTree = "<group>"; };
 		8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHFoursquareService.m; path = classes/services/LCHFoursquareService.m; sourceTree = "<group>"; };
 		8EABBF3E183E67BA00A3D705 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -181,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				8E367E77183DCAF8001792E1 /* classes */,
+				8E6252B8183F06E100244D54 /* views */,
 				8E367E46183DBEEA001792E1 /* Main.storyboard */,
 				8E367E4C183DBEEA001792E1 /* Images.xcassets */,
 				8E367E3B183DBEEA001792E1 /* Supporting Files */,
@@ -238,6 +251,8 @@
 				8EABBF57183EAEF400A3D705 /* LCHFoursquareVenueViewController.m */,
 				8E6252B0183EC11E00244D54 /* LCHMenuTableViewController.h */,
 				8E6252B1183EC11E00244D54 /* LCHMenuTableViewController.m */,
+				8E6252B4183F02A400244D54 /* LCHReviewViewController.h */,
+				8E6252B5183F02A400244D54 /* LCHReviewViewController.m */,
 				8E367E7E183DCB33001792E1 /* LCHViewController.h */,
 				8E367E7F183DCB33001792E1 /* LCHViewController.m */,
 			);
@@ -251,6 +266,25 @@
 				8E367E7B183DCB23001792E1 /* LCHAppDelegate.m */,
 			);
 			name = delegates;
+			sourceTree = "<group>";
+		};
+		8E6252B8183F06E100244D54 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				8E6252C1183F06F600244D54 /* HPGrowingTextView */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		8E6252C1183F06F600244D54 /* HPGrowingTextView */ = {
+			isa = PBXGroup;
+			children = (
+				8E6252B9183F06F200244D54 /* HPGrowingTextView.h */,
+				8E6252BA183F06F200244D54 /* HPGrowingTextView.m */,
+				8E6252BB183F06F200244D54 /* HPTextViewInternal.h */,
+				8E6252BC183F06F200244D54 /* HPTextViewInternal.m */,
+			);
+			name = HPGrowingTextView;
 			sourceTree = "<group>";
 		};
 		8EABBF39183E674E00A3D705 /* services */ = {
@@ -475,11 +509,14 @@
 				8EABBF4B183E808900A3D705 /* LCHFoursquareVenue.m in Sources */,
 				8E367E80183DCB33001792E1 /* LCHViewController.m in Sources */,
 				8EABBF58183EAEF400A3D705 /* LCHFoursquareVenueViewController.m in Sources */,
+				8E6252BF183F06F200244D54 /* HPTextViewInternal.m in Sources */,
+				8E6252BD183F06F200244D54 /* HPGrowingTextView.m in Sources */,
 				8EABBF46183E805100A3D705 /* LCHFoursquareVenueBuilder.m in Sources */,
 				8E6252B2183EC11E00244D54 /* LCHMenuTableViewController.m in Sources */,
 				8E6252AA183EB68400244D54 /* LCHMenuSection.m in Sources */,
 				8E6252A6183EB58A00244D54 /* LCHMenuEntry.m in Sources */,
 				8E367E7C183DCB23001792E1 /* LCHAppDelegate.m in Sources */,
+				8E6252B6183F02A400244D54 /* LCHReviewViewController.m in Sources */,
 				8EABBF3C183E679A00A3D705 /* LCHFoursquareService.m in Sources */,
 				8EABBF54183E967800A3D705 /* LCHModel.m in Sources */,
 				8E6252AE183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m in Sources */,
@@ -502,9 +539,12 @@
 				8EABBF59183EAEF400A3D705 /* LCHFoursquareVenueViewController.m in Sources */,
 				8EABBF47183E805100A3D705 /* LCHFoursquareVenueBuilder.m in Sources */,
 				8E367E81183DCB33001792E1 /* LCHViewController.m in Sources */,
+				8E6252BE183F06F200244D54 /* HPGrowingTextView.m in Sources */,
 				8EABBF3D183E679A00A3D705 /* LCHFoursquareService.m in Sources */,
 				8E6252AF183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m in Sources */,
+				8E6252C0183F06F200244D54 /* HPTextViewInternal.m in Sources */,
 				8E6252A3183EB56D00244D54 /* LCHMenu.m in Sources */,
+				8E6252B7183F02A400244D54 /* LCHReviewViewController.m in Sources */,
 				8EABBF55183E967800A3D705 /* LCHModel.m in Sources */,
 				8E367E7D183DCB23001792E1 /* LCHAppDelegate.m in Sources */,
 				8E6252A7183EB58A00244D54 /* LCHMenuEntry.m in Sources */,
