@@ -51,12 +51,12 @@ static NSString *const FS_MENU_URL = @"https://api.foursquare.com/v2/venues/";
            
            return connection;
        } completionBlock:^(FSNConnection *connection) {
-           NSLog(@"complete! %@ :: %@", connection.responseData, connection.error);
+//           NSLog(@"complete! %@ :: %@", connection.responseData, connection.error);
            
            if (!connection.error) {
                NSError *error = nil;
                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:connection.responseData options:kNilOptions error:&error];
-               NSLog(@"json: %@", json);
+//               NSLog(@"json: %@", json);
                [delegate buildVenuesWithJSON:json];
            }
            
@@ -88,12 +88,12 @@ static NSString *const FS_MENU_URL = @"https://api.foursquare.com/v2/venues/";
                                                 
                                                 return connection;
                                             } completionBlock:^(FSNConnection *connection) {
-                                                NSLog(@"complete! %@ :: %@", connection.responseData, connection.error);
+//                                                NSLog(@"complete! %@ :: %@", connection.responseData, connection.error);
                                                 
                                                 if (!connection.error) {
                                                     NSError *error = nil;
                                                     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:connection.responseData options:kNilOptions error:&error];
-                                                    NSLog(@"json: %@", json);
+//                                                    NSLog(@"json: %@", json);
                                                     [delegate buildMenuWithJSON:json];
                                                 }
                                                 
@@ -101,9 +101,7 @@ static NSString *const FS_MENU_URL = @"https://api.foursquare.com/v2/venues/";
                                                 
                                             }
                                  ];
-    
     [connection start];
-
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "LCHFoursquareVenueBuilder.h"
 #import "LCHFoursquareVenue.h"
+#import "LCHModel.h"
 
 @implementation LCHFoursquareVenueBuilder
 
@@ -20,8 +21,9 @@
     for (NSDictionary *dict in venuesArray) {
         venue = [[LCHFoursquareVenue alloc] initWithDictionary:dict];
         [venuesToReturn addObject:venue];
-        NSLog(@"name: %@", venue.venueName);
-        NSLog(@"id: %@", venue.venueID);
+        if ([[LCHModel sharedInstance] getStoredVenueForVenueID:venue.venueID]) {
+            venue.storedVenue = [[LCHModel sharedInstance] getStoredVenueForVenueID:venue.venueID];
+        }
     }
     return (NSArray*)venuesToReturn;
 }

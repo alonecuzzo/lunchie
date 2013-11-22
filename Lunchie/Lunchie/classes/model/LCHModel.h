@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @class LCHMenu;
+@class LCHStoredVenue;
 
 @interface LCHModel : NSObject
 
 @property(nonatomic) NSArray *venues;
 @property(nonatomic) LCHMenu *currentMenu;
+@property(nonatomic) NSArray *storedVenues;
 
+- (LCHStoredVenue*)getStoredVenueForVenueID:(NSString*)venueID;
 + (id)sharedInstance;
 
 @end

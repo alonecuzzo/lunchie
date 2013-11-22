@@ -7,6 +7,7 @@
 //
 
 #import "LCHModel.h"
+#import "LCHStoredVenue.h"
 
 @implementation LCHModel
 
@@ -18,6 +19,16 @@
         sharedInstance = [[self alloc] init];
     });
     return sharedInstance;
+}
+
+- (LCHStoredVenue*)getStoredVenueForVenueID:(NSString*)venueID
+{
+    for (LCHStoredVenue *storedVenue in [[LCHModel sharedInstance] storedVenues]) {
+        if ([storedVenue.data.venueID isEqualToString:venueID]) {
+            return storedVenue;
+        }
+    }
+    return nil;
 }
 
 @end

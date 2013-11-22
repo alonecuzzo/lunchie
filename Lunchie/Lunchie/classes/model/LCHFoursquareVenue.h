@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LCHStoredVenue.h"
 
 @interface LCHFoursquareVenue : NSObject
 
 @property(nonatomic) NSString *venueID;
 @property(nonatomic) NSString *venueName;
+@property(nonatomic) LCHStoredVenue *storedVenue;
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 
