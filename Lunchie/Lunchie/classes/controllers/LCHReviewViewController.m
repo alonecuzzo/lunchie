@@ -15,6 +15,7 @@
 
 @property(nonatomic) HPGrowingTextView *growingTextView;
 @property(nonatomic) UIView *containerView;
+@property(nonatomic) NSArray *comments;
 
 @end
 
@@ -41,6 +42,8 @@
 {
     [super viewDidLoad];
     
+    [self refreshComments];
+    
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -55,6 +58,7 @@
     _containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     
     _growingTextView = [[HPGrowingTextView alloc] initWithFrame:CGRectMake(0, 3, _containerView.frame.size.width - buttonWidth, containerHeight)];
+    _growingTextView.placeholder = @"Leave a Review";
     _growingTextView.contentInset = UIEdgeInsetsMake(3, 3, 0, 0);
     _growingTextView.delegate = self;
     _growingTextView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -67,20 +71,31 @@
     [_containerView addSubview:sendButton];
 }
 
+- (void)refreshComments
+{
+    if (self.venue.storedVenue.data.comments) {
+        _comments = self.venue.storedVenue.data.comments;
+    }
+}
+
 - (void)saveComment
 {
-    NSLog(@"venueID: %@", self.venue.venueID);
     if ([_growingTextView.text length] > 0) {
         LCHStoredVenue *sv;
         if (!self.venue.storedVenue) {
             sv = [[LCHStoredVenue alloc] initWithDictionary:[NSDictionary dictionaryWithObject:self.venue.venueID forKey:kVenueIDKey]];
+            self.venue.storedVenue = sv;
             [sv addComment:_growingTextView.text];
             [[LCHModel sharedInstance] writeStoredVenue:sv];
         } else {
-            NSLog(@"our comments!, %d", self.venue.storedVenue.data.comments.count);
             [self.venue.storedVenue addComment:_growingTextView.text];
             [[LCHModel sharedInstance] writeStoredVenue:self.venue.storedVenue];
         }
+        _growingTextView.text = @"";
+        _growingTextView.placeholder = @"Leave a Review";
+        [_growingTextView resignFirstResponder];
+        [self refreshComments];
+        [self.tableView reloadData];
     }
 }
 
@@ -142,16 +157,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return (_comments) ? _comments.count : 0;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -162,9 +173,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.textLabel.text = [_comments objectAtIndex:indexPath.row];
     
     return cell;
 }
