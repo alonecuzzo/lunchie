@@ -33,8 +33,8 @@
         menuSection = [[LCHMenuSection alloc] initWithDictionary:section];
         NSDictionary *innerEntriesJSON = [section objectForKey:@"entries"];
         NSArray *innerItemsArray = [innerEntriesJSON objectForKey:@"items"];
+        tmpEntryArray = [NSMutableArray array];
         for (NSDictionary *entry in innerItemsArray) {
-            tmpEntryArray = [NSMutableArray array];
             menuEntry = [[LCHMenuEntry alloc] initWithDictionary:entry];
             [tmpEntryArray addObject:menuEntry];
         }

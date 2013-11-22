@@ -33,6 +33,11 @@
     [getMenuButton setTitle:@"menu" forState:UIControlStateNormal];
     [getMenuButton addTarget:self action:@selector(getMenuPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:getMenuButton];
+    
+    UIButton *writeReviewButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 220, 70, 40)];
+    [writeReviewButton setBackgroundColor:[UIColor redColor]];
+    [writeReviewButton setTitle:@"review" forState:UIControlStateNormal];
+    [self.view addSubview:writeReviewButton];
 }
 
 - (void)getMenuPressed

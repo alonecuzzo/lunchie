@@ -62,12 +62,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return (self.menu) ? [self.menu.menuSections count] : 1;
+    return (self.menu.menuSections.count > 0) ? [self.menu.menuSections count] : 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return (self.menu) ? [[(LCHMenuSection*)[self.menu.menuSections objectAtIndex:section] entries] count] : 0;
+    return (self.menu.menuSections.count > 0) ? [[(LCHMenuSection*)[self.menu.menuSections objectAtIndex:section] entries] count] : 0;
 }
 
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
