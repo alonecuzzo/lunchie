@@ -28,7 +28,7 @@
 {
     [aCoder encodeObject:_venueID forKey:kVenueIDKey];
     [aCoder encodeObject:_comments forKey:kCommentsKey];
-    [aCoder encodeObject:[NSNumber numberWithBool:_hasBeenVisited] forKey:kHasBeenVisitedKey];
+    [aCoder encodeBool:_hasBeenVisited forKey:kHasBeenVisitedKey];
     [aCoder encodeBool:_isThumbsDowned forKey:kIsThumbsDownedKey];
 }
 
@@ -36,9 +36,9 @@
 {
     NSString *venueID = [aDecoder decodeObjectForKey:kVenueIDKey];
     NSArray *comments = [aDecoder decodeObjectForKey:kCommentsKey];
-    NSNumber *hasBeenVisited = [aDecoder decodeObjectForKey:kHasBeenVisitedKey];
+    BOOL hasBeenVisited = [aDecoder decodeBoolForKey:kHasBeenVisitedKey];
     BOOL isThumbsDowned = [aDecoder decodeBoolForKey:kIsThumbsDownedKey];
-    NSDictionary *initDict = [NSDictionary dictionaryWithObjectsAndKeys:venueID, kVenueIDKey, comments, kCommentsKey, hasBeenVisited, kHasBeenVisitedKey, [NSNumber numberWithBool:isThumbsDowned], kIsThumbsDownedKey, nil];
+    NSDictionary *initDict = [NSDictionary dictionaryWithObjectsAndKeys:venueID, kVenueIDKey, comments, kCommentsKey, [NSNumber numberWithBool:hasBeenVisited], kHasBeenVisitedKey, [NSNumber numberWithBool:isThumbsDowned], kIsThumbsDownedKey, nil];
     return [self initWithDictionary:initDict];
 }
 
