@@ -43,6 +43,10 @@
 		8E6252C0183F06F200244D54 /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252BC183F06F200244D54 /* HPTextViewInternal.m */; };
 		8E6252C6183F198400244D54 /* LCHStoredVenueData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252C5183F198400244D54 /* LCHStoredVenueData.m */; };
 		8E6252C7183F198400244D54 /* LCHStoredVenueData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252C5183F198400244D54 /* LCHStoredVenueData.m */; };
+		8E6252CA183FAF4400244D54 /* LCHStoredVenueDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252C9183FAF4400244D54 /* LCHStoredVenueDatabase.m */; };
+		8E6252CB183FAF4400244D54 /* LCHStoredVenueDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252C9183FAF4400244D54 /* LCHStoredVenueDatabase.m */; };
+		8E6252CE183FB19A00244D54 /* LCHStoredVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252CD183FB19A00244D54 /* LCHStoredVenue.m */; };
+		8E6252CF183FB19A00244D54 /* LCHStoredVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252CD183FB19A00244D54 /* LCHStoredVenue.m */; };
 		8EABBF3C183E679A00A3D705 /* LCHFoursquareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */; };
 		8EABBF3D183E679A00A3D705 /* LCHFoursquareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */; };
 		8EABBF3F183E67BA00A3D705 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EABBF3E183E67BA00A3D705 /* CoreLocation.framework */; };
@@ -112,6 +116,10 @@
 		8E6252BC183F06F200244D54 /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPTextViewInternal.m; path = classes/views/HPGrowingTextView/HPTextViewInternal.m; sourceTree = "<group>"; };
 		8E6252C4183F198400244D54 /* LCHStoredVenueData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHStoredVenueData.h; path = classes/model/file/LCHStoredVenueData.h; sourceTree = "<group>"; };
 		8E6252C5183F198400244D54 /* LCHStoredVenueData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHStoredVenueData.m; path = classes/model/file/LCHStoredVenueData.m; sourceTree = "<group>"; };
+		8E6252C8183FAF4400244D54 /* LCHStoredVenueDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHStoredVenueDatabase.h; path = classes/model/file/LCHStoredVenueDatabase.h; sourceTree = "<group>"; };
+		8E6252C9183FAF4400244D54 /* LCHStoredVenueDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHStoredVenueDatabase.m; path = classes/model/file/LCHStoredVenueDatabase.m; sourceTree = "<group>"; };
+		8E6252CC183FB19A00244D54 /* LCHStoredVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHStoredVenue.h; path = classes/model/file/LCHStoredVenue.h; sourceTree = "<group>"; };
+		8E6252CD183FB19A00244D54 /* LCHStoredVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHStoredVenue.m; path = classes/model/file/LCHStoredVenue.m; sourceTree = "<group>"; };
 		8EABBF3A183E679A00A3D705 /* LCHFoursquareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHFoursquareService.h; path = classes/services/LCHFoursquareService.h; sourceTree = "<group>"; };
 		8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHFoursquareService.m; path = classes/services/LCHFoursquareService.m; sourceTree = "<group>"; };
 		8EABBF3E183E67BA00A3D705 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -294,8 +302,12 @@
 		8E6252C3183F194400244D54 /* file */ = {
 			isa = PBXGroup;
 			children = (
+				8E6252CC183FB19A00244D54 /* LCHStoredVenue.h */,
+				8E6252CD183FB19A00244D54 /* LCHStoredVenue.m */,
 				8E6252C4183F198400244D54 /* LCHStoredVenueData.h */,
 				8E6252C5183F198400244D54 /* LCHStoredVenueData.m */,
+				8E6252C8183FAF4400244D54 /* LCHStoredVenueDatabase.h */,
+				8E6252C9183FAF4400244D54 /* LCHStoredVenueDatabase.m */,
 			);
 			name = file;
 			sourceTree = "<group>";
@@ -535,8 +547,10 @@
 				8EABBF3C183E679A00A3D705 /* LCHFoursquareService.m in Sources */,
 				8EABBF54183E967800A3D705 /* LCHModel.m in Sources */,
 				8E6252AE183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m in Sources */,
+				8E6252CA183FAF4400244D54 /* LCHStoredVenueDatabase.m in Sources */,
 				8E367E41183DBEEA001792E1 /* main.m in Sources */,
 				8E6252A2183EB56D00244D54 /* LCHMenu.m in Sources */,
+				8E6252CE183FB19A00244D54 /* LCHStoredVenue.m in Sources */,
 				8EABBF50183E84D500A3D705 /* LCHNetworkManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,8 +564,10 @@
 				8EABBF42183E689A00A3D705 /* LCHFoursquareServiceTests.m in Sources */,
 				8E6252B3183EC11E00244D54 /* LCHMenuTableViewController.m in Sources */,
 				8E6252C7183F198400244D54 /* LCHStoredVenueData.m in Sources */,
+				8E6252CF183FB19A00244D54 /* LCHStoredVenue.m in Sources */,
 				8EABBF51183E84D500A3D705 /* LCHNetworkManager.m in Sources */,
 				8E367E60183DBEEB001792E1 /* LunchieTests.m in Sources */,
+				8E6252CB183FAF4400244D54 /* LCHStoredVenueDatabase.m in Sources */,
 				8EABBF59183EAEF400A3D705 /* LCHFoursquareVenueViewController.m in Sources */,
 				8EABBF47183E805100A3D705 /* LCHFoursquareVenueBuilder.m in Sources */,
 				8E367E81183DCB33001792E1 /* LCHViewController.m in Sources */,

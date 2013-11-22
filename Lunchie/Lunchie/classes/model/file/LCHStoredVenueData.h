@@ -15,4 +15,6 @@
 @property(assign) BOOL hasBeenVisited;
 @property(assign) BOOL isLiked;
 
+- (instancetype)initWithDictionary:(NSDictionary*)dict;
+
 @end
