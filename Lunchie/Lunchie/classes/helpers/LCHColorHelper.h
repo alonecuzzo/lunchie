@@ -10,4 +10,8 @@
 
 @interface LCHColorHelper : NSObject
 
++ (UIColor*)lunchieRed;
+
++ (UIColor*)lunchieLightGrey;
+
 @end

@@ -9,6 +9,7 @@
 #import "LCHIntroViewController.h"
 #import "LCHSignupViewController.h"
 #import "LCHFontHelper.h"
+#import "LCHIntroView.h"
 
 @interface LCHIntroViewController ()
 
@@ -32,9 +33,10 @@
     [self.navigationController setNavigationBarHidden:YES];
     
     EAIntroPage *page1 = [EAIntroPage page];
-//    page1.title = @"Too many lunch choices got you bogged down??";
-//    page1.titleFont = [LCHFontHelper getFont:LCHFontSullivanFill withSize:LCHFontSizeSmall];
-//    page1.desc = @"LMOAZ AT THE LOLZ!!!";
+    LCHIntroView *page1View = [[LCHIntroView alloc] initWithFrame:self.view.frame];
+    page1View.titleLabel.text = @"Too many restaurant choices got you bogged down??";
+    page1View.descriptionLabel.text = @"C'mon man, you know that's a lolcat... Don't lie to me man that IS a lolcat.  Don't you think that's a lolcat cuz I do think it's a locat, I'm going crazy man!";
+    page1.customView = page1View;
     [page1 setBgImage:[UIImage imageNamed:@"intro_bkgrnd_1"]];
     
     EAIntroPage *page2 = [EAIntroPage page];
@@ -42,6 +44,7 @@
     page2.desc = @"AGAINZO AAGIAN!!! LMOAZ AT THE LOLZ!!!";
     
     EAIntroView *introView = [[EAIntroView alloc] initWithFrame:self.view.frame andPages:@[page1, page2]];
+    [introView.skipButton setHidden:YES];
     introView.delegate = self;
     [introView showInView:self.view animateDuration:0.0f];
 }

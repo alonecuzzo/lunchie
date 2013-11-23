@@ -31,6 +31,7 @@
 		8E37E4E01841616A0074AFB4 /* Sullivan-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E37E4DD1841616A0074AFB4 /* Sullivan-Regular.otf */; };
 		8E37E4E11841616A0074AFB4 /* Sullivan-Fill.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8E37E4DE1841616A0074AFB4 /* Sullivan-Fill.otf */; };
 		8E37E4E4184161F80074AFB4 /* LCHColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E37E4E3184161F80074AFB4 /* LCHColorHelper.m */; };
+		8E37E4E7184166AE0074AFB4 /* LCHIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E37E4E6184166AE0074AFB4 /* LCHIntroView.m */; };
 		8E6252A2183EB56D00244D54 /* LCHMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A1183EB56D00244D54 /* LCHMenu.m */; };
 		8E6252A3183EB56D00244D54 /* LCHMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A1183EB56D00244D54 /* LCHMenu.m */; };
 		8E6252A6183EB58A00244D54 /* LCHMenuEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A5183EB58A00244D54 /* LCHMenuEntry.m */; };
@@ -125,6 +126,8 @@
 		8E37E4DE1841616A0074AFB4 /* Sullivan-Fill.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sullivan-Fill.otf"; path = "assets/fonts/Sullivan-Fill.otf"; sourceTree = "<group>"; };
 		8E37E4E2184161F80074AFB4 /* LCHColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHColorHelper.h; path = classes/helpers/LCHColorHelper.h; sourceTree = "<group>"; };
 		8E37E4E3184161F80074AFB4 /* LCHColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHColorHelper.m; path = classes/helpers/LCHColorHelper.m; sourceTree = "<group>"; };
+		8E37E4E5184166AE0074AFB4 /* LCHIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHIntroView.h; path = classes/views/LCHIntroView.h; sourceTree = "<group>"; };
+		8E37E4E6184166AE0074AFB4 /* LCHIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHIntroView.m; path = classes/views/LCHIntroView.m; sourceTree = "<group>"; };
 		8E6252A0183EB56D00244D54 /* LCHMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHMenu.h; path = classes/model/LCHMenu.h; sourceTree = "<group>"; };
 		8E6252A1183EB56D00244D54 /* LCHMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHMenu.m; path = classes/model/LCHMenu.m; sourceTree = "<group>"; };
 		8E6252A4183EB58A00244D54 /* LCHMenuEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHMenuEntry.h; path = classes/model/LCHMenuEntry.h; sourceTree = "<group>"; };
@@ -380,6 +383,8 @@
 			isa = PBXGroup;
 			children = (
 				8E6252C1183F06F600244D54 /* HPGrowingTextView */,
+				8E37E4E5184166AE0074AFB4 /* LCHIntroView.h */,
+				8E37E4E6184166AE0074AFB4 /* LCHIntroView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -673,6 +678,7 @@
 				8E367E41183DBEEA001792E1 /* main.m in Sources */,
 				8E6252A2183EB56D00244D54 /* LCHMenu.m in Sources */,
 				8E6252CE183FB19A00244D54 /* LCHStoredVenue.m in Sources */,
+				8E37E4E7184166AE0074AFB4 /* LCHIntroView.m in Sources */,
 				8E37E4DA18415FCE0074AFB4 /* LCHFontHelper.m in Sources */,
 				8E6252DE184060F900244D54 /* LCHIntroViewController.m in Sources */,
 				8EABBF50183E84D500A3D705 /* LCHNetworkManager.m in Sources */,
