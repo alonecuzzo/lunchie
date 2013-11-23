@@ -9,6 +9,7 @@
 #import "LCHAppDelegate.h"
 #import "LCHViewController.h"
 #import "LCHModel.h"
+#import "LCHIntroViewController.h"
 
 @implementation LCHAppDelegate
 
@@ -16,11 +17,8 @@
 {
     [[LCHModel sharedInstance] refreshStoredVenueData];
     
-    // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[UINavigationController alloc] initWithRootViewController:[
-                                                                                      [LCHViewController alloc] initWithStyle:UITableViewStylePlain]];
+    self.viewController = [[UINavigationController alloc] initWithRootViewController:[[LCHIntroViewController alloc] init]];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
