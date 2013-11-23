@@ -9,17 +9,11 @@
 #import "LCHAppDelegate.h"
 #import "LCHViewController.h"
 #import "LCHModel.h"
-#import "LCHTwitterService.h"
 
 @implementation LCHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    LCHTwitterService *ts = [[LCHTwitterService alloc] init];
-    [ts screenameFromTwitterWithCompletionBlock:^(NSString *sn) {
-        NSLog(@"sn:: %@", sn);
-    }];
-    
     [[LCHModel sharedInstance] refreshStoredVenueData];
     
     // Override point for customization after application launch.
