@@ -40,8 +40,11 @@
     [page1 setBgImage:[UIImage imageNamed:@"intro_bkgrnd_1"]];
     
     EAIntroPage *page2 = [EAIntroPage page];
-    page2.title = @"WTF Z GOING ON?!";
-    page2.desc = @"AGAINZO AAGIAN!!! LMOAZ AT THE LOLZ!!!";
+    LCHIntroView *page2View = [[LCHIntroView alloc] initWithFrame:self.view.frame];
+    page2View.titleLabel.text = @"Too many restaurant choices got you bogged down??";
+    page2View.descriptionLabel.text = @"C'mon man, you know that's a lolcat... Don't lie to me man that IS a lolcat.  Don't you think that's a lolcat cuz I do think it's a locat, I'm going crazy man!";
+    page2.customView = page2View;
+    [page2 setBgImage:[UIImage imageNamed:@"intro_bkgrnd_2"]];
     
     EAIntroView *introView = [[EAIntroView alloc] initWithFrame:self.view.frame andPages:@[page1, page2]];
     [introView.skipButton setHidden:YES];
