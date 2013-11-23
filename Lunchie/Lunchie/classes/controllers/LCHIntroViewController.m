@@ -8,6 +8,7 @@
 
 #import "LCHIntroViewController.h"
 #import "LCHSignupViewController.h"
+#import "LCHFontHelper.h"
 
 @interface LCHIntroViewController ()
 
@@ -31,8 +32,10 @@
     [self.navigationController setNavigationBarHidden:YES];
     
     EAIntroPage *page1 = [EAIntroPage page];
-    page1.title = @"Hello world";
-    page1.desc = @"LMOAZ AT THE LOLZ!!!";
+//    page1.title = @"Too many lunch choices got you bogged down??";
+//    page1.titleFont = [LCHFontHelper getFont:LCHFontSullivanFill withSize:LCHFontSizeSmall];
+//    page1.desc = @"LMOAZ AT THE LOLZ!!!";
+    [page1 setBgImage:[UIImage imageNamed:@"intro_bkgrnd_1"]];
     
     EAIntroPage *page2 = [EAIntroPage page];
     page2.title = @"WTF Z GOING ON?!";
@@ -40,7 +43,7 @@
     
     EAIntroView *introView = [[EAIntroView alloc] initWithFrame:self.view.frame andPages:@[page1, page2]];
     introView.delegate = self;
-    [introView showInView:self.view animateDuration:0.3f];
+    [introView showInView:self.view animateDuration:0.0f];
 }
 
 #pragma mark - delegate stuff
