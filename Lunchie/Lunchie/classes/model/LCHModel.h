@@ -16,10 +16,12 @@
 @property(nonatomic) NSArray *venues;
 @property(nonatomic) LCHMenu *currentMenu;
 @property(nonatomic) NSArray *storedVenues;
+@property(nonatomic) NSArray *teamMembers;
 
 - (LCHStoredVenue*)getStoredVenueForVenueID:(NSString*)venueID;
 - (void)writeStoredVenue:(LCHStoredVenue*)storedVenue;
 - (void)refreshStoredVenueData;
 + (id)sharedInstance;
+
 
 @end

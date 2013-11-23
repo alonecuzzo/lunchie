@@ -58,6 +58,8 @@
 		8E6252E31840683200244D54 /* LCHSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252E11840683200244D54 /* LCHSignupViewController.m */; };
 		8E6252E618406AA200244D54 /* LCHSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252E518406AA200244D54 /* LCHSocialManager.m */; };
 		8E6252E718406AA200244D54 /* LCHSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252E518406AA200244D54 /* LCHSocialManager.m */; };
+		8E8BF21D1840F1810058262C /* LCHFakeTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8BF21C1840F1810058262C /* LCHFakeTeam.m */; };
+		8E8BF21E1840F1810058262C /* LCHFakeTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8BF21C1840F1810058262C /* LCHFakeTeam.m */; };
 		8EABBF3C183E679A00A3D705 /* LCHFoursquareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */; };
 		8EABBF3D183E679A00A3D705 /* LCHFoursquareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */; };
 		8EABBF3F183E67BA00A3D705 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EABBF3E183E67BA00A3D705 /* CoreLocation.framework */; };
@@ -143,6 +145,8 @@
 		8E6252E11840683200244D54 /* LCHSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHSignupViewController.m; path = classes/controllers/LCHSignupViewController.m; sourceTree = "<group>"; };
 		8E6252E418406AA200244D54 /* LCHSocialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHSocialManager.h; path = classes/management/LCHSocialManager.h; sourceTree = "<group>"; };
 		8E6252E518406AA200244D54 /* LCHSocialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHSocialManager.m; path = classes/management/LCHSocialManager.m; sourceTree = "<group>"; };
+		8E8BF21B1840F1810058262C /* LCHFakeTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHFakeTeam.h; path = classes/model/fakes/LCHFakeTeam.h; sourceTree = "<group>"; };
+		8E8BF21C1840F1810058262C /* LCHFakeTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHFakeTeam.m; path = classes/model/fakes/LCHFakeTeam.m; sourceTree = "<group>"; };
 		8EABBF3A183E679A00A3D705 /* LCHFoursquareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHFoursquareService.h; path = classes/services/LCHFoursquareService.h; sourceTree = "<group>"; };
 		8EABBF3B183E679A00A3D705 /* LCHFoursquareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHFoursquareService.m; path = classes/services/LCHFoursquareService.m; sourceTree = "<group>"; };
 		8EABBF3E183E67BA00A3D705 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -342,6 +346,15 @@
 			name = file;
 			sourceTree = "<group>";
 		};
+		8E8BF21A1840F1130058262C /* fakes */ = {
+			isa = PBXGroup;
+			children = (
+				8E8BF21B1840F1810058262C /* LCHFakeTeam.h */,
+				8E8BF21C1840F1810058262C /* LCHFakeTeam.m */,
+			);
+			name = fakes;
+			sourceTree = "<group>";
+		};
 		8EABBF39183E674E00A3D705 /* services */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,6 +390,7 @@
 		8EABBF48183E805900A3D705 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				8E8BF21A1840F1130058262C /* fakes */,
 				8E6252C3183F194400244D54 /* file */,
 				8EABBF49183E808900A3D705 /* LCHFoursquareVenue.h */,
 				8EABBF4A183E808900A3D705 /* LCHFoursquareVenue.m */,
@@ -585,6 +599,7 @@
 				8E6252B6183F02A400244D54 /* LCHReviewViewController.m in Sources */,
 				8EABBF3C183E679A00A3D705 /* LCHFoursquareService.m in Sources */,
 				8EABBF54183E967800A3D705 /* LCHModel.m in Sources */,
+				8E8BF21D1840F1810058262C /* LCHFakeTeam.m in Sources */,
 				8E6252AE183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m in Sources */,
 				8E6252D4183FFD2400244D54 /* LCHTwitterService.m in Sources */,
 				8E6252CA183FAF4400244D54 /* LCHStoredVenueDatabase.m in Sources */,
@@ -600,6 +615,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E8BF21E1840F1810058262C /* LCHFakeTeam.m in Sources */,
 				8EABBF4C183E808900A3D705 /* LCHFoursquareVenue.m in Sources */,
 				8E6252AB183EB68400244D54 /* LCHMenuSection.m in Sources */,
 				8EABBF42183E689A00A3D705 /* LCHFoursquareServiceTests.m in Sources */,

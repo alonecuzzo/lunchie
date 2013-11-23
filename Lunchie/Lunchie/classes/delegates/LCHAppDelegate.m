@@ -10,11 +10,13 @@
 #import "LCHVenuesTableViewController.h"
 #import "LCHModel.h"
 #import "LCHIntroViewController.h"
+#import "LCHFakeTeam.h"
 
 @implementation LCHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[LCHModel sharedInstance] setTeamMembers:[LCHFakeTeam fakeTeam]];
     [[LCHModel sharedInstance] refreshStoredVenueData];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
