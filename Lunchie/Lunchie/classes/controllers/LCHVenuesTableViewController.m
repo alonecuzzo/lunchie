@@ -26,6 +26,7 @@
     [super viewDidLoad];
     
     [self.navigationController setNavigationBarHidden:NO];
+    [self.navigationItem setHidesBackButton:YES];
     
     CLLocation *location = [[CLLocation alloc] initWithLatitude:40.712840 longitude:-74.007742];
     LCHNetworkManager *manager = [[LCHNetworkManager alloc] init];

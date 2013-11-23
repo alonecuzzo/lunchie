@@ -55,6 +55,12 @@
     [writeReviewButton setTitle:@"review" forState:UIControlStateNormal];
     [writeReviewButton addTarget:self action:@selector(reviewButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:writeReviewButton];
+    
+    UIButton *chooseRestaurantButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 370, 70, 40)];
+    [chooseRestaurantButton setBackgroundColor:[UIColor redColor]];
+    [chooseRestaurantButton setTitle:@"choose" forState:UIControlStateNormal];
+    [chooseRestaurantButton addTarget:self action:@selector(chooseRestaurantPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:chooseRestaurantButton];
 }
 
 - (void)setupThumbButton
@@ -65,14 +71,16 @@
     [_thumbsButton setTitle:@"thumbsdown" forState:UIControlStateNormal];
     
     if (self.venue.storedVenue) {
-        
         if (!self.venue.storedVenue.data.isThumbsDowned) {
             [_thumbsButton setTitle:@"thumbsup" forState:UIControlStateNormal];
         }
     }
     
     [self.view addSubview:_thumbsButton];
-    [self.navigationController setTitle:self.venue.venueName];
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.navigationController.navigationBar.topItem.title = self.venue.venueName;
+    });
 }
 
 - (void)thumbsButtonPressed
@@ -107,6 +115,11 @@
     LCHReviewViewController *rvc = [[LCHReviewViewController alloc] init];
     rvc.venue = self.venue;
     [self.navigationController pushViewController:rvc animated:YES];
+}
+
+- (void)chooseRestaurantPressed
+{
+    
 }
 
 - (void)didReceiveMemoryWarning
