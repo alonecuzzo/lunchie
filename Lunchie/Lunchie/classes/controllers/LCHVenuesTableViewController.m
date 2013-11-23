@@ -6,24 +6,26 @@
 //  Copyright (c) 2013 23bit. All rights reserved.
 //
 
-#import "LCHViewController.h"
+#import "LCHVenuesTableViewController.h"
 #import "LCHNetworkManager.h"
 #import "LCHFoursquareService.h"
 #import "LCHFoursquareVenue.h"
 #import "LCHModel.h"
 #import "LCHFoursquareVenueViewController.h"
 
-@interface LCHViewController ()
+@interface LCHVenuesTableViewController ()
 
 @property(nonatomic) NSArray *venues;
 
 @end
 
-@implementation LCHViewController
+@implementation LCHVenuesTableViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.navigationController setNavigationBarHidden:NO];
     
     CLLocation *location = [[CLLocation alloc] initWithLatitude:40.712840 longitude:-74.007742];
     LCHNetworkManager *manager = [[LCHNetworkManager alloc] init];

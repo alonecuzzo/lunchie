@@ -15,6 +15,6 @@
 
 @end
 
-@interface LCHViewController : UITableViewController <LCHVenuesTableViewDelegate>
+@interface LCHVenuesTableViewController : UITableViewController <LCHVenuesTableViewDelegate>
 
 @end

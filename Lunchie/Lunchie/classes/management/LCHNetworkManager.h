@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-#import "LCHViewController.h"
+#import "LCHVenuesTableViewController.h"
 #import "LCHFoursquareVenueMenuBuilder.h"
 #import "LCHMenuTableViewController.h"
 
