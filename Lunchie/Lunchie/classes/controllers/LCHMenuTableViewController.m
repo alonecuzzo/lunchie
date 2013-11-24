@@ -12,19 +12,22 @@
 #import "LCHMenuSection.h"
 #import "LCHMenuEntry.h"
 #import "LCHModel.h"
+#import "LCHColorHelper.h"
+#import "LCHFontHelper.h"
 
 @interface LCHMenuTableViewController ()
 
 @property(nonatomic)LCHNetworkManager *manager;
 @property(nonatomic)LCHMenu *menu;
+@property(nonatomic) UIView *navBar;
 
 @end
 
 @implementation LCHMenuTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)init
 {
-    self = [super initWithStyle:style];
+    self = [super init];
     if (self) {
         [[LCHModel sharedInstance] setCurrentMenu:nil];
         _manager = [[LCHNetworkManager alloc] init];
@@ -36,14 +39,30 @@
 {
     [super viewDidLoad];
     
+    _navBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
+    _navBar.backgroundColor = [LCHColorHelper lunchieRed];
+    
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 30, [UIImage imageNamed:@"backButton"].size.width, [UIImage imageNamed:@"backButton"].size.height)];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"backButton"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [_navBar addSubview:backButton];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, _navBar.frame.size.width, 20)];
+    titleLabel.font = [LCHFontHelper getFont:LCHFontSullivanFill withSize:LCHFontSizeSmall];
+    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.text = @"Menu";
+    
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _navBar.frame.size.height - 25, self.view.frame.size.width, self.view.frame.size.height - _navBar.frame.size.height)];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
+    
     [_manager searchMenusForVenueID:self.venueID];
     _manager.menuDelegate = self;
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self.view addSubview:_navBar];
+    [_navBar addSubview:titleLabel];
 }
 
 - (void)refreshMenu
@@ -56,6 +75,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)backButtonPressed
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Table view data source
@@ -83,6 +107,8 @@
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.textLabel.font = [LCHFontHelper getFont:LCHFontSullivanFill withSize:LCHFontSizeSmall];
+        cell.textLabel.textColor = [LCHColorHelper lunchieBlack];
     }
     
     LCHMenuSection *menuSection = [_menu.menuSections objectAtIndex:indexPath.section];
@@ -91,6 +117,25 @@
     cell.textLabel.text = menuEntry.entryName;
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 45;
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UILabel *sectionLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width, 45)];
+    sectionLabel.backgroundColor = [LCHColorHelper lunchieBlack];
+    sectionLabel.textColor = [UIColor whiteColor];
+    sectionLabel.font = [LCHFontHelper getFont:LCHFontSullivanFill withSize:LCHFontSizeSmall];
+    LCHMenuSection *menuSection = [self.menu.menuSections objectAtIndex:section];
+    sectionLabel.text = menuSection.sectionName;
+    UIView *sectionHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 45)];
+    sectionHeaderView.backgroundColor = [LCHColorHelper lunchieBlack];
+    [sectionHeaderView addSubview:sectionLabel];
+    return sectionHeaderView;
 }
 
 /*

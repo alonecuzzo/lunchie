@@ -16,8 +16,9 @@
 
 @end
 
-@interface LCHMenuTableViewController : UITableViewController <LCHMenuTableViewControllerDelegate>
+@interface LCHMenuTableViewController : UIViewController <LCHMenuTableViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic) NSString *venueID;
+@property(nonatomic) UITableView *tableView;
 
 @end
