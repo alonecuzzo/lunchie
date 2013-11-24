@@ -18,6 +18,9 @@
         _venueName = [dictionary objectForKey:@"name"];
         NSDictionary *location = [dictionary objectForKey:@"location"];
         _venueAddress = [location objectForKey:@"address"];
+        NSDictionary *likes = [dictionary objectForKey:@"likes"];
+        NSNumber *venueLikes = [likes objectForKey:@"count"];
+        _venueLikes = [venueLikes intValue];
     }
     return self;
 }

@@ -15,6 +15,7 @@
 @property(nonatomic) NSString *venueName;
 @property(nonatomic) NSString *venueAddress;
 @property(nonatomic) LCHStoredVenue *storedVenue;
+@property(assign) uint venueLikes;
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;
 
