@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "LCHFoursquareVenue.h"
+#import "LCHVenuesViewController.h"
 
 @interface LCHVenuePanel : UIView
 
-- (instancetype)initWithVenue:(LCHFoursquareVenue*)venue andFrame:(CGRect)frame;
+@property(weak) id <LCHVenuesDelegate> venueDelegate;
+
+- (instancetype)initWithVenue:(LCHFoursquareVenue*)venue andParentFrame:(CGRect)frame;
+- (void)openPanel;
 
 @end

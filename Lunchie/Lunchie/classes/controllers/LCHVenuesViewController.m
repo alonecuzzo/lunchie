@@ -65,7 +65,8 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         NSMutableArray *pages = [NSMutableArray array];
         for (LCHFoursquareVenue *venue in _venuesToDisplay) {
-            LCHVenuePanel *venuePanel = [[LCHVenuePanel alloc] initWithVenue:venue andFrame:self.view.frame];
+            LCHVenuePanel *venuePanel = [[LCHVenuePanel alloc] initWithVenue:venue andParentFrame:self.view.frame];
+            venuePanel.venueDelegate = self;
             EAIntroPage *page = [EAIntroPage page];
             page.bgImage = [UIImage imageNamed:@"intro_bkgrnd_2"];
             page.customView = venuePanel;
@@ -75,9 +76,18 @@
         [_venuePagerView showInView:self.view animateDuration:0.3f];
         _venuePagerView.swipeToExit = NO;
         [_venuePagerView.skipButton setHidden:YES];
+        //helps with coordinate system later, not giving the venuepager a smaller frame
         [_navBar removeFromSuperview];
         [self.view addSubview:_navBar];
     });
+}
+
+- (void)venuePanelWasTapped:(LCHVenuePanel *)venuePanel
+{
+    [_venuePagerView setHidden:YES];
+    [venuePanel removeFromSuperview];
+    [self.view addSubview:venuePanel];
+    [venuePanel openPanel];
 }
 
 - (void)chooseVenuesToDisplay

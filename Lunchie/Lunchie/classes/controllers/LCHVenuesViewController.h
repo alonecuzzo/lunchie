@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class LCHVenuePanel;
+
 @protocol LCHVenuesDelegate <NSObject>
 
 - (void)refreshVenues;
+- (void)venuePanelWasTapped:(LCHVenuePanel*)venuePanel;
 
 @end
 
