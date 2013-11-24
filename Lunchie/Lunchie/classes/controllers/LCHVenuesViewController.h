@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @class LCHVenuePanel;
+@class LCHFoursquareVenue;
 
 @protocol LCHVenuesDelegate <NSObject>
 
 - (void)refreshVenues;
 - (void)venuePanelWasTapped:(LCHVenuePanel*)venuePanel;
+- (void)thumbsDownWasTapped:(LCHFoursquareVenue*)venue isThumbsDown:(BOOL)isThumbsDown;
 
 @end
 

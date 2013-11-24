@@ -15,6 +15,7 @@
 #import "LCHVenuePanel.h"
 #import <EAIntroPage.h>
 #import <EAIntroView.h>
+#import "LCHStoredVenue.h"
 
 @interface LCHVenuesViewController ()
 
@@ -88,6 +89,20 @@
     [venuePanel removeFromSuperview];
     [self.view addSubview:venuePanel];
     [venuePanel openPanel];
+}
+
+- (void)thumbsDownWasTapped:(LCHFoursquareVenue *)venue isThumbsDown:(BOOL)isThumbsDown
+{
+    NSLog(@"isthumbsdown: %d", isThumbsDown);
+    if (!venue.storedVenue) {
+        NSDictionary *svDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:isThumbsDown], kIsThumbsDownedKey, venue.venueID, kVenueIDKey, nil];
+        LCHStoredVenue *sv = [[LCHStoredVenue alloc] initWithDictionary:svDict];
+        venue.storedVenue = sv;
+        [[LCHModel sharedInstance] writeStoredVenue:sv];
+    } else {
+        [venue.storedVenue toggleThumbsDowned];
+        [[LCHModel sharedInstance] writeStoredVenue:venue.storedVenue];
+    }
 }
 
 - (void)chooseVenuesToDisplay

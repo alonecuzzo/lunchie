@@ -19,6 +19,7 @@
 @property(nonatomic) UIView *venueImageView;
 @property(nonatomic) UIView *heartView;
 @property(nonatomic) UILabel *addressLabel;
+@property(nonatomic) UIButton *thumbsDownButton;
 
 @end
 
@@ -28,6 +29,8 @@
 
 - (instancetype)initWithVenue:(LCHFoursquareVenue*)venue andParentFrame:(CGRect)frame
 {
+    self.venue = venue;
+    
     float leftMargin = 40;
     float innerLeftMargin = 10;
     
@@ -79,8 +82,25 @@
         _addressLabel.text = venue.venueAddress;
         [self addSubview:_addressLabel];
         
+        _thumbsDownButton = [[UIButton alloc] initWithFrame:CGRectMake(_heartView.frame.origin.x - 34, _heartView.frame.origin.y - 30, [UIImage imageNamed:@"thumbsDownIconNormal"].size.width + 10, [UIImage imageNamed:@"thumbsDownIconNormal"].size.height + 10)];
+        [_thumbsDownButton addTarget:self action:@selector(thumbsDownButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+        [_thumbsDownButton setImage:[UIImage imageNamed:@"thumbsDownIconNormal"] forState:UIControlStateNormal];
+        [_thumbsDownButton setImage:[UIImage imageNamed:@"thumbsDownIconSelected"] forState:UIControlStateSelected];
+        _thumbsDownButton.alpha = 0;
+        
+        if (self.venue.storedVenue) {
+            NSLog(@"ISTHUMBDOWN!? %d", self.venue.storedVenue.data.isThumbsDowned);
+           if (self.venue.storedVenue.data.isThumbsDowned == YES)
+                _thumbsDownButton.selected = YES;
+        }
     }
     return self;
+}
+
+- (void)thumbsDownButtonPressed
+{
+    _thumbsDownButton.selected = !_thumbsDownButton.selected;
+    [self.venueDelegate thumbsDownWasTapped:self.venue isThumbsDown:_thumbsDownButton.selected];
 }
 
 - (void)venuePanelWasTapped:(UIGestureRecognizer*)tapGestureRecognizer
@@ -91,7 +111,9 @@
 
 - (void)openPanel
 {
-    [UIView animateWithDuration:0.5f animations:^{
+    [self addSubview:_thumbsDownButton];
+    
+    [UIView animateWithDuration:0.3f animations:^{
         CGPoint headerPoint = [self convertPoint:CGPointMake(0, 0) fromView:self.superview];
         [_headerBkgrnd setFrame:CGRectMake(headerPoint.x, headerPoint.y, self.superview.frame.size.width, 60)];
         [_venueTitleLabel setFrame:CGRectMake(headerPoint.x + ((self.superview.frame.size.width / 2) - (_venueTitleLabel.frame.size.width / 2)), headerPoint.y + 20, _venueTitleLabel.frame.size.width, _venueTitleLabel.frame.size.height)];
@@ -100,7 +122,11 @@
         [_heartView setFrame:CGRectMake(headerPoint.x + 20, headerPoint.y + _venueImageView.frame.size.height + 75, _heartView.frame.size.width, _heartView.frame.size.height)];
         [_addressLabel setFrame:CGRectMake(headerPoint.x + self.superview.frame.size.width - _addressLabel.frame.size.width - 20, headerPoint.y + _venueImageView.frame.size.height + 75, _addressLabel.frame.size.width, _addressLabel.frame.size.height)];
     } completion:^(BOOL finished) {
-        
+        [UIView animateWithDuration:0.3f animations:^{
+            _thumbsDownButton.alpha = 1.0f;
+        } completion:^(BOOL finished) {
+            
+        }];
     }];
 }
 
