@@ -52,6 +52,7 @@
     
     EAIntroPage *signupPage = [EAIntroPage page];
     _signupPanelView = [[LCHSignupPanelView alloc] initWithFrame:CGRectMake(30, 70, self.view.frame.size.width - 60, 400)];
+    _signupPanelView.introDelegate = self;
     signupPage.customView = _signupPanelView;
     [signupPage setBgImage:[UIImage imageNamed:@"intro_bkgrnd_2"]];
     
@@ -74,22 +75,27 @@
     [_signupPanelView hideKeyboard];
 }
 
-- (void)facebookPress
+- (void)facebookButtonWasPressedForNameTextView:(UITextView *)textView
 {
-    [_manager fullnameFromFacebookWithCompletionBlock:^(NSString *fullName) {
+   [_manager fullnameFromFacebookWithCompletionBlock:^(NSString *fullName) {
         dispatch_async(dispatch_get_main_queue(), ^{
-//            _nameLabel.text = fullName;
+            textView.text = fullName;
         });
-    }];
+   }];
 }
 
-- (void)twitterPress
+- (void)twitterButtonWasPressedForNameTextView:(UITextView *)textView
 {
-    [_manager screenameFromTwitterWithCompletionBlock:^(NSString *screename) {
+   [_manager screenameFromTwitterWithCompletionBlock:^(NSString *screename) {
         dispatch_async(dispatch_get_main_queue(), ^{
-//            _nameLabel.text = screename;
+            textView.text = screename;
         });
-    }];
+   }];
+}
+
+- (void)donePressed
+{
+    
 }
 
 - (void)didReceiveMemoryWarning

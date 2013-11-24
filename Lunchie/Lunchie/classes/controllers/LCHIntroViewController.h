@@ -10,6 +10,14 @@
 #import <EAIntroView/EAIntroPage.h>
 #import <EAIntroView/EAIntroView.h>
 
-@interface LCHIntroViewController : UIViewController <EAIntroDelegate>
+@protocol LCHIntroViewDelegate <NSObject>
+
+- (void)facebookButtonWasPressedForNameTextView:(UITextView*)textView;
+- (void)twitterButtonWasPressedForNameTextView:(UITextView*)textView;
+- (void)donePressed;
+
+@end
+
+@interface LCHIntroViewController : UIViewController <EAIntroDelegate, LCHIntroViewDelegate>
 
 @end

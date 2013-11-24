@@ -9,6 +9,7 @@
 #import "LCHSignupPanelView.h"
 #import "LCHFontHelper.h"
 #import "LCHColorHelper.h"
+#import "LCHSocialMediaButton.h"
 
 @interface LCHSignupPanelView()
 
@@ -59,7 +60,7 @@
         _yourNameTextView.backgroundColor = [UIColor whiteColor];
         [self addSubview:_yourNameTextView];
         
-        UILabel *teamLabel = [[UILabel alloc] initWithFrame:CGRectMake(leftMargin, _yourNameTextView.frame.size.height + _yourNameTextView.frame.origin.y + leftMargin, self.frame.size.width, labelHeight)];
+        UILabel *teamLabel = [[UILabel alloc] initWithFrame:CGRectMake(leftMargin, _yourNameTextView.frame.size.height + _yourNameTextView.frame.origin.y + leftMargin / 2, self.frame.size.width, labelHeight)];
         teamLabel.text = @"Your Team";
         teamLabel.textColor = [LCHColorHelper lunchieDarkGrey];
         teamLabel.font = signUpTitle.font;
@@ -73,10 +74,39 @@
         _yourTeamTextView.text = @"Fueled";
         [self addSubview:_yourTeamTextView];
         
+        LCHSocialMediaButton *twitterButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(leftMargin, _yourTeamTextView.frame.size.height + _yourTeamTextView.frame.origin.y + leftMargin, _yourTeamTextView.frame.size.width, _yourTeamTextView.frame.size.height)];
+        [twitterButton setTitle:@"Sign Up With Twitter" forState:UIControlStateNormal];
+        [twitterButton addTarget:self action:@selector(twitterPressed) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:twitterButton];
         
+        LCHSocialMediaButton *facebookButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(leftMargin, twitterButton.frame.size.height + twitterButton.frame.origin.y + leftMargin / 2, _yourTeamTextView.frame.size.width, _yourTeamTextView.frame.size.height)];
+        [facebookButton setTitle:@"Sign Up With Facebook" forState:UIControlStateNormal];
+        [facebookButton addTarget:self action:@selector(facebookPressed) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:facebookButton];
         
+        LCHSocialMediaButton *doneButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(leftMargin, facebookButton.frame.size.height + facebookButton.frame.origin.y + leftMargin / 2, _yourTeamTextView.frame.size.width, _yourTeamTextView.frame.size.height)];
+        [doneButton setTitle:@"Done" forState:UIControlStateNormal];
+        [doneButton setBackgroundColor:[LCHColorHelper lunchieRed]];
+        [doneButton addTarget:self action:@selector(donePressed) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:doneButton];
     }
+    
     return self;
+}
+
+- (void)facebookPressed
+{
+    [self.introDelegate facebookButtonWasPressedForNameTextView:_yourNameTextView];
+}
+
+- (void)twitterPressed
+{
+    [self.introDelegate twitterButtonWasPressedForNameTextView:_yourNameTextView];
+}
+
+- (void)donePressed
+{
+    [self.introDelegate donePressed];
 }
 
 - (void)hideKeyboard

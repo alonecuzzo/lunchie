@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LCHIntroViewController.h"
 
 @interface LCHSignupPanelView : UIView
+
+@property(weak) id <LCHIntroViewDelegate> introDelegate;
 
 - (void)hideKeyboard;
 

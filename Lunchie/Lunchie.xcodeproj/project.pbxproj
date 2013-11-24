@@ -34,6 +34,7 @@
 		8E37E4E7184166AE0074AFB4 /* LCHIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E37E4E6184166AE0074AFB4 /* LCHIntroView.m */; };
 		8E37E4E918416D8D0074AFB4 /* intro_bkgrnd_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E37E4E818416D8D0074AFB4 /* intro_bkgrnd_2.png */; };
 		8E37E4EF18416FE00074AFB4 /* LCHSignupPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E37E4EE18416FE00074AFB4 /* LCHSignupPanelView.m */; };
+		8E37E4F318417C8D0074AFB4 /* LCHSocialMediaButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E37E4F218417C8D0074AFB4 /* LCHSocialMediaButton.m */; };
 		8E6252A2183EB56D00244D54 /* LCHMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A1183EB56D00244D54 /* LCHMenu.m */; };
 		8E6252A3183EB56D00244D54 /* LCHMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A1183EB56D00244D54 /* LCHMenu.m */; };
 		8E6252A6183EB58A00244D54 /* LCHMenuEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A5183EB58A00244D54 /* LCHMenuEntry.m */; };
@@ -131,6 +132,8 @@
 		8E37E4E818416D8D0074AFB4 /* intro_bkgrnd_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = intro_bkgrnd_2.png; path = assets/images/intro/intro_bkgrnd_2.png; sourceTree = "<group>"; };
 		8E37E4ED18416FE00074AFB4 /* LCHSignupPanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHSignupPanelView.h; path = classes/views/LCHSignupPanelView.h; sourceTree = "<group>"; };
 		8E37E4EE18416FE00074AFB4 /* LCHSignupPanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHSignupPanelView.m; path = classes/views/LCHSignupPanelView.m; sourceTree = "<group>"; };
+		8E37E4F118417C8D0074AFB4 /* LCHSocialMediaButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHSocialMediaButton.h; path = classes/views/button/LCHSocialMediaButton.h; sourceTree = "<group>"; };
+		8E37E4F218417C8D0074AFB4 /* LCHSocialMediaButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHSocialMediaButton.m; path = classes/views/button/LCHSocialMediaButton.m; sourceTree = "<group>"; };
 		8E6252A0183EB56D00244D54 /* LCHMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHMenu.h; path = classes/model/LCHMenu.h; sourceTree = "<group>"; };
 		8E6252A1183EB56D00244D54 /* LCHMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHMenu.m; path = classes/model/LCHMenu.m; sourceTree = "<group>"; };
 		8E6252A4183EB58A00244D54 /* LCHMenuEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHMenuEntry.h; path = classes/model/LCHMenuEntry.h; sourceTree = "<group>"; };
@@ -379,9 +382,19 @@
 			name = fonts;
 			sourceTree = "<group>";
 		};
+		8E37E4F018417C110074AFB4 /* button */ = {
+			isa = PBXGroup;
+			children = (
+				8E37E4F118417C8D0074AFB4 /* LCHSocialMediaButton.h */,
+				8E37E4F218417C8D0074AFB4 /* LCHSocialMediaButton.m */,
+			);
+			name = button;
+			sourceTree = "<group>";
+		};
 		8E6252B8183F06E100244D54 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				8E37E4F018417C110074AFB4 /* button */,
 				8E6252C1183F06F600244D54 /* HPGrowingTextView */,
 				8E37E4E5184166AE0074AFB4 /* LCHIntroView.h */,
 				8E37E4E6184166AE0074AFB4 /* LCHIntroView.m */,
@@ -663,6 +676,7 @@
 				8E37E4E4184161F80074AFB4 /* LCHColorHelper.m in Sources */,
 				8E6252DA1840085800244D54 /* LCHFacebookService.m in Sources */,
 				8E6252BF183F06F200244D54 /* HPTextViewInternal.m in Sources */,
+				8E37E4F318417C8D0074AFB4 /* LCHSocialMediaButton.m in Sources */,
 				8E6252BD183F06F200244D54 /* HPGrowingTextView.m in Sources */,
 				8E37E4EF18416FE00074AFB4 /* LCHSignupPanelView.m in Sources */,
 				8EABBF46183E805100A3D705 /* LCHFoursquareVenueBuilder.m in Sources */,
