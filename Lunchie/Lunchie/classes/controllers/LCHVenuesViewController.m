@@ -93,7 +93,6 @@
 
 - (void)thumbsDownWasTapped:(LCHFoursquareVenue *)venue isThumbsDown:(BOOL)isThumbsDown
 {
-    NSLog(@"isthumbsdown: %d", isThumbsDown);
     if (!venue.storedVenue) {
         NSDictionary *svDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:isThumbsDown], kIsThumbsDownedKey, venue.venueID, kVenueIDKey, nil];
         LCHStoredVenue *sv = [[LCHStoredVenue alloc] initWithDictionary:svDict];

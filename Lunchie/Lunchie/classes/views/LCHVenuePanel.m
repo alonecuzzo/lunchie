@@ -9,6 +9,7 @@
 #import "LCHVenuePanel.h"
 #import "LCHColorHelper.h"
 #import "LCHFontHelper.h"
+#import "LCHSocialMediaButton.h"
 
 @interface LCHVenuePanel()
 
@@ -20,6 +21,9 @@
 @property(nonatomic) UIView *heartView;
 @property(nonatomic) UILabel *addressLabel;
 @property(nonatomic) UIButton *thumbsDownButton;
+@property(nonatomic) LCHSocialMediaButton *menuButton;
+@property(nonatomic) LCHSocialMediaButton *reviewsButton;
+@property(nonatomic) LCHSocialMediaButton *sendToFriendsButton;
 
 @end
 
@@ -82,17 +86,30 @@
         _addressLabel.text = venue.venueAddress;
         [self addSubview:_addressLabel];
         
-        _thumbsDownButton = [[UIButton alloc] initWithFrame:CGRectMake(_heartView.frame.origin.x - 34, _heartView.frame.origin.y - 30, [UIImage imageNamed:@"thumbsDownIconNormal"].size.width + 10, [UIImage imageNamed:@"thumbsDownIconNormal"].size.height + 10)];
+        _thumbsDownButton = [[UIButton alloc] initWithFrame:CGRectMake(_heartView.frame.origin.x + 34, _heartView.frame.origin.y - 65, [UIImage imageNamed:@"thumbsDownIconNormal"].size.width + 10, [UIImage imageNamed:@"thumbsDownIconNormal"].size.height + 10)];
         [_thumbsDownButton addTarget:self action:@selector(thumbsDownButtonPressed) forControlEvents:UIControlEventTouchUpInside];
         [_thumbsDownButton setImage:[UIImage imageNamed:@"thumbsDownIconNormal"] forState:UIControlStateNormal];
         [_thumbsDownButton setImage:[UIImage imageNamed:@"thumbsDownIconSelected"] forState:UIControlStateSelected];
         _thumbsDownButton.alpha = 0;
         
-        if (self.venue.storedVenue) {
-            NSLog(@"ISTHUMBDOWN!? %d", self.venue.storedVenue.data.isThumbsDowned);
-           if (self.venue.storedVenue.data.isThumbsDowned == YES)
-                _thumbsDownButton.selected = YES;
-        }
+        _reviewsButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(innerLeftMargin, _thumbsDownButton.frame.origin.y + _thumbsDownButton.frame.size.height + 10, _parentFrame.size.width - 2 * innerLeftMargin, 45)];
+        _reviewsButton.alpha = 0;
+        NSString *reviewsString = (self.venue.storedVenue && self.venue.storedVenue.data.comments.count > 0) ? [NSString stringWithFormat:@"Reviews(%d)", self.venue.storedVenue.data.comments.count] : @"Reviews(0)";
+        [_reviewsButton setTitle:reviewsString forState:UIControlStateNormal];
+        _reviewsButton.alpha = 0;
+        
+        _menuButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(_reviewsButton.frame.origin.x, _reviewsButton.frame.origin.y + _reviewsButton.frame.size.height + 10, _reviewsButton.frame.size.width, 45)];
+        _menuButton.alpha = 0;
+        [_menuButton setTitle:@"Menu" forState:UIControlStateNormal];
+        _menuButton.alpha = 0;
+        
+        _sendToFriendsButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(_menuButton.frame.origin.x, _menuButton.frame.origin.y + _menuButton.frame.size.height + 10, _menuButton.frame.size.width, 45)];
+        _reviewsButton.alpha = 0;
+        [_sendToFriendsButton setTitle:@"Send To Team" forState:UIControlStateNormal];
+        _sendToFriendsButton.alpha = 0;
+        
+        if (self.venue.storedVenue)
+            _thumbsDownButton.selected = self.venue.storedVenue.data.isThumbsDowned;
     }
     return self;
 }
@@ -112,9 +129,12 @@
 - (void)openPanel
 {
     [self addSubview:_thumbsDownButton];
+    [self addSubview:_reviewsButton];
+    [self addSubview:_menuButton];
+    [self addSubview:_sendToFriendsButton];
     
+    CGPoint headerPoint = [self convertPoint:CGPointMake(0, 0) fromView:self.superview];
     [UIView animateWithDuration:0.3f animations:^{
-        CGPoint headerPoint = [self convertPoint:CGPointMake(0, 0) fromView:self.superview];
         [_headerBkgrnd setFrame:CGRectMake(headerPoint.x, headerPoint.y, self.superview.frame.size.width, 60)];
         [_venueTitleLabel setFrame:CGRectMake(headerPoint.x + ((self.superview.frame.size.width / 2) - (_venueTitleLabel.frame.size.width / 2)), headerPoint.y + 20, _venueTitleLabel.frame.size.width, _venueTitleLabel.frame.size.height)];
         [_bkgrndView setFrame:CGRectMake(headerPoint.x, headerPoint.y, self.superview.frame.size.width, self.superview.frame.size.height)];
@@ -122,8 +142,14 @@
         [_heartView setFrame:CGRectMake(headerPoint.x + 20, headerPoint.y + _venueImageView.frame.size.height + 75, _heartView.frame.size.width, _heartView.frame.size.height)];
         [_addressLabel setFrame:CGRectMake(headerPoint.x + self.superview.frame.size.width - _addressLabel.frame.size.width - 20, headerPoint.y + _venueImageView.frame.size.height + 75, _addressLabel.frame.size.width, _addressLabel.frame.size.height)];
     } completion:^(BOOL finished) {
+         [_reviewsButton setFrame:CGRectMake(headerPoint.x + _menuButton.frame.origin.x, _reviewsButton.frame.origin.y, _reviewsButton.frame.size.width, _reviewsButton.frame.size.height)];
+         [_menuButton setFrame:CGRectMake(headerPoint.x + _menuButton.frame.origin.x, _menuButton.frame.origin.y, _menuButton.frame.size.width, _menuButton.frame.size.height)];
+         [_sendToFriendsButton setFrame:CGRectMake(headerPoint.x + _sendToFriendsButton.frame.origin.x, _sendToFriendsButton.frame.origin.y, _sendToFriendsButton.frame.size.width, _sendToFriendsButton.frame.size.height)];
         [UIView animateWithDuration:0.3f animations:^{
+            _menuButton.alpha = 1.0f;
+            _sendToFriendsButton.alpha = 1.0f;
             _thumbsDownButton.alpha = 1.0f;
+            _reviewsButton.alpha = 1.0f;
         } completion:^(BOOL finished) {
             
         }];
