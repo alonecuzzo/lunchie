@@ -53,13 +53,16 @@
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.text = @"Menu";
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _navBar.frame.size.height - 25, self.view.frame.size.width, self.view.frame.size.height - _navBar.frame.size.height)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _navBar.frame.size.height - 25, self.view.frame.size.width, self.view.frame.size.height - _navBar.frame.size.height + 25)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
     
-    [_manager searchMenusForVenueID:self.venueID];
     _manager.menuDelegate = self;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [_manager searchMenusForVenueID:self.venueID];
+    });
     
     [self.view addSubview:_navBar];
     [_navBar addSubview:titleLabel];
@@ -68,7 +71,10 @@
 - (void)refreshMenu
 {
     _menu = [[LCHModel sharedInstance] currentMenu];
-    [self.tableView reloadData];
+    NSLog(@"menu section count:: %d", _menu.menuSections.count);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,18 +92,21 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return (self.menu.menuSections.count > 0) ? [self.menu.menuSections count] : 1;
+    return ([self hasMenu]) ? [self.menu.menuSections count] : 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return (self.menu.menuSections.count > 0) ? [[(LCHMenuSection*)[self.menu.menuSections objectAtIndex:section] entries] count] : 0;
+    return ([self hasMenu]) ? [[(LCHMenuSection*)[self.menu.menuSections objectAtIndex:section] entries] count] : 0;
 }
 
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    LCHMenuSection *menuSection = [self.menu.menuSections objectAtIndex:section];
-    return menuSection.sectionName;
+    if ([self hasMenu]) {
+        LCHMenuSection *menuSection = [self.menu.menuSections objectAtIndex:section];
+        return menuSection.sectionName;
+    }
+    return @"";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -113,7 +122,6 @@
     
     LCHMenuSection *menuSection = [_menu.menuSections objectAtIndex:indexPath.section];
     LCHMenuEntry *menuEntry = [menuSection.entries objectAtIndex:indexPath.row];
-    
     cell.textLabel.text = menuEntry.entryName;
     
     return cell;
@@ -138,55 +146,9 @@
     return sectionHeaderView;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (BOOL)hasMenu
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return self.menu.menuSections.count > 0;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end
