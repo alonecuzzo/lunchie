@@ -10,12 +10,15 @@
 #import "LCHStoredVenue.h"
 #import "LCHStoredVenueData.h"
 #import "LCHModel.h"
+#import "LCHColorHelper.h"
+#import "LCHFontHelper.h"
 
 @interface LCHReviewViewController ()
 
 @property(nonatomic) HPGrowingTextView *growingTextView;
 @property(nonatomic) UIView *containerView;
 @property(nonatomic) NSArray *comments;
+@property(nonatomic) UIView *navBar;
 
 @end
 
@@ -38,37 +41,60 @@
     
     [self refreshComments];
     
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
+    _navBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
+    _navBar.backgroundColor = [LCHColorHelper lunchieRed];
+    
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 30, [UIImage imageNamed:@"backButton"].size.width, [UIImage imageNamed:@"backButton"].size.height)];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"backButton"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [_navBar addSubview:backButton];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, _navBar.frame.size.width, 20)];
+    titleLabel.font = [LCHFontHelper getFont:LCHFontSullivanFill withSize:LCHFontSizeSmall];
+    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.text = @"Reviews";
+    
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _navBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - _navBar.frame.size.height)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
     
-    float containerHeight = 40.0f;
-    float buttonWidth = 40.0f;
+    float containerHeight = 50.0f;
+    float buttonWidth = 90.0f;
     
     _containerView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - containerHeight, self.view.frame.size.width, containerHeight)];
-    _containerView.backgroundColor = [UIColor redColor];
+    _containerView.backgroundColor = [LCHColorHelper lunchieBlack];
     [self.view addSubview:_containerView];
     _containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     
-    _growingTextView = [[HPGrowingTextView alloc] initWithFrame:CGRectMake(0, 3, _containerView.frame.size.width - buttonWidth, containerHeight)];
+    _growingTextView = [[HPGrowingTextView alloc] initWithFrame:CGRectMake(0, 9, _containerView.frame.size.width - buttonWidth, containerHeight)];
     _growingTextView.placeholder = @"Leave a Review";
-    _growingTextView.contentInset = UIEdgeInsetsMake(3, 3, 0, 0);
+    _growingTextView.contentInset = UIEdgeInsetsMake(7, 7, 0, 0);
     _growingTextView.delegate = self;
     _growingTextView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [_containerView addSubview:_growingTextView];
     
-    UIButton *sendButton = [[UIButton alloc] initWithFrame:CGRectMake(_growingTextView.frame.size.width + 5, 3, buttonWidth, 38)];
-    [sendButton setTitle:@"send" forState:UIControlStateNormal];
-    [sendButton setBackgroundColor:[UIColor blackColor]];
+    UIButton *sendButton = [[UIButton alloc] initWithFrame:CGRectMake(_growingTextView.frame.size.width + 5, 0, buttonWidth - 5, containerHeight - 3)];
+    [sendButton setTitle:@"Send" forState:UIControlStateNormal];
+    [sendButton setBackgroundColor:[LCHColorHelper lunchieRed]];
+    sendButton.titleLabel.font = [LCHFontHelper getFont:LCHFontSullivanFill withSize:LCHFontSizeSmall];
     [sendButton addTarget:self action:@selector(saveComment) forControlEvents:UIControlEventTouchUpInside];
     [_containerView addSubview:sendButton];
+    
+    [self.view addSubview:_navBar];
+    [_navBar addSubview:titleLabel];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     self.navigationController.navigationBar.topItem.title = @"Leave a Review";
+}
+
+- (void)backButtonPressed
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)refreshComments
@@ -177,6 +203,9 @@
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.textLabel.font = [LCHFontHelper getFont:LCHFontSullivanFill withSize:LCHFontSizeSmall];
+        cell.textLabel.textColor = [LCHColorHelper lunchieBlack];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     cell.textLabel.text = [_comments objectAtIndex:indexPath.row];
