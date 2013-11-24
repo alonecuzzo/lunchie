@@ -118,6 +118,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.textLabel.font = [LCHFontHelper getFont:LCHFontSullivanFill withSize:LCHFontSizeSmall];
         cell.textLabel.textColor = [LCHColorHelper lunchieBlack];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     LCHMenuSection *menuSection = [_menu.menuSections objectAtIndex:indexPath.section];
