@@ -93,6 +93,7 @@
         _thumbsDownButton.alpha = 0;
         
         _reviewsButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(innerLeftMargin, _thumbsDownButton.frame.origin.y + _thumbsDownButton.frame.size.height + 10, _parentFrame.size.width - 2 * innerLeftMargin, 45)];
+        [_reviewsButton addTarget:self action:@selector(reviewsWasTapped) forControlEvents:UIControlEventTouchUpInside];
         _reviewsButton.alpha = 0;
         NSString *reviewsString = (self.venue.storedVenue && self.venue.storedVenue.data.comments.count > 0) ? [NSString stringWithFormat:@"Reviews(%d)", self.venue.storedVenue.data.comments.count] : @"Reviews(0)";
         [_reviewsButton setTitle:reviewsString forState:UIControlStateNormal];
@@ -104,7 +105,7 @@
         _menuButton.alpha = 0;
         
         _sendToFriendsButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(_menuButton.frame.origin.x, _menuButton.frame.origin.y + _menuButton.frame.size.height + 10, _menuButton.frame.size.width, 45)];
-        _reviewsButton.alpha = 0;
+        _sendToFriendsButton.alpha = 0;
         [_sendToFriendsButton setTitle:@"Send To Team" forState:UIControlStateNormal];
         _sendToFriendsButton.alpha = 0;
         
@@ -124,6 +125,11 @@
 {
     [self removeGestureRecognizer:tapGestureRecognizer];
     [self.venueDelegate venuePanelWasTapped:self];
+}
+
+- (void)reviewsWasTapped
+{
+    [self.venueDelegate reviewsWasTapped:self.venue];
 }
 
 - (void)openPanel

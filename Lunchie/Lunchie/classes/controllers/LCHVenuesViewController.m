@@ -16,6 +16,7 @@
 #import <EAIntroPage.h>
 #import <EAIntroView.h>
 #import "LCHStoredVenue.h"
+#import "LCHReviewViewController.h"
 
 @interface LCHVenuesViewController ()
 
@@ -102,6 +103,13 @@
         [venue.storedVenue toggleThumbsDowned];
         [[LCHModel sharedInstance] writeStoredVenue:venue.storedVenue];
     }
+}
+
+- (void)reviewsWasTapped:(LCHFoursquareVenue *)venue
+{
+    LCHReviewViewController *rvc = [[LCHReviewViewController alloc] init];
+    rvc.venue = venue;
+    [self.navigationController pushViewController:rvc animated:YES];
 }
 
 - (void)chooseVenuesToDisplay

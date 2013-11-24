@@ -16,6 +16,7 @@
 - (void)refreshVenues;
 - (void)venuePanelWasTapped:(LCHVenuePanel*)venuePanel;
 - (void)thumbsDownWasTapped:(LCHFoursquareVenue*)venue isThumbsDown:(BOOL)isThumbsDown;
+- (void)reviewsWasTapped:(LCHFoursquareVenue*)venue;
 
 @end
 
