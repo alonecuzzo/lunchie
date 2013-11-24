@@ -13,6 +13,7 @@
 
 @property(nonatomic) NSString *venueID;
 @property(nonatomic) NSString *venueName;
+@property(nonatomic) NSString *venueAddress;
 @property(nonatomic) LCHStoredVenue *storedVenue;
 
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary;

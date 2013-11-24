@@ -16,6 +16,8 @@
     if (self) {
         _venueID = [dictionary objectForKey:@"id"];
         _venueName = [dictionary objectForKey:@"name"];
+        NSDictionary *location = [dictionary objectForKey:@"location"];
+        _venueAddress = [location objectForKey:@"address"];
     }
     return self;
 }
