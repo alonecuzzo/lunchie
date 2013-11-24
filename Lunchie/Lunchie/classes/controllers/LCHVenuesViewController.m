@@ -16,6 +16,7 @@
 #import <EAIntroPage.h>
 #import <EAIntroView.h>
 #import "LCHStoredVenue.h"
+#import "LCHMenuTableViewController.h"
 #import "LCHReviewViewController.h"
 
 @interface LCHVenuesViewController ()
@@ -110,6 +111,13 @@
     LCHReviewViewController *rvc = [[LCHReviewViewController alloc] init];
     rvc.venue = venue;
     [self.navigationController pushViewController:rvc animated:YES];
+}
+
+- (void)menuWasTapped:(LCHFoursquareVenue *)venue
+{
+    LCHMenuTableViewController *mtvc = [[LCHMenuTableViewController alloc] init];
+    mtvc.venueID = venue.venueID;
+    [self.navigationController pushViewController:mtvc animated:YES];
 }
 
 - (void)chooseVenuesToDisplay
