@@ -7,11 +7,15 @@
 //
 
 #import "LCHIntroViewController.h"
-#import "LCHSignupViewController.h"
 #import "LCHFontHelper.h"
 #import "LCHIntroView.h"
+#import "LCHSocialManager.h"
+#import "LCHSignupPanelView.h"
 
 @interface LCHIntroViewController ()
+
+@property(nonatomic) LCHSocialManager *manager;
+@property(nonatomic) LCHSignupPanelView *signupPanelView;
 
 @end
 
@@ -21,7 +25,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        _manager = [[LCHSocialManager alloc] init];
     }
     return self;
 }
@@ -46,9 +50,15 @@
     page2.customView = page2View;
     [page2 setBgImage:[UIImage imageNamed:@"intro_bkgrnd_2"]];
     
-    EAIntroView *introView = [[EAIntroView alloc] initWithFrame:self.view.frame andPages:@[page1, page2]];
+    EAIntroPage *signupPage = [EAIntroPage page];
+    _signupPanelView = [[LCHSignupPanelView alloc] initWithFrame:CGRectMake(30, 70, self.view.frame.size.width - 60, 400)];
+    signupPage.customView = _signupPanelView;
+    [signupPage setBgImage:[UIImage imageNamed:@"intro_bkgrnd_2"]];
+    
+    EAIntroView *introView = [[EAIntroView alloc] initWithFrame:self.view.frame andPages:@[page1, page2, signupPage]];
     [introView.skipButton setHidden:YES];
     introView.delegate = self;
+    introView.swipeToExit = NO;
     [introView showInView:self.view animateDuration:0.0f];
 }
 
@@ -56,13 +66,30 @@
 
 - (void)introDidFinish:(EAIntroView *)introView
 {
-    LCHSignupViewController *suvc = [[LCHSignupViewController alloc] init];
-    [self.navigationController pushViewController:suvc animated:YES];
+    
 }
 
 - (void)intro:(EAIntroView *)introView pageAppeared:(EAIntroPage *)page withIndex:(NSInteger)pageIndex
 {
-    
+    [_signupPanelView hideKeyboard];
+}
+
+- (void)facebookPress
+{
+    [_manager fullnameFromFacebookWithCompletionBlock:^(NSString *fullName) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+//            _nameLabel.text = fullName;
+        });
+    }];
+}
+
+- (void)twitterPress
+{
+    [_manager screenameFromTwitterWithCompletionBlock:^(NSString *screename) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+//            _nameLabel.text = screename;
+        });
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,5 +97,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//- (BOOL)prefersStatusBarHidden
+//{
+//    return YES;
+//}
 
 @end

@@ -16,10 +16,8 @@ enum {
 typedef NSInteger LCHFont;
 
 enum {
-    LCHFontSizeSmall                  = 28,
-    LCHFontSizeCityNameLarge          = 40,
-    LCHFontSizeLogoLarge              = 75,
-    LCHFontSizeTemperatureReadingHuge = 220
+    LCHFontSizeSmall                  = 24,
+    LCHFontSizeCityNameLarge          = 40
 };
 typedef NSInteger LCHFontSize;
 

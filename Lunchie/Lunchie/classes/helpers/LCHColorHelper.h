@@ -13,5 +13,9 @@
 + (UIColor*)lunchieRed;
 
 + (UIColor*)lunchieLightGrey;
++ (UIColor*)lunchieDarkGrey;
++ (UIColor*)lunchieBlack;
+
++ (UIColor*)lunchiePurple;
 
 @end

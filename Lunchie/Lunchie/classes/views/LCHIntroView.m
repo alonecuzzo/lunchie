@@ -27,7 +27,7 @@
         
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(leftMargin, topMargin, labelWidth, 70)];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.font = [LCHFontHelper getFont:LCHFontSullivanFill withSize:LCHFontSizeSmall-4];
+        _titleLabel.font = [LCHFontHelper getFont:LCHFontSullivanFill withSize:LCHFontSizeSmall];
         _titleLabel.textColor = [LCHColorHelper lunchieLightGrey];
         _titleLabel.numberOfLines = 0;
         [self addSubview:_titleLabel];

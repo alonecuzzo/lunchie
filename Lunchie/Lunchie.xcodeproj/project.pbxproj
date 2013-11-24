@@ -33,6 +33,7 @@
 		8E37E4E4184161F80074AFB4 /* LCHColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E37E4E3184161F80074AFB4 /* LCHColorHelper.m */; };
 		8E37E4E7184166AE0074AFB4 /* LCHIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E37E4E6184166AE0074AFB4 /* LCHIntroView.m */; };
 		8E37E4E918416D8D0074AFB4 /* intro_bkgrnd_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E37E4E818416D8D0074AFB4 /* intro_bkgrnd_2.png */; };
+		8E37E4EF18416FE00074AFB4 /* LCHSignupPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E37E4EE18416FE00074AFB4 /* LCHSignupPanelView.m */; };
 		8E6252A2183EB56D00244D54 /* LCHMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A1183EB56D00244D54 /* LCHMenu.m */; };
 		8E6252A3183EB56D00244D54 /* LCHMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A1183EB56D00244D54 /* LCHMenu.m */; };
 		8E6252A6183EB58A00244D54 /* LCHMenuEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A5183EB58A00244D54 /* LCHMenuEntry.m */; };
@@ -62,8 +63,6 @@
 		8E6252DB1840085800244D54 /* LCHFacebookService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252D91840085800244D54 /* LCHFacebookService.m */; };
 		8E6252DE184060F900244D54 /* LCHIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252DD184060F900244D54 /* LCHIntroViewController.m */; };
 		8E6252DF184060F900244D54 /* LCHIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252DD184060F900244D54 /* LCHIntroViewController.m */; };
-		8E6252E21840683200244D54 /* LCHSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252E11840683200244D54 /* LCHSignupViewController.m */; };
-		8E6252E31840683200244D54 /* LCHSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252E11840683200244D54 /* LCHSignupViewController.m */; };
 		8E6252E618406AA200244D54 /* LCHSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252E518406AA200244D54 /* LCHSocialManager.m */; };
 		8E6252E718406AA200244D54 /* LCHSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252E518406AA200244D54 /* LCHSocialManager.m */; };
 		8E8BF21D1840F1810058262C /* LCHFakeTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8BF21C1840F1810058262C /* LCHFakeTeam.m */; };
@@ -130,6 +129,8 @@
 		8E37E4E5184166AE0074AFB4 /* LCHIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHIntroView.h; path = classes/views/LCHIntroView.h; sourceTree = "<group>"; };
 		8E37E4E6184166AE0074AFB4 /* LCHIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHIntroView.m; path = classes/views/LCHIntroView.m; sourceTree = "<group>"; };
 		8E37E4E818416D8D0074AFB4 /* intro_bkgrnd_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = intro_bkgrnd_2.png; path = assets/images/intro/intro_bkgrnd_2.png; sourceTree = "<group>"; };
+		8E37E4ED18416FE00074AFB4 /* LCHSignupPanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHSignupPanelView.h; path = classes/views/LCHSignupPanelView.h; sourceTree = "<group>"; };
+		8E37E4EE18416FE00074AFB4 /* LCHSignupPanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHSignupPanelView.m; path = classes/views/LCHSignupPanelView.m; sourceTree = "<group>"; };
 		8E6252A0183EB56D00244D54 /* LCHMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHMenu.h; path = classes/model/LCHMenu.h; sourceTree = "<group>"; };
 		8E6252A1183EB56D00244D54 /* LCHMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHMenu.m; path = classes/model/LCHMenu.m; sourceTree = "<group>"; };
 		8E6252A4183EB58A00244D54 /* LCHMenuEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHMenuEntry.h; path = classes/model/LCHMenuEntry.h; sourceTree = "<group>"; };
@@ -160,8 +161,6 @@
 		8E6252D91840085800244D54 /* LCHFacebookService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHFacebookService.m; path = classes/services/LCHFacebookService.m; sourceTree = "<group>"; };
 		8E6252DC184060F900244D54 /* LCHIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHIntroViewController.h; path = classes/controllers/LCHIntroViewController.h; sourceTree = "<group>"; };
 		8E6252DD184060F900244D54 /* LCHIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHIntroViewController.m; path = classes/controllers/LCHIntroViewController.m; sourceTree = "<group>"; };
-		8E6252E01840683200244D54 /* LCHSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHSignupViewController.h; path = classes/controllers/LCHSignupViewController.h; sourceTree = "<group>"; };
-		8E6252E11840683200244D54 /* LCHSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHSignupViewController.m; path = classes/controllers/LCHSignupViewController.m; sourceTree = "<group>"; };
 		8E6252E418406AA200244D54 /* LCHSocialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHSocialManager.h; path = classes/management/LCHSocialManager.h; sourceTree = "<group>"; };
 		8E6252E518406AA200244D54 /* LCHSocialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHSocialManager.m; path = classes/management/LCHSocialManager.m; sourceTree = "<group>"; };
 		8E8BF21B1840F1810058262C /* LCHFakeTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHFakeTeam.h; path = classes/model/fakes/LCHFakeTeam.h; sourceTree = "<group>"; };
@@ -318,8 +317,6 @@
 				8E6252B1183EC11E00244D54 /* LCHMenuTableViewController.m */,
 				8E6252B4183F02A400244D54 /* LCHReviewViewController.h */,
 				8E6252B5183F02A400244D54 /* LCHReviewViewController.m */,
-				8E6252E01840683200244D54 /* LCHSignupViewController.h */,
-				8E6252E11840683200244D54 /* LCHSignupViewController.m */,
 				8E367E7E183DCB33001792E1 /* LCHVenuesTableViewController.h */,
 				8E367E7F183DCB33001792E1 /* LCHVenuesTableViewController.m */,
 			);
@@ -388,6 +385,8 @@
 				8E6252C1183F06F600244D54 /* HPGrowingTextView */,
 				8E37E4E5184166AE0074AFB4 /* LCHIntroView.h */,
 				8E37E4E6184166AE0074AFB4 /* LCHIntroView.m */,
+				8E37E4ED18416FE00074AFB4 /* LCHSignupPanelView.h */,
+				8E37E4EE18416FE00074AFB4 /* LCHSignupPanelView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -657,7 +656,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E6252E21840683200244D54 /* LCHSignupViewController.m in Sources */,
 				8E6252E618406AA200244D54 /* LCHSocialManager.m in Sources */,
 				8EABBF4B183E808900A3D705 /* LCHFoursquareVenue.m in Sources */,
 				8E367E80183DCB33001792E1 /* LCHVenuesTableViewController.m in Sources */,
@@ -666,6 +664,7 @@
 				8E6252DA1840085800244D54 /* LCHFacebookService.m in Sources */,
 				8E6252BF183F06F200244D54 /* HPTextViewInternal.m in Sources */,
 				8E6252BD183F06F200244D54 /* HPGrowingTextView.m in Sources */,
+				8E37E4EF18416FE00074AFB4 /* LCHSignupPanelView.m in Sources */,
 				8EABBF46183E805100A3D705 /* LCHFoursquareVenueBuilder.m in Sources */,
 				8E6252B2183EC11E00244D54 /* LCHMenuTableViewController.m in Sources */,
 				8E6252AA183EB68400244D54 /* LCHMenuSection.m in Sources */,
@@ -705,7 +704,6 @@
 				8E367E60183DBEEB001792E1 /* LunchieTests.m in Sources */,
 				8E6252CB183FAF4400244D54 /* LCHStoredVenueDatabase.m in Sources */,
 				8EABBF59183EAEF400A3D705 /* LCHFoursquareVenueViewController.m in Sources */,
-				8E6252E31840683200244D54 /* LCHSignupViewController.m in Sources */,
 				8EABBF47183E805100A3D705 /* LCHFoursquareVenueBuilder.m in Sources */,
 				8E6252D5183FFD2400244D54 /* LCHTwitterService.m in Sources */,
 				8E367E81183DCB33001792E1 /* LCHVenuesTableViewController.m in Sources */,
