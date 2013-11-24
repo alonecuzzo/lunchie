@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-#import "LCHVenuesTableViewController.h"
 #import "LCHFoursquareVenueMenuBuilder.h"
+#import "LCHVenuesViewController.h"
 #import "LCHMenuTableViewController.h"
 
 @class LCHFoursquareService;
@@ -31,7 +31,7 @@
 @property(nonatomic) LCHFoursquareVenueBuilder *foursquareVenueBuilder;
 @property(nonatomic) LCHFoursquareVenueMenuBuilder *foursquareVenueMenuBuilder;
 @property(nonatomic) LCHFoursquareService *foursquareService;
-@property(weak) id <LCHVenuesTableViewDelegate> delegate;
+@property(weak) id <LCHVenuesDelegate> delegate;
 @property(weak) id <LCHMenuTableViewControllerDelegate> menuDelegate;
 
 - (void)buildVenuesWithJSON:(NSDictionary *)json;

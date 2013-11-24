@@ -96,16 +96,19 @@
 
 - (void)facebookPressed
 {
+    [self hideKeyboard];
     [self.introDelegate facebookButtonWasPressedForNameTextView:_yourNameTextView];
 }
 
 - (void)twitterPressed
 {
+    [self hideKeyboard];
     [self.introDelegate twitterButtonWasPressedForNameTextView:_yourNameTextView];
 }
 
 - (void)donePressed
 {
+    [self hideKeyboard];
     [self.introDelegate donePressed];
 }
 

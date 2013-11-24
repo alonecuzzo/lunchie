@@ -7,7 +7,6 @@
 //
 
 #import "LCHAppDelegate.h"
-#import "LCHVenuesTableViewController.h"
 #import "LCHModel.h"
 #import "LCHIntroViewController.h"
 #import "LCHFakeTeam.h"

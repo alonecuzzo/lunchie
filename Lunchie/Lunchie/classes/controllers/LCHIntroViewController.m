@@ -11,6 +11,7 @@
 #import "LCHIntroView.h"
 #import "LCHSocialManager.h"
 #import "LCHSignupPanelView.h"
+#import "LCHVenuesViewController.h"
 
 @interface LCHIntroViewController ()
 
@@ -95,7 +96,8 @@
 
 - (void)donePressed
 {
-    
+    LCHVenuesViewController *vvc = [[LCHVenuesViewController alloc] init];
+    [self.navigationController pushViewController:vvc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

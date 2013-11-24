@@ -22,8 +22,6 @@
 		8E367E60183DBEEB001792E1 /* LunchieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E5F183DBEEB001792E1 /* LunchieTests.m */; };
 		8E367E7C183DCB23001792E1 /* LCHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E7B183DCB23001792E1 /* LCHAppDelegate.m */; };
 		8E367E7D183DCB23001792E1 /* LCHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E7B183DCB23001792E1 /* LCHAppDelegate.m */; };
-		8E367E80183DCB33001792E1 /* LCHVenuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E7F183DCB33001792E1 /* LCHVenuesTableViewController.m */; };
-		8E367E81183DCB33001792E1 /* LCHVenuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E367E7F183DCB33001792E1 /* LCHVenuesTableViewController.m */; };
 		8E367E83183DCF07001792E1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E367E82183DCF07001792E1 /* Security.framework */; };
 		8E37E4D618415D9C0074AFB4 /* intro_bkgrnd_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E37E4D518415D9C0074AFB4 /* intro_bkgrnd_1.png */; };
 		8E37E4DA18415FCE0074AFB4 /* LCHFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E37E4D918415FCE0074AFB4 /* LCHFontHelper.m */; };
@@ -35,6 +33,7 @@
 		8E37E4E918416D8D0074AFB4 /* intro_bkgrnd_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E37E4E818416D8D0074AFB4 /* intro_bkgrnd_2.png */; };
 		8E37E4EF18416FE00074AFB4 /* LCHSignupPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E37E4EE18416FE00074AFB4 /* LCHSignupPanelView.m */; };
 		8E37E4F318417C8D0074AFB4 /* LCHSocialMediaButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E37E4F218417C8D0074AFB4 /* LCHSocialMediaButton.m */; };
+		8E37E4F6184245340074AFB4 /* LCHVenuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E37E4F5184245340074AFB4 /* LCHVenuesViewController.m */; };
 		8E6252A2183EB56D00244D54 /* LCHMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A1183EB56D00244D54 /* LCHMenu.m */; };
 		8E6252A3183EB56D00244D54 /* LCHMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A1183EB56D00244D54 /* LCHMenu.m */; };
 		8E6252A6183EB58A00244D54 /* LCHMenuEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6252A5183EB58A00244D54 /* LCHMenuEntry.m */; };
@@ -116,8 +115,6 @@
 		8E367E5F183DBEEB001792E1 /* LunchieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LunchieTests.m; sourceTree = "<group>"; };
 		8E367E7A183DCB23001792E1 /* LCHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHAppDelegate.h; path = classes/delegates/LCHAppDelegate.h; sourceTree = "<group>"; };
 		8E367E7B183DCB23001792E1 /* LCHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHAppDelegate.m; path = classes/delegates/LCHAppDelegate.m; sourceTree = "<group>"; };
-		8E367E7E183DCB33001792E1 /* LCHVenuesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHVenuesTableViewController.h; path = classes/controllers/LCHVenuesTableViewController.h; sourceTree = "<group>"; };
-		8E367E7F183DCB33001792E1 /* LCHVenuesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHVenuesTableViewController.m; path = classes/controllers/LCHVenuesTableViewController.m; sourceTree = "<group>"; };
 		8E367E82183DCF07001792E1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		8E37E4D518415D9C0074AFB4 /* intro_bkgrnd_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = intro_bkgrnd_1.png; path = assets/images/intro/intro_bkgrnd_1.png; sourceTree = "<group>"; };
 		8E37E4D818415FCE0074AFB4 /* LCHFontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHFontHelper.h; path = classes/helpers/LCHFontHelper.h; sourceTree = "<group>"; };
@@ -134,6 +131,8 @@
 		8E37E4EE18416FE00074AFB4 /* LCHSignupPanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHSignupPanelView.m; path = classes/views/LCHSignupPanelView.m; sourceTree = "<group>"; };
 		8E37E4F118417C8D0074AFB4 /* LCHSocialMediaButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHSocialMediaButton.h; path = classes/views/button/LCHSocialMediaButton.h; sourceTree = "<group>"; };
 		8E37E4F218417C8D0074AFB4 /* LCHSocialMediaButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHSocialMediaButton.m; path = classes/views/button/LCHSocialMediaButton.m; sourceTree = "<group>"; };
+		8E37E4F4184245340074AFB4 /* LCHVenuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHVenuesViewController.h; path = classes/controllers/LCHVenuesViewController.h; sourceTree = "<group>"; };
+		8E37E4F5184245340074AFB4 /* LCHVenuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHVenuesViewController.m; path = classes/controllers/LCHVenuesViewController.m; sourceTree = "<group>"; };
 		8E6252A0183EB56D00244D54 /* LCHMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHMenu.h; path = classes/model/LCHMenu.h; sourceTree = "<group>"; };
 		8E6252A1183EB56D00244D54 /* LCHMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHMenu.m; path = classes/model/LCHMenu.m; sourceTree = "<group>"; };
 		8E6252A4183EB58A00244D54 /* LCHMenuEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHMenuEntry.h; path = classes/model/LCHMenuEntry.h; sourceTree = "<group>"; };
@@ -320,8 +319,8 @@
 				8E6252B1183EC11E00244D54 /* LCHMenuTableViewController.m */,
 				8E6252B4183F02A400244D54 /* LCHReviewViewController.h */,
 				8E6252B5183F02A400244D54 /* LCHReviewViewController.m */,
-				8E367E7E183DCB33001792E1 /* LCHVenuesTableViewController.h */,
-				8E367E7F183DCB33001792E1 /* LCHVenuesTableViewController.m */,
+				8E37E4F4184245340074AFB4 /* LCHVenuesViewController.h */,
+				8E37E4F5184245340074AFB4 /* LCHVenuesViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -671,7 +670,6 @@
 			files = (
 				8E6252E618406AA200244D54 /* LCHSocialManager.m in Sources */,
 				8EABBF4B183E808900A3D705 /* LCHFoursquareVenue.m in Sources */,
-				8E367E80183DCB33001792E1 /* LCHVenuesTableViewController.m in Sources */,
 				8EABBF58183EAEF400A3D705 /* LCHFoursquareVenueViewController.m in Sources */,
 				8E37E4E4184161F80074AFB4 /* LCHColorHelper.m in Sources */,
 				8E6252DA1840085800244D54 /* LCHFacebookService.m in Sources */,
@@ -687,6 +685,7 @@
 				8E367E7C183DCB23001792E1 /* LCHAppDelegate.m in Sources */,
 				8E6252B6183F02A400244D54 /* LCHReviewViewController.m in Sources */,
 				8EABBF3C183E679A00A3D705 /* LCHFoursquareService.m in Sources */,
+				8E37E4F6184245340074AFB4 /* LCHVenuesViewController.m in Sources */,
 				8EABBF54183E967800A3D705 /* LCHModel.m in Sources */,
 				8E8BF21D1840F1810058262C /* LCHFakeTeam.m in Sources */,
 				8E6252AE183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m in Sources */,
@@ -720,7 +719,6 @@
 				8EABBF59183EAEF400A3D705 /* LCHFoursquareVenueViewController.m in Sources */,
 				8EABBF47183E805100A3D705 /* LCHFoursquareVenueBuilder.m in Sources */,
 				8E6252D5183FFD2400244D54 /* LCHTwitterService.m in Sources */,
-				8E367E81183DCB33001792E1 /* LCHVenuesTableViewController.m in Sources */,
 				8E6252BE183F06F200244D54 /* HPGrowingTextView.m in Sources */,
 				8EABBF3D183E679A00A3D705 /* LCHFoursquareService.m in Sources */,
 				8E6252AF183EB7DA00244D54 /* LCHFoursquareVenueMenuBuilder.m in Sources */,
