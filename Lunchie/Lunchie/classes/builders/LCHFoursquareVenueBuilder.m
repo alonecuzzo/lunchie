@@ -23,7 +23,6 @@
         if ([[LCHModel sharedInstance] getStoredVenueForVenueID:venue.venueID]) {
             venue.storedVenue = [[LCHModel sharedInstance] getStoredVenueForVenueID:venue.venueID];
             if (venue.storedVenue.data.isThumbsDowned && kIsThumbsDownFilterOn == 1) {
-                NSLog(@"venue is thumbsdowned: %@", venue.venueName);
                 continue;
             }
         }

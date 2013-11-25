@@ -173,6 +173,7 @@
     if (!venue.storedVenue) {
         NSDictionary *svDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], kHasBeenVisitedKey, venue.venueID, kVenueIDKey, nil];
         LCHStoredVenue *sv = [[LCHStoredVenue alloc] initWithDictionary:svDict];
+        sv.data.hasBeenVisited = YES;
         venue.storedVenue = sv;
         [[LCHModel sharedInstance] writeStoredVenue:sv];
     } else {
