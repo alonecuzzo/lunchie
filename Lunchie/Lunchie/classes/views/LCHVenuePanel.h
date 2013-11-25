@@ -17,5 +17,6 @@
 - (instancetype)initWithVenue:(LCHFoursquareVenue*)venue andParentFrame:(CGRect)frame andImageName:(NSString*)imageName;
 - (void)openPanel;
 - (void)closePanel;
+- (void)refreshReviewButton;
 
 @end

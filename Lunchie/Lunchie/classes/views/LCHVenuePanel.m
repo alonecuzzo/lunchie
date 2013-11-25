@@ -116,8 +116,7 @@
         _reviewsButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(innerLeftMargin, _heartView.frame.origin.y + _heartView.frame.size.height + 90, _parentFrame.size.width - 2 * innerLeftMargin, 45)];
         [_reviewsButton addTarget:self action:@selector(reviewsWasTapped) forControlEvents:UIControlEventTouchUpInside];
         _reviewsButton.alpha = 0;
-        NSString *reviewsString = (self.venue.storedVenue && self.venue.storedVenue.data.comments.count > 0) ? [NSString stringWithFormat:@"Reviews(%lu)", (unsigned long)self.venue.storedVenue.data.comments.count] : @"Reviews(0)";
-        [_reviewsButton setTitle:reviewsString forState:UIControlStateNormal];
+        [self refreshReviewButton];
         [_reviewsButton setBackgroundColor:[LCHColorHelper lunchiePurple]];
         
         _menuButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(_reviewsButton.frame.origin.x, _reviewsButton.frame.origin.y + _reviewsButton.frame.size.height + 10, _reviewsButton.frame.size.width, 45)];
@@ -136,6 +135,12 @@
             _thumbsDownButton.selected = self.venue.storedVenue.data.isThumbsDowned;
     }
     return self;
+}
+
+- (void)refreshReviewButton
+{
+    NSString *reviewsString = (self.venue.storedVenue && self.venue.storedVenue.data.comments.count > 0) ? [NSString stringWithFormat:@"Reviews(%lu)", (unsigned long)self.venue.storedVenue.data.comments.count] : @"Reviews(0)";
+    [_reviewsButton setTitle:reviewsString forState:UIControlStateNormal];
 }
 
 - (void)thumbsDownButtonPressed

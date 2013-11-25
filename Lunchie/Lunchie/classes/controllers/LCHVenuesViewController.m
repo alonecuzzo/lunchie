@@ -27,6 +27,7 @@
 @property(nonatomic) NSMutableArray *venuesToDisplay;
 @property(nonatomic) EAIntroView *venuePagerView;
 @property(nonatomic) UIView *panelParent;
+@property(nonatomic) LCHVenuePanel *openPanel;
 
 @end
 
@@ -59,6 +60,14 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [_manager searchVenuesForLocation:location];
     });
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (_openPanel)
+        [_openPanel refreshReviewButton];
 }
 
 #pragma mark - delegate stuff
@@ -108,6 +117,7 @@
 
 - (void)venuePanelWasTapped:(LCHVenuePanel *)venuePanel
 {
+    _openPanel = venuePanel;
     _panelParent = venuePanel.superview;
     [venuePanel removeFromSuperview];
     [self.view addSubview:venuePanel];
@@ -149,6 +159,7 @@
 
 - (void)panelDidFinishClosing:(LCHVenuePanel *)venuePanel
 {
+    _openPanel = nil;
     [venuePanel removeFromSuperview];
     [_panelParent addSubview:venuePanel];
 }
@@ -165,11 +176,6 @@
         [_venuesToDisplay addObject:_venues[index]];
         NSLog(@"venue: %@", [(LCHFoursquareVenue*)_venues[index] venueName]);
     }
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
