@@ -19,7 +19,7 @@
 #import "LCHMenuTableViewController.h"
 #import "LCHReviewViewController.h"
 
-@interface LCHVenuesViewController ()
+@interface LCHVenuesViewController () <UIAlertViewDelegate>
 
 @property(nonatomic) UIView *navBar;
 @property(nonatomic) LCHNetworkManager *manager;
@@ -168,6 +168,15 @@
         venue.storedVenue.data.hasBeenVisited = YES;
         [[LCHModel sharedInstance] writeStoredVenue:venue.storedVenue];
     }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Great Success!" message:@"The menu has been sent to your team." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Okay", nil];
+        [alert show];
+    });
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self backButtonwasTapped:_openPanel];
 }
 
 - (void)panelDidFinishClosing:(LCHVenuePanel *)venuePanel
