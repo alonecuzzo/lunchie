@@ -107,27 +107,30 @@
         [self addSubview:_addressLabel];
         _originalAddressFrame = _addressLabel.frame;
         
-        _thumbsDownButton = [[UIButton alloc] initWithFrame:CGRectMake(_heartView.frame.origin.x + 74, _heartView.frame.origin.y + 55, [UIImage imageNamed:@"thumbsDownIconNormal"].size.width + 10, [UIImage imageNamed:@"thumbsDownIconNormal"].size.height + 10)];
+        _thumbsDownButton = [[UIButton alloc] initWithFrame:CGRectMake(_heartView.frame.origin.x + 265, _heartView.frame.origin.y - 140, [UIImage imageNamed:@"thumbsDownIconNormal"].size.width + 10, [UIImage imageNamed:@"thumbsDownIconNormal"].size.height + 10)];
         [_thumbsDownButton addTarget:self action:@selector(thumbsDownButtonPressed) forControlEvents:UIControlEventTouchUpInside];
         [_thumbsDownButton setImage:[UIImage imageNamed:@"thumbsDownIconNormal"] forState:UIControlStateNormal];
         [_thumbsDownButton setImage:[UIImage imageNamed:@"thumbsDownIconSelected"] forState:UIControlStateSelected];
         _thumbsDownButton.alpha = 0;
         
-        _reviewsButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(innerLeftMargin, _thumbsDownButton.frame.origin.y + _thumbsDownButton.frame.size.height + 10, _parentFrame.size.width - 2 * innerLeftMargin, 45)];
+        _reviewsButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(innerLeftMargin, _heartView.frame.origin.y + _heartView.frame.size.height + 90, _parentFrame.size.width - 2 * innerLeftMargin, 45)];
         [_reviewsButton addTarget:self action:@selector(reviewsWasTapped) forControlEvents:UIControlEventTouchUpInside];
         _reviewsButton.alpha = 0;
         NSString *reviewsString = (self.venue.storedVenue && self.venue.storedVenue.data.comments.count > 0) ? [NSString stringWithFormat:@"Reviews(%lu)", (unsigned long)self.venue.storedVenue.data.comments.count] : @"Reviews(0)";
         [_reviewsButton setTitle:reviewsString forState:UIControlStateNormal];
+        [_reviewsButton setBackgroundColor:[LCHColorHelper lunchiePurple]];
         
         _menuButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(_reviewsButton.frame.origin.x, _reviewsButton.frame.origin.y + _reviewsButton.frame.size.height + 10, _reviewsButton.frame.size.width, 45)];
         [_menuButton addTarget:self action:@selector(menuWasTapped) forControlEvents:UIControlEventTouchUpInside];
         _menuButton.alpha = 0;
         [_menuButton setTitle:@"Menu" forState:UIControlStateNormal];
+        [_menuButton setBackgroundColor:[LCHColorHelper lunchiePurple]];
         
         _sendToFriendsButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(_menuButton.frame.origin.x, _menuButton.frame.origin.y + _menuButton.frame.size.height + 10, _menuButton.frame.size.width, 45)];
         [_sendToFriendsButton addTarget:self action:@selector(menuWasTapped) forControlEvents:UIControlEventTouchUpInside];
         _sendToFriendsButton.alpha = 0;
         [_sendToFriendsButton setTitle:@"Send To Team" forState:UIControlStateNormal];
+        [_sendToFriendsButton setBackgroundColor:[LCHColorHelper lunchieRed]];
         
         if (self.venue.storedVenue)
             _thumbsDownButton.selected = self.venue.storedVenue.data.isThumbsDowned;
