@@ -18,6 +18,7 @@
 #import "LCHStoredVenue.h"
 #import "LCHMenuTableViewController.h"
 #import "LCHReviewViewController.h"
+#import "LCHFontHelper.h"
 
 @interface LCHVenuesViewController () <UIAlertViewDelegate>
 
@@ -28,6 +29,7 @@
 @property(nonatomic) EAIntroView *venuePagerView;
 @property(nonatomic) UIView *panelParent;
 @property(nonatomic) LCHVenuePanel *openPanel;
+@property(nonatomic) UILabel *preloader;
 
 @end
 
@@ -55,6 +57,14 @@
     _navBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
     _navBar.backgroundColor = [LCHColorHelper lunchieRed];
     [self.view addSubview:_navBar];
+    
+    CGSize preloaderSize = CGSizeMake(280, 30);
+    _preloader = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) - (preloaderSize.width / 2), (self.view.frame.size.height / 2) - (preloaderSize.height / 2), preloaderSize.width, preloaderSize.height)];
+    _preloader.text = @"Loading Venues, please wait...";
+    _preloader.font = [LCHFontHelper getFont:LCHFontSullivanFill withSize:LCHFontSizeSmall];
+    _preloader.textColor = [UIColor whiteColor];
+    _preloader.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:_preloader];
     
     CLLocation *location = [[CLLocation alloc] initWithLatitude:40.712840 longitude:-74.007742];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
