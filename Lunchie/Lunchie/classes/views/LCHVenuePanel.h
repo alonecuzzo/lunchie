@@ -16,5 +16,6 @@
 
 - (instancetype)initWithVenue:(LCHFoursquareVenue*)venue andParentFrame:(CGRect)frame;
 - (void)openPanel;
+- (void)closePanel;
 
 @end

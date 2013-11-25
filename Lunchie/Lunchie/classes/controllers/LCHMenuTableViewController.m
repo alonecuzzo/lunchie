@@ -71,7 +71,6 @@
 - (void)refreshMenu
 {
     _menu = [[LCHModel sharedInstance] currentMenu];
-    NSLog(@"menu section count:: %d", _menu.menuSections.count);
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
@@ -140,7 +139,7 @@
     sectionLabel.textColor = [UIColor whiteColor];
     sectionLabel.font = [LCHFontHelper getFont:LCHFontSullivanFill withSize:LCHFontSizeSmall];
     LCHMenuSection *menuSection = [self.menu.menuSections objectAtIndex:section];
-    sectionLabel.text = menuSection.sectionName;
+    sectionLabel.text = ([self hasMenu]) ? menuSection.sectionName : @"This venue doesn't have a menu!";
     UIView *sectionHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 45)];
     sectionHeaderView.backgroundColor = [LCHColorHelper lunchieBlack];
     [sectionHeaderView addSubview:sectionLabel];

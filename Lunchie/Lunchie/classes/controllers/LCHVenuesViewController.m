@@ -26,6 +26,7 @@
 @property(nonatomic) NSArray *venues;
 @property(nonatomic) NSMutableArray *venuesToDisplay;
 @property(nonatomic) EAIntroView *venuePagerView;
+@property(nonatomic) UIView *panelParent;
 
 @end
 
@@ -87,6 +88,7 @@
 
 - (void)venuePanelWasTapped:(LCHVenuePanel *)venuePanel
 {
+    _panelParent = venuePanel.superview;
     [_venuePagerView setHidden:YES];
     [venuePanel removeFromSuperview];
     [self.view addSubview:venuePanel];
@@ -118,6 +120,18 @@
     LCHMenuTableViewController *mtvc = [[LCHMenuTableViewController alloc] init];
     mtvc.venueID = venue.venueID;
     [self.navigationController pushViewController:mtvc animated:YES];
+}
+
+- (void)backButtonwasTapped:(LCHVenuePanel *)venuePanel
+{
+    [_venuePagerView setHidden:NO];
+    [venuePanel closePanel];
+}
+
+- (void)panelDidFinishClosing:(LCHVenuePanel *)venuePanel
+{
+    [venuePanel removeFromSuperview];
+    [_panelParent addSubview:venuePanel];
 }
 
 - (void)chooseVenuesToDisplay
