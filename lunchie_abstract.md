@@ -32,11 +32,16 @@ All of the functional requirements assigned were met.
 
 **Design Patterns**
 I like to code iteratively.  As Donald Knuth said, "premature optimization is the root of all evil" and I approached this project (sans tests) the same.  Because of my overall strategy and priorities of this project, I was only able to iterate a limited number of times.  I'll address the patterns that I used, and the ones that I left out and would add had I had more time.
+
 1. **Singleton Pattern:** There is always a single instance of the model, LCHModel.  The plus side of this is that I never have to worry about my model being overwritten or using it in an unexpected state, i.e. without the setup code that is done in my managers.
-2. **Façade Pattern:** The LCHNetworkManager sits as a façade between it's service and builders.  This hides the implementation details of a manager call from the rest of the app.  This allows the addition of any number of services/builders to the manager without affecting the rest of the app.  
+
+2. **Façade Pattern:** The LCHNetworkManager sits as a façade between it's service and builders.  This hides the implementation details of a manager call from the rest of the app.  This allows the addition of any number of services/builders to the manager without affecting the rest of the app.
+  
 3. **Builder Pattern:** The LCHFoursquareVenueBuilder and LCHFoursquareVenueMenuBuilders abstract the json response parsing from the manager.  If Foursquare were to ever change the output of their api, or we were to migrate to a different api version, all I'd have to do is update the corresponding builder and I'd ensure that the rest of the app works fine.
 4. **MVC & Delegate Patterns:** It is impossible to write a Cocoa app without implicitly using MVC, as it is a crucial pattern found in the framework.  It is very possible to break this pattern explicitly.  In my code, namely in the LCHVenuePanel, I adhere to this pattern by never calling my model singleton directly.  Using the delegate pattern I have the Panel's delegate, which is a view controller, handle all interfacing with the app's model.
+
 5. **General Inheritance:** This is an area that the code could use some work.  I try to avoid using UINavigationBar as it is weird and unintuitive to me.  I like to use my own navigation bar, but the UINavigationViewController is a great controller to have.  I would've rather had a parent view controller that my other vc's would've inherited from with just a single instance of my custom navbar and other stuff put in there.  Because there are only 3 vc's that need to use the code, really 2, I thought the duplication negligible, but it still can be improved upon.
+
 6. **External Libraries Used:**
 EAIntroView: This helped with the horizontal paging.  It is code that I could've written myself, but having it saved time.
 FSNetworking: MKNetworkKit was overkill for this project.  I needed a simple library so I could grab venues from Foursquare.
@@ -50,7 +55,7 @@ I thought Core Data was overkill for this assignment.  In a more robust approach
 
 I kept the comments to a minimum, and come from the school of thought that comments in code are mostly evil.  I the code and the unit tests should be written clearly enough that they serve as documentation themselves.
 
-**Summary**
+**Summary:**
 This challenge was a lot of fun.  It pushed me in a lot of ways, and I honestly am very proud of what I was able to produce in such a short period of time.  Please do not hesitate to contact me if you have any questions or would like me to clarify any parts of the code.
 
 Thanks for the opportunity!
