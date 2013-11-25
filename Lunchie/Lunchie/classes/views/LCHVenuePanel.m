@@ -40,7 +40,7 @@
     CGRect _originalBkgrndViewFrame;
 }
 
-- (instancetype)initWithVenue:(LCHFoursquareVenue*)venue andParentFrame:(CGRect)frame
+- (instancetype)initWithVenue:(LCHFoursquareVenue*)venue andParentFrame:(CGRect)frame andImageName:(NSString*)imageName
 {
     self.venue = venue;
     
@@ -83,7 +83,7 @@
         [_venueImageView setBackgroundColor:[LCHColorHelper lunchiePurple]];
         _venueImageView.clipsToBounds = YES;
         [self addSubview:_venueImageView];
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sauce"]];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
         [_venueImageView addSubview:imageView];
         _originalVenueImageFrame = _venueImageView.frame;
         
@@ -116,7 +116,7 @@
         _reviewsButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(innerLeftMargin, _thumbsDownButton.frame.origin.y + _thumbsDownButton.frame.size.height + 10, _parentFrame.size.width - 2 * innerLeftMargin, 45)];
         [_reviewsButton addTarget:self action:@selector(reviewsWasTapped) forControlEvents:UIControlEventTouchUpInside];
         _reviewsButton.alpha = 0;
-        NSString *reviewsString = (self.venue.storedVenue && self.venue.storedVenue.data.comments.count > 0) ? [NSString stringWithFormat:@"Reviews(%d)", self.venue.storedVenue.data.comments.count] : @"Reviews(0)";
+        NSString *reviewsString = (self.venue.storedVenue && self.venue.storedVenue.data.comments.count > 0) ? [NSString stringWithFormat:@"Reviews(%lu)", (unsigned long)self.venue.storedVenue.data.comments.count] : @"Reviews(0)";
         [_reviewsButton setTitle:reviewsString forState:UIControlStateNormal];
         
         _menuButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(_reviewsButton.frame.origin.x, _reviewsButton.frame.origin.y + _reviewsButton.frame.size.height + 10, _reviewsButton.frame.size.width, 45)];

@@ -87,6 +87,8 @@
 		8EABBF55183E967800A3D705 /* LCHModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF53183E967800A3D705 /* LCHModel.m */; };
 		8EABBF58183EAEF400A3D705 /* LCHFoursquareVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF57183EAEF400A3D705 /* LCHFoursquareVenueViewController.m */; };
 		8EABBF59183EAEF400A3D705 /* LCHFoursquareVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EABBF57183EAEF400A3D705 /* LCHFoursquareVenueViewController.m */; };
+		8ED72D8418438E1C00BC4BE0 /* pasta@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ED72D8218438E1C00BC4BE0 /* pasta@2x.png */; };
+		8ED72D8518438E1C00BC4BE0 /* salad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ED72D8318438E1C00BC4BE0 /* salad@2x.png */; };
 		A679EF86CF394708A95E38EE /* libPods-LunchieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3778D5A5C9147229B596A65 /* libPods-LunchieTests.a */; };
 /* End PBXBuildFile section */
 
@@ -194,6 +196,8 @@
 		8EABBF53183E967800A3D705 /* LCHModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHModel.m; path = classes/model/LCHModel.m; sourceTree = "<group>"; };
 		8EABBF56183EAEF400A3D705 /* LCHFoursquareVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCHFoursquareVenueViewController.h; path = classes/controllers/LCHFoursquareVenueViewController.h; sourceTree = "<group>"; };
 		8EABBF57183EAEF400A3D705 /* LCHFoursquareVenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCHFoursquareVenueViewController.m; path = classes/controllers/LCHFoursquareVenueViewController.m; sourceTree = "<group>"; };
+		8ED72D8218438E1C00BC4BE0 /* pasta@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pasta@2x.png"; path = "assets/images/placeholders/pasta@2x.png"; sourceTree = "<group>"; };
+		8ED72D8318438E1C00BC4BE0 /* salad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "salad@2x.png"; path = "assets/images/placeholders/salad@2x.png"; sourceTree = "<group>"; };
 		D3778D5A5C9147229B596A65 /* libPods-LunchieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LunchieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -408,6 +412,8 @@
 		8E37E4FA184258EE0074AFB4 /* placeholders */ = {
 			isa = PBXGroup;
 			children = (
+				8ED72D8218438E1C00BC4BE0 /* pasta@2x.png */,
+				8ED72D8318438E1C00BC4BE0 /* salad@2x.png */,
 				8E37E4FB184258FC0074AFB4 /* sauce@2x.png */,
 			);
 			name = placeholders;
@@ -621,6 +627,8 @@
 				8E37E4E918416D8D0074AFB4 /* intro_bkgrnd_2.png in Resources */,
 				8E37E4FF184262520074AFB4 /* heart@2x.png in Resources */,
 				8E37E4D618415D9C0074AFB4 /* intro_bkgrnd_1.png in Resources */,
+				8ED72D8418438E1C00BC4BE0 /* pasta@2x.png in Resources */,
+				8ED72D8518438E1C00BC4BE0 /* salad@2x.png in Resources */,
 				8E37E4E11841616A0074AFB4 /* Sullivan-Fill.otf in Resources */,
 				8E367E4D183DBEEA001792E1 /* Images.xcassets in Resources */,
 				8E367E3F183DBEEA001792E1 /* InfoPlist.strings in Resources */,
