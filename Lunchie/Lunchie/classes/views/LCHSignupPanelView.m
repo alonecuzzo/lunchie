@@ -48,7 +48,7 @@
         float labelHeight = 20;
         float textFieldHeight = 40;
         
-        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(leftMargin, headerHeight + leftMargin, self.frame.size.width, labelHeight)];
+        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(leftMargin, headerHeight + leftMargin / 2, self.frame.size.width, labelHeight)];
         nameLabel.text = @"Your Name";
         nameLabel.textColor = [LCHColorHelper lunchieDarkGrey];
         nameLabel.font = signUpTitle.font;

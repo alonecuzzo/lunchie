@@ -52,7 +52,8 @@
     [page2 setBgImage:[UIImage imageNamed:@"intro_bkgrnd_2"]];
     
     EAIntroPage *signupPage = [EAIntroPage page];
-    _signupPanelView = [[LCHSignupPanelView alloc] initWithFrame:CGRectMake(30, 70, self.view.frame.size.width - 60, 400)];
+    CGSize signupPanelSize = CGSizeMake(self.view.frame.size.width - 60, 370);
+    _signupPanelView = [[LCHSignupPanelView alloc] initWithFrame:CGRectMake(30, (self.view.frame.size.height / 2) - (signupPanelSize.height / 2) - 10, signupPanelSize.width, signupPanelSize.height)];
     _signupPanelView.introDelegate = self;
     signupPage.customView = _signupPanelView;
     [signupPage setBgImage:[UIImage imageNamed:@"intro_bkgrnd_2"]];
