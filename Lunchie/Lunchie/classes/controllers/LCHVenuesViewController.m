@@ -109,7 +109,6 @@
 - (void)venuePanelWasTapped:(LCHVenuePanel *)venuePanel
 {
     _panelParent = venuePanel.superview;
-    [_venuePagerView setHidden:YES];
     [venuePanel removeFromSuperview];
     [self.view addSubview:venuePanel];
     [venuePanel openPanel];
@@ -152,6 +151,11 @@
 {
     [venuePanel removeFromSuperview];
     [_panelParent addSubview:venuePanel];
+}
+
+- (void)panelDidFinishOpening
+{
+    [_venuePagerView setHidden:YES];
 }
 
 - (void)chooseVenuesToDisplay

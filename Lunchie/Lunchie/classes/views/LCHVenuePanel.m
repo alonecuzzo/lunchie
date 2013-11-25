@@ -192,6 +192,7 @@
             _reviewsButton.alpha = 1.0f;
             _backButton.alpha = 1.0f;
         } completion:^(BOOL finished) {
+            [self.venueDelegate panelDidFinishOpening];
         }];
     }];
 }
