@@ -126,7 +126,7 @@
         [_menuButton setBackgroundColor:[LCHColorHelper lunchiePurple]];
         
         _sendToFriendsButton = [[LCHSocialMediaButton alloc] initWithFrame:CGRectMake(_menuButton.frame.origin.x, _menuButton.frame.origin.y + _menuButton.frame.size.height + 10, _menuButton.frame.size.width, 45)];
-        [_sendToFriendsButton addTarget:self action:@selector(menuWasTapped) forControlEvents:UIControlEventTouchUpInside];
+        [_sendToFriendsButton addTarget:self action:@selector(sendToTeamWasTapped) forControlEvents:UIControlEventTouchUpInside];
         _sendToFriendsButton.alpha = 0;
         [_sendToFriendsButton setTitle:@"Send To Team" forState:UIControlStateNormal];
         [_sendToFriendsButton setBackgroundColor:[LCHColorHelper lunchieRed]];
@@ -163,6 +163,11 @@
 - (void)menuWasTapped
 {
     [self.venueDelegate menuWasTapped:self.venue];
+}
+
+- (void)sendToTeamWasTapped
+{
+    [self.venueDelegate sendToTeamWasTapped:self.venue];
 }
 
 - (void)backButtonPressed

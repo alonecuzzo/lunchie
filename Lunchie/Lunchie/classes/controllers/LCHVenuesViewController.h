@@ -21,6 +21,7 @@
 - (void)backButtonwasTapped:(LCHVenuePanel*)venuePanel;
 - (void)panelDidFinishOpening;
 - (void)panelDidFinishClosing:(LCHVenuePanel*)venuePanel;
+- (void)sendToTeamWasTapped:(LCHFoursquareVenue*)venue;
 
 @end
 

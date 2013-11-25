@@ -146,6 +146,11 @@
     return sectionHeaderView;
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 - (BOOL)hasMenu
 {
     return self.menu.menuSections.count > 0;

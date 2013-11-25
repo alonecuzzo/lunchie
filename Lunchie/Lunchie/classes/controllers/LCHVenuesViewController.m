@@ -157,6 +157,11 @@
     [venuePanel closePanel];
 }
 
+- (void)sendToTeamWasTapped:(LCHFoursquareVenue *)venue
+{
+    
+}
+
 - (void)panelDidFinishClosing:(LCHVenuePanel *)venuePanel
 {
     _openPanel = nil;
@@ -176,6 +181,11 @@
         [_venuesToDisplay addObject:_venues[index]];
         NSLog(@"venue: %@", [(LCHFoursquareVenue*)_venues[index] venueName]);
     }
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning
