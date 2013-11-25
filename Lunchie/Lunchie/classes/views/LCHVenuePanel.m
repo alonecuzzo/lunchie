@@ -26,6 +26,7 @@
 @property(nonatomic) LCHSocialMediaButton *sendToFriendsButton;
 @property(nonatomic) UIButton *backButton;
 @property(nonatomic) UIGestureRecognizer *tapRecognizer;
+@property(nonatomic) UIImageView *hasBeenVisitedCheckmark;
 
 @end
 
@@ -99,6 +100,11 @@
         [_heartView addSubview:heartImageView];
         _originalHeartViewFrame = _heartView.frame;
         
+        _hasBeenVisitedCheckmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"checkmarkIcon"]];
+        [_hasBeenVisitedCheckmark setFrame:CGRectMake(likeCount.frame.origin.x + likeCount.frame.size.width - 35, -3, [UIImage imageNamed:@"checkmarkIcon"].size.width, [UIImage imageNamed:@"checkmarkIcon"].size.width)];
+        [_heartView addSubview:_hasBeenVisitedCheckmark];
+        _hasBeenVisitedCheckmark.hidden = YES;
+        
         _addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(_heartView.frame.origin.x + _heartView.frame.size.width, _heartView.frame.origin.y, self.frame.size.width - (_heartView.frame.origin.x + _heartView.frame.size.width) - innerLeftMargin, 30)];
         _addressLabel.font = likeCount.font;
         _addressLabel.textColor = [LCHColorHelper lunchiePurple];
@@ -131,8 +137,10 @@
         [_sendToFriendsButton setTitle:@"Send To Team" forState:UIControlStateNormal];
         [_sendToFriendsButton setBackgroundColor:[LCHColorHelper lunchieRed]];
         
-        if (self.venue.storedVenue)
+        if (self.venue.storedVenue) {
             _thumbsDownButton.selected = self.venue.storedVenue.data.isThumbsDowned;
+            _hasBeenVisitedCheckmark.hidden = !self.venue.storedVenue.data.hasBeenVisited;
+        }
     }
     return self;
 }
@@ -141,6 +149,11 @@
 {
     NSString *reviewsString = (self.venue.storedVenue && self.venue.storedVenue.data.comments.count > 0) ? [NSString stringWithFormat:@"Reviews(%lu)", (unsigned long)self.venue.storedVenue.data.comments.count] : @"Reviews(0)";
     [_reviewsButton setTitle:reviewsString forState:UIControlStateNormal];
+}
+
+- (void)refreshHasBeenVisitedCheckmark
+{
+    
 }
 
 - (void)thumbsDownButtonPressed
@@ -167,6 +180,7 @@
 
 - (void)sendToTeamWasTapped
 {
+    _hasBeenVisitedCheckmark.hidden = NO;
     [self.venueDelegate sendToTeamWasTapped:self.venue];
 }
 

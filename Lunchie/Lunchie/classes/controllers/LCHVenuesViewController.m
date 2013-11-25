@@ -159,7 +159,15 @@
 
 - (void)sendToTeamWasTapped:(LCHFoursquareVenue *)venue
 {
-    
+    if (!venue.storedVenue) {
+        NSDictionary *svDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], kHasBeenVisitedKey, venue.venueID, kVenueIDKey, nil];
+        LCHStoredVenue *sv = [[LCHStoredVenue alloc] initWithDictionary:svDict];
+        venue.storedVenue = sv;
+        [[LCHModel sharedInstance] writeStoredVenue:sv];
+    } else {
+        venue.storedVenue.data.hasBeenVisited = YES;
+        [[LCHModel sharedInstance] writeStoredVenue:venue.storedVenue];
+    }
 }
 
 - (void)panelDidFinishClosing:(LCHVenuePanel *)venuePanel

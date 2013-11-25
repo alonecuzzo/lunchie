@@ -18,5 +18,6 @@
 - (void)openPanel;
 - (void)closePanel;
 - (void)refreshReviewButton;
+- (void)refreshHasBeenVisitedCheckmark;
 
 @end

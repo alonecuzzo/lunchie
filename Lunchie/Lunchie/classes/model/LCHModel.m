@@ -39,7 +39,6 @@
 
 - (void)writeStoredVenue:(LCHStoredVenue*)storedVenue
 {
-    NSLog(@"storing venue! %d", storedVenue.data.isThumbsDowned);
     [storedVenue saveData];
     [[LCHModel sharedInstance] refreshStoredVenueData];
 }

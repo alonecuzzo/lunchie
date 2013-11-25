@@ -16,8 +16,6 @@
     if (self) {
         _venueID = [dict objectForKey:kVenueIDKey];
         _comments = [dict objectForKey:kCommentsKey];
-        _hasBeenVisited = [[dict objectForKey:kHasBeenVisitedKey] boolValue];
-        NSLog(@"building is thumbs down:: %d, ", _isThumbsDowned);
     }
     return self;
 }
@@ -39,7 +37,9 @@
     BOOL hasBeenVisited = [aDecoder decodeBoolForKey:kHasBeenVisitedKey];
     BOOL isThumbsDowned = [aDecoder decodeBoolForKey:kIsThumbsDownedKey];
     //cheating and setting isThumbsDown here, for some reason it started losing it's value when it was passed through the dictionary... weird, not enough time to fully fix so inserting this bool hack here for now
+    //had to do the same with hasbeen visited
     _isThumbsDowned = isThumbsDowned;
+    _hasBeenVisited = hasBeenVisited;
     NSDictionary *initDict = [NSDictionary dictionaryWithObjectsAndKeys:venueID, kVenueIDKey, comments, kCommentsKey, [NSNumber numberWithBool:hasBeenVisited], kHasBeenVisitedKey, [NSNumber numberWithBool:isThumbsDowned], kIsThumbsDownedKey, nil];
     return [self initWithDictionary:initDict];
 }
