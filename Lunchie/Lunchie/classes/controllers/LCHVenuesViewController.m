@@ -69,25 +69,29 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         NSMutableArray *pages = [NSMutableArray array];
         int i = 0;
-        NSString *imageName = @"";
+        NSString *imageName;
+        NSString *bkgrndName;
         for (LCHFoursquareVenue *venue in _venuesToDisplay) {
             switch (i) {
                 case 0:
                     imageName = @"pasta";
+                    bkgrndName = @"intro_bkgrnd_pasta.png";
                     break;
                     
                 case 1:
                     imageName = @"salad";
+                    bkgrndName = @"intro_bkgrnd_salad";
                     break;
                     
                 case 2:
                     imageName = @"sauce";
+                    bkgrndName = @"intro_bkgrnd_2";
                     break;
             }
             LCHVenuePanel *venuePanel = [[LCHVenuePanel alloc] initWithVenue:venue andParentFrame:self.view.frame andImageName:imageName];
             venuePanel.venueDelegate = self;
             EAIntroPage *page = [EAIntroPage page];
-            page.bgImage = [UIImage imageNamed:@"intro_bkgrnd_2"];
+            page.bgImage = [UIImage imageNamed:bkgrndName];
             page.customView = venuePanel;
             [pages addObject:page];
             i++;
