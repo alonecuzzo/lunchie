@@ -18,7 +18,7 @@
     if (self) {
         
         float leftMargin = 40.0f;
-        float topMargin = 200.0f;
+        float topMargin = 100.0f;
         float labelWidth = self.frame.size.width - (2*leftMargin);
         
         UIView *bkgrndView = [[UIView alloc] initWithFrame:CGRectMake(leftMargin - 10, topMargin - 5, labelWidth + 20, 80)];

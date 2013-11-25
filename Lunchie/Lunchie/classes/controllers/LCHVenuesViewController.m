@@ -51,8 +51,9 @@
     
     _venuesToDisplay = [NSMutableArray array];
     
-    UIImageView *bkgrndView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"intro_bkgrnd_1"]];
-    [self.view addSubview:bkgrndView];
+//    UIImageView *bkgrndView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"intro_bkgrnd_1"]];
+//    [self.view addSubview:bkgrndView];
+    self.view.backgroundColor = [LCHColorHelper lunchieBlack];
     
     _navBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
     _navBar.backgroundColor = [LCHColorHelper lunchieRed];
