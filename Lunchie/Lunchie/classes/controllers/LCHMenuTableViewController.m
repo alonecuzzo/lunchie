@@ -42,7 +42,7 @@
     _navBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
     _navBar.backgroundColor = [LCHColorHelper lunchieRed];
     
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 30, [UIImage imageNamed:@"backButton"].size.width, [UIImage imageNamed:@"backButton"].size.height)];
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 27, [UIImage imageNamed:@"backButton"].size.width, [UIImage imageNamed:@"backButton"].size.height)];
     [backButton setBackgroundImage:[UIImage imageNamed:@"backButton"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [_navBar addSubview:backButton];

@@ -65,7 +65,7 @@
         [self addSubview:_headerBkgrnd];
         _originalHeaderBkgrndFrame = _headerBkgrnd.frame;
         
-        _backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 30, [UIImage imageNamed:@"backButton"].size.width, [UIImage imageNamed:@"backButton"].size.height)];
+        _backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 28, [UIImage imageNamed:@"backButton"].size.width, [UIImage imageNamed:@"backButton"].size.height)];
         [_backButton setBackgroundImage:[UIImage imageNamed:@"backButton"] forState:UIControlStateNormal];
         [_backButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
         [_headerBkgrnd addSubview:_backButton];
