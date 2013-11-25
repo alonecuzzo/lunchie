@@ -32,7 +32,7 @@
         _titleLabel.numberOfLines = 0;
         [self addSubview:_titleLabel];
         
-        _descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(leftMargin, _titleLabel.frame.size.height + _titleLabel.frame.origin.y + 10, _titleLabel.frame.size.width, 200)];
+        _descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(leftMargin, _titleLabel.frame.size.height + _titleLabel.frame.origin.y + 10, _titleLabel.frame.size.width, 240)];
         _descriptionLabel.font = [LCHFontHelper getFont:LCHFontSullivanFill withSize:LCHFontSizeSmall];
         _descriptionLabel.textAlignment = NSTextAlignmentCenter;
         _descriptionLabel.textColor = [LCHColorHelper lunchieLightGrey];

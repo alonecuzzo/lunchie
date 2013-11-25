@@ -30,7 +30,7 @@ All of the functional requirements assigned were met.
 3. **Ability to thumbs-down a restaurant and it is not considered in the future:** There is a thumbs-down button at the top right of the image in venue detail view.  While I'm not in love with its placement, pressing it marks the venue as thumbs downed.  Upon the next loading of the app, venues that are thumbs downed are not added to the model's venue array.  Eventually you can run out of venues to show.  I'd have another view or some way to see the thumbs downed venues in a future version of the app.
 4. **Twitter & Facebook native api usage:** In the initial signup screen, when you press either the Twitter or Facebook buttons, the app will attempt to access the locally stored Facebook or Twitter account on the phone and then populate the "Your Name" field with the username or full name of the user.  This screen serves no other purpose than to demonstrate that functionality.  In the real app, there'd be a more robust signup process of course.
 
-**Design Patterns**
+**Design Patterns:**
 I like to code iteratively.  As Donald Knuth said, "premature optimization is the root of all evil" and I approached this project (sans tests) the same.  Because of my overall strategy and priorities of this project, I was only able to iterate a limited number of times.  I'll address the patterns that I used, and the ones that I left out and would add had I had more time.
 
 1. **Singleton Pattern:** There is always a single instance of the model, LCHModel.  The plus side of this is that I never have to worry about my model being overwritten or using it in an unexpected state, i.e. without the setup code that is done in my managers.

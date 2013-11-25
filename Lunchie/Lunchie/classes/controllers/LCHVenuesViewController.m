@@ -65,9 +65,9 @@
     _preloader.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:_preloader];
     
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:40.712840 longitude:-74.007742];
+    CLLocation *fueledOfficeLocation = [[CLLocation alloc] initWithLatitude:40.724402 longitude:-73.997476];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [_manager searchVenuesForLocation:location];
+        [_manager searchVenuesForLocation:fueledOfficeLocation];
     });
 }
 

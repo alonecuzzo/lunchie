@@ -40,14 +40,14 @@
     EAIntroPage *page1 = [EAIntroPage page];
     LCHIntroView *page1View = [[LCHIntroView alloc] initWithFrame:self.view.frame];
     page1View.titleLabel.text = @"Too many restaurant choices got you bogged down??";
-    page1View.descriptionLabel.text = @"C'mon man, you know that's a lolcat... Don't lie to me man that IS a lolcat.  Don't you think that's a lolcat cuz I do think it's a locat, I'm going crazy man!";
+    page1View.descriptionLabel.text = @"Lunchie picks three restaurants in your area, just three.  No more sweaty palms while wading through 100 Thai restaurants on seamless.";
     page1.customView = page1View;
     [page1 setBgImage:[UIImage imageNamed:@"intro_bkgrnd_1"]];
     
     EAIntroPage *page2 = [EAIntroPage page];
     LCHIntroView *page2View = [[LCHIntroView alloc] initWithFrame:self.view.frame];
-    page2View.titleLabel.text = @"Too many restaurant choices got you bogged down??";
-    page2View.descriptionLabel.text = @"C'mon man, you know that's a lolcat... Don't lie to me man that IS a lolcat.  Don't you think that's a lolcat cuz I do think it's a locat, I'm going crazy man!";
+    page2View.titleLabel.text = @"Team members too busy to reply to the team list?";
+    page2View.descriptionLabel.text = @" We've got you covered there as well.  Lunchie fires out an alarm at a time you set so you get all the orders you need on time and can get back to what matters most, doing great work.";
     page2.customView = page2View;
     [page2 setBgImage:[UIImage imageNamed:@"intro_bkgrnd_2"]];
     
