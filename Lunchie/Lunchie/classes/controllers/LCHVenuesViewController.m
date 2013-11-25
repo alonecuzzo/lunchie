@@ -51,8 +51,6 @@
     
     _venuesToDisplay = [NSMutableArray array];
     
-//    UIImageView *bkgrndView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"intro_bkgrnd_1"]];
-//    [self.view addSubview:bkgrndView];
     self.view.backgroundColor = [LCHColorHelper lunchieBlack];
     
     _navBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
@@ -87,6 +85,7 @@
     _venues = [[LCHModel sharedInstance] venues];
     [self chooseVenuesToDisplay];
     dispatch_async(dispatch_get_main_queue(), ^{
+        _preloader.hidden = YES;
         NSMutableArray *pages = [NSMutableArray array];
         int i = 0;
         NSString *imageName;
