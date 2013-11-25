@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "LCHNetworkManager.h"
 
+#define kIsThumbsDownFilterOn 1
+
 @interface LCHFoursquareVenueBuilder : NSObject
 
 - (NSArray*)buildVenuesFromJSON:(NSDictionary*)json;

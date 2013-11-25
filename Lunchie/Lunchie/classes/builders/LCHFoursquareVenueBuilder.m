@@ -20,11 +20,14 @@
     LCHFoursquareVenue *venue;
     for (NSDictionary *dict in venuesArray) {
         venue = [[LCHFoursquareVenue alloc] initWithDictionary:dict];
-        [venuesToReturn addObject:venue];
         if ([[LCHModel sharedInstance] getStoredVenueForVenueID:venue.venueID]) {
-            NSLog(@"venueName: %@", venue.venueName);
             venue.storedVenue = [[LCHModel sharedInstance] getStoredVenueForVenueID:venue.venueID];
+            if (venue.storedVenue.data.isThumbsDowned && kIsThumbsDownFilterOn == 1) {
+                NSLog(@"venue is thumbsdowned: %@", venue.venueName);
+                continue;
+            }
         }
+        [venuesToReturn addObject:venue];
     }
     return (NSArray*)venuesToReturn;
 }

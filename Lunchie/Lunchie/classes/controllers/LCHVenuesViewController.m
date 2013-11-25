@@ -139,10 +139,11 @@
     if (!venue.storedVenue) {
         NSDictionary *svDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:isThumbsDown], kIsThumbsDownedKey, venue.venueID, kVenueIDKey, nil];
         LCHStoredVenue *sv = [[LCHStoredVenue alloc] initWithDictionary:svDict];
+        sv.data.isThumbsDowned = isThumbsDown;
         venue.storedVenue = sv;
         [[LCHModel sharedInstance] writeStoredVenue:sv];
     } else {
-        [venue.storedVenue toggleThumbsDowned];
+        venue.storedVenue.data.isThumbsDowned = isThumbsDown;
         [[LCHModel sharedInstance] writeStoredVenue:venue.storedVenue];
     }
 }

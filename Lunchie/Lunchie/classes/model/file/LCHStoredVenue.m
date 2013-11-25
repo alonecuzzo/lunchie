@@ -75,11 +75,8 @@
     [archiver encodeObject:_data forKey:kDataKey];
     [archiver finishEncoding];
     [data writeToFile:dataPath atomically:YES];
-}
-
-- (void)toggleThumbsDowned
-{
-    _data.isThumbsDowned = !_data.isThumbsDowned;
+    
+    NSLog(@"saving thumbs downed!, %d", _data.isThumbsDowned);
 }
 
 - (void)addComment:(NSString*)comment
