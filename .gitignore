@@ -22,3 +22,6 @@ Pods
 
 #vim
 *.swp
+
+#submodules
+CoreBitcoin/
